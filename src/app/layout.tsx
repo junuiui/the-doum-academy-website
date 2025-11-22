@@ -7,6 +7,10 @@ import { ReactNode } from 'react';
 export const metadata = {
     title: 'The Doum Academy',
     description: 'Welcome to The Doum Academy',
+    icons: {
+        icon: '/theDoumAcademy_sqaure.png',
+    }
+
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

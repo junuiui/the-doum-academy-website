@@ -1,12 +1,47 @@
-// src/components/Navbar.tsx
+'use client'
+// src/components/NavBar.tsx
 import Link from 'next/link';
 import styles from './NavBar.module.css';
+import logoImage from '../../public/theDoumAcademy.webp';
+import { useState } from 'react';
+
+
 
 export default function Navbar() {
+    const [open, setOpen] = useState(false);
+
     return (
-        <nav className={styles.navbar}>
-            <div className={styles.logo}>The Doum Academy</div>
-            <div className={styles.navLinks}>
+        <>
+            <nav className={styles.navbar}>
+                {/* Left: Logo Image */}
+                <div className={styles.navLeft}>
+                    <img src={logoImage.src} alt="The Doum Academy Logo" className={styles.logoImage} />
+                </div>
+
+                {/* Center: Logo Text */}
+                <div className={styles.navCenter}>
+                    <span className={styles.logoText}>The Doum Academy</span>
+                </div>
+
+                {/* Right: Links + Mobile Menu Button */}
+                <div className={styles.navRight}>
+                    <div className={styles.navLinks}>
+                        <Link href="/courses">Courses</Link>
+                        <Link href="/about-us">About Us</Link>
+                        <Link href="/teachers">Teachers</Link>
+                        <Link href="/achievements">Achievements</Link>
+                        <Link href="/contact">Contact Us</Link>
+                        <Link href="/book-appointment">Book Appointment</Link>
+                    </div>
+
+                    <button className={styles.menuBtn} onClick={() => setOpen(!open)}>
+                        ☰
+                    </button>
+                </div>
+            </nav>
+
+            {/* Mobile Dropdown */}
+            <div className={`${styles.mobileMenu} ${open ? styles.show : ''}`}>
                 <Link href="/courses">Courses</Link>
                 <Link href="/about-us">About Us</Link>
                 <Link href="/teachers">Teachers</Link>
@@ -14,6 +49,6 @@ export default function Navbar() {
                 <Link href="/contact">Contact Us</Link>
                 <Link href="/book-appointment">Book Appointment</Link>
             </div>
-        </nav>
+        </>
     );
 }
