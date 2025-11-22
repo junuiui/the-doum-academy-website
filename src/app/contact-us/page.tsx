@@ -1,4 +1,4 @@
 
 export default function ContactUsPage() {
-    return <div></div>
+    return <div>Contact Us</div>
 }

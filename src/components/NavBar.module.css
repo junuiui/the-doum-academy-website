@@ -56,6 +56,11 @@
     color:blue
 }
 
+.active {
+    color: #0070f3;
+    border-bottom: 2px solid #0070f3;
+}
+
 /* Mobile menu button (hidden on PC) */
 .menuBtn {
     display: none;

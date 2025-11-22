@@ -4,11 +4,20 @@ import Link from 'next/link';
 import styles from './NavBar.module.css';
 import logoImage from '../../public/theDoumAcademy.webp';
 import { useState } from 'react';
-
-
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const pathname = usePathname();
+
+    const links = [
+        { name: 'Courses', href: '/courses' },
+        { name: 'About Us', href: '/about-us' },
+        { name: 'Teachers', href: '/teachers' },
+        { name: 'Achievements', href: '/achievements' },
+        { name: 'Contact Us', href: '/contact-us' },
+        { name: 'Book Appointment', href: '/book-appointment' },
+    ];
 
     return (
         <>
@@ -26,16 +35,15 @@ export default function Navbar() {
                 {/* Right: Links + Mobile Menu Button */}
                 <div className={styles.navRight}>
                     <div className={styles.navLinks}>
-                        <Link href="/courses">Courses</Link>
-                        <Link href="/about-us">About Us</Link>
-                        <Link href="/teachers">Teachers</Link>
-                        <Link href="/achievements">Achievements</Link>
-                        <Link href="/contact">Contact Us</Link>
-                        <Link href="/book-appointment">Book Appointment</Link>
-                        {/* TODO
-                            1. add more ?
-                            2. reduce?
-                        */}
+                        {links.map(link => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className={pathname === link.href ? styles.active : ''}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                     </div>
 
                     <button className={styles.menuBtn} onClick={() => setOpen(!open)}>
@@ -46,12 +54,16 @@ export default function Navbar() {
 
             {/* Mobile Dropdown */}
             <div className={`${styles.mobileMenu} ${open ? styles.show : ''}`}>
-                <Link href="/courses">Courses</Link>
-                <Link href="/about-us">About Us</Link>
-                <Link href="/teachers">Teachers</Link>
-                <Link href="/achievements">Achievements</Link>
-                <Link href="/contact">Contact Us</Link>
-                <Link href="/book-appointment">Book Appointment</Link>
+                {links.map(link => (
+                    <Link
+                        key={link.href}
+                        href={link.href}
+                        className={pathname === link.href ? styles.active : ''}
+                        onClick={() => setOpen(false)} // 클릭하면 메뉴 닫힘
+                    >
+                        {link.name}
+                    </Link>
+                ))}
             </div>
         </>
     );
