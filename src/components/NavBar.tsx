@@ -20,7 +20,7 @@ export default function Navbar() {
 
                 {/* Center: Logo Text */}
                 <div className={styles.navCenter}>
-                    <span className={styles.logoText}>The Doum Academy</span>
+                    <span><Link className={styles.logoText} href="/">The Doum Academy</Link></span>
                 </div>
 
                 {/* Right: Links + Mobile Menu Button */}
@@ -32,6 +32,10 @@ export default function Navbar() {
                         <Link href="/achievements">Achievements</Link>
                         <Link href="/contact">Contact Us</Link>
                         <Link href="/book-appointment">Book Appointment</Link>
+                        {/* TODO
+                            1. add more ?
+                            2. reduce?
+                        */}
                     </div>
 
                     <button className={styles.menuBtn} onClick={() => setOpen(!open)}>

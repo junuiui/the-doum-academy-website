@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "isOwner": true,
+        "name": "Devin Kim",
+        "subject": "Science",
+        "bio": "10+ years of experience teaching high school mathematics. Specialized in Pre-Calculus and AP Calculus preparation.",
+        "profileImage": null,
+        "education": "Bsc - Science",
+        "experience": [
+            "Former tutor at XYZ Academy",
+            "Helped 50+ students improve grades"
+        ],
+        "achievements": [
+            "Students admitted to UBC Engineering",
+            "Average grade improvement: 18%"
+        ]
+    },
+    {
+        "id": 2,
+        "isOwner": true,
+        "name": "Kate Sunmin Lee",
+        "subject": "Art",
+        "bio": "10+ years of experience teaching high school mathematics. Specialized in Pre-Calculus and AP Calculus preparation.",
+        "profileImage": null,
+        "education": "Bsc - Art",
+        "experience": [
+            "Former tutor at XYZ Academy",
+            "Helped 50+ students improve grades"
+        ],
+        "achievements": [
+            "Students admitted to UBC Engineering",
+            "Average grade improvement: 18%"
+        ]
+    },
+    {
+        "id": 3,
+        "isOwner": false,
+        "name": "Junui Hong",
+        "subject": "Science",
+        "bio": "10+ years of experience teaching high school mathematics. Specialized in Pre-Calculus and AP Calculus preparation.",
+        "profileImage": null,
+        "education": "SFU - Bsc CompSci Software System",
+        "experience": [
+            "Former tutor at XYZ Academy",
+            "Helped 50+ students improve grades"
+        ],
+        "achievements": [
+            "Students admitted to UBC Engineering",
+            "Average grade improvement: 18%"
+        ]
+    }
+]

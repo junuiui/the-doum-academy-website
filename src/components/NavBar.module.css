@@ -5,6 +5,7 @@
     padding: 12px 20px;
     box-sizing: border-box;
     position: relative;
+    border-bottom: 2px solid #e0e0e0;
 }
 
 /* ----- LEFT ----- */
@@ -25,7 +26,10 @@
 }
 
 .logoText {
+    font-size: 120%;
     font-weight: 600;
+    text-decoration: none;
+    color: #000;
 }
 
 /* ----- RIGHT ----- */
@@ -46,6 +50,10 @@
     text-decoration: none;
     color: #333;
     font-weight: 500;
+}
+
+.navLinks a:hover {
+    color:blue
 }
 
 /* Mobile menu button (hidden on PC) */
