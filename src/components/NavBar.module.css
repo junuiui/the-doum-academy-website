@@ -4,8 +4,10 @@
     align-items: center;
     padding: 12px 20px;
     box-sizing: border-box;
-    position: relative;
+    position: fixed;
     border-bottom: 2px solid #e0e0e0;
+    background-color: #fff;
+    z-index: 1000; 
 }
 
 /* ----- LEFT ----- */
