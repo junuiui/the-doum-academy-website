@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import teachers from "@/data/teachers.json";
 
-export default function TeachersPage() {
+export default function TeachersComponent() {
     const owners = teachers.filter((t) => t.isOwner);
     const normalTeachers = teachers.filter((t) => !t.isOwner);
 
