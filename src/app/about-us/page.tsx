@@ -1,4 +1,12 @@
+import TeachersPage from "../teachers/page";
 
 export default function AboutUsPage() {
-    return <div>about us</div>
+    return (
+        <>
+            About us Starts here...
+
+            <TeachersPage />
+        </>
+
+    )
 }
