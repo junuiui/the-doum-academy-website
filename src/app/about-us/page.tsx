@@ -1,4 +1,5 @@
 import TeachersPage from "../teachers/page";
+import styles from './page.module.css';
 
 export default function AboutUsPage() {
     return (
@@ -6,7 +7,35 @@ export default function AboutUsPage() {
             About us Starts here...
 
             <TeachersPage />
+
+            {/* Google Map */}
+            <div className={styles.campusSection}>
+                <div className={styles.campusBox}>
+                    <h3>Vancouver Campus</h3>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386.9409216475215!2d-123.16890769068837!3d49.257384111637265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673a86f27b225%3A0xe3d6ce97d84ebedd!2s3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2!5e0!3m2!1sen!2sca!4v1763949854500!5m2!1sen!2sca"
+                        width="100%"
+                        height="300"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+
+                <div className={styles.campusBox}>
+                    <h3>Port Moody Campus</h3>
+                    <iframe
+                        src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Doum%20Academy&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                        width="100%"
+                        height="300"
+                        style={{ border: 0 }}
+                        loading="lazy"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+            </div>
         </>
 
     )
 }
+

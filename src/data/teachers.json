@@ -2,52 +2,91 @@
     {
         "id": 1,
         "isOwner": true,
-        "name": "Devin Kim",
-        "subject": "Science",
-        "bio": "10+ years of experience teaching high school mathematics. Specialized in Pre-Calculus and AP Calculus preparation.",
+        "name": "name",
+        "subject": "subjects",
+        "bio": "bio",
         "profileImage": null,
-        "education": "Bsc - Science",
+        "education": "highest education",
         "experience": [
-            "Former tutor at XYZ Academy",
-            "Helped 50+ students improve grades"
+            "experience1", "experience2", "experience3"
         ],
         "achievements": [
-            "Students admitted to UBC Engineering",
-            "Average grade improvement: 18%"
+            "achievement1", "achievement2", "achievement3"
         ]
     },
     {
         "id": 2,
         "isOwner": true,
-        "name": "Kate Sunmin Lee",
-        "subject": "Art",
-        "bio": "10+ years of experience teaching high school mathematics. Specialized in Pre-Calculus and AP Calculus preparation.",
+        "name": "name",
+        "subject": "subjects",
+        "bio": "bio",
         "profileImage": null,
-        "education": "Bsc - Art",
+        "education": "highest education",
         "experience": [
-            "Former tutor at XYZ Academy",
-            "Helped 50+ students improve grades"
+            "experience1", "experience2", "experience3"
         ],
         "achievements": [
-            "Students admitted to UBC Engineering",
-            "Average grade improvement: 18%"
+            "achievement1", "achievement2", "achievement3"
         ]
     },
     {
         "id": 3,
         "isOwner": false,
-        "name": "Junui Hong",
-        "subject": "Science",
-        "bio": "10+ years of experience teaching high school mathematics. Specialized in Pre-Calculus and AP Calculus preparation.",
+        "name": "name",
+        "subject": "subjects",
+        "bio": "bio",
         "profileImage": null,
-        "education": "SFU - Bsc CompSci Software System",
+        "education": "highest education",
         "experience": [
-            "Former tutor at XYZ Academy",
-            "Helped 50+ students improve grades"
+            "experience1", "experience2", "experience3"
         ],
         "achievements": [
-            "Students admitted to UBC Engineering",
-            "Average grade improvement: 18%"
+            "achievement1", "achievement2", "achievement3"
+        ]
+    },
+    {
+        "id": 4,
+        "isOwner": false,
+        "name": "name",
+        "subject": "subjects",
+        "bio": "bio",
+        "profileImage": null,
+        "education": "highest education",
+        "experience": [
+            "experience1", "experience2", "experience3"
+        ],
+        "achievements": [
+            "achievement1", "achievement2", "achievement3"
+        ]
+    },
+    {
+        "id": 5,
+        "isOwner": false,
+        "name": "name",
+        "subject": "subjects",
+        "bio": "bio",
+        "profileImage": null,
+        "education": "highest education",
+        "experience": [
+            "experience1", "experience2", "experience3"
+        ],
+        "achievements": [
+            "achievement1", "achievement2", "achievement3"
+        ]
+    },
+    {
+        "id": 6,
+        "isOwner": false,
+        "name": "name",
+        "subject": "subjects",
+        "bio": "bio",
+        "profileImage": null,
+        "education": "highest education",
+        "experience": [
+            "experience1", "experience2", "experience3"
+        ],
+        "achievements": [
+            "achievement1", "achievement2", "achievement3"
         ]
     }
 ]

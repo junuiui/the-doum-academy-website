@@ -13,10 +13,11 @@ export default function Navbar() {
     const links = [
         { name: 'Courses', href: '/courses' },
         { name: 'About Us', href: '/about-us' },
-        { name: 'Teachers', href: '/teachers' },
+        // { name: 'Teachers', href: '/teachers' },
         { name: 'Achievements', href: '/achievements' },
-        { name: 'Contact Us', href: '/contact-us' },
+        { name: 'Gallery', href: '/gallery' },
         { name: 'Book Appointment', href: '/book-appointment' },
+        { name: 'Contact Us', href: '/contact-us' },
     ];
 
     return (
