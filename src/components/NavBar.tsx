@@ -17,7 +17,7 @@ export default function Navbar() {
 
 
     const links = [
-        { name: 'Courses', href: '/courses' },
+        { name: 'Service', href: '/service' },
         { name: 'About Us', href: '/about-us' },
         // { name: 'Teachers', href: '/teachers' }, // combined to about-us
         { name: 'Achievements', href: '/achievements' },

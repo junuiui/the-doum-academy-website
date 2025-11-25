@@ -2,91 +2,271 @@
     {
         "id": 1,
         "isOwner": true,
-        "name": "name",
-        "subject": "subjects",
-        "bio": "bio",
+        "name": {
+            "en": "Devin Kim",
+            "ko": "Devin Kim"
+        },
+        "subject": {
+            "en": "Math/Science",
+            "ko": "수학/과학"
+        },
+        "bio": {
+            "en": "22 yearas of ",
+            "ko": "22년 경력의 수학/과학 전문가, 명문대 입시의 가장 확실한 길을 제시합니다."
+        },
         "profileImage": null,
-        "education": "highest education",
-        "experience": [
-            "experience1", "experience2", "experience3"
-        ],
-        "achievements": [
-            "achievement1", "achievement2", "achievement3"
-        ]
+        "education": {
+            "en": "SFU Actuarial Science",
+            "ko": "SFU Actuarial Science"
+        },
+        "experience": {
+            "en": [
+                "experience1",
+                "experience2",
+                "experience3"
+            ],
+            "ko": [
+                "경력1",
+                "경력2",
+                "경력3"
+            ]
+        },
+        "achievements": {
+            "en": [
+                "achievement1",
+                "achievement2",
+                "achievement3"
+            ],
+            "ko": [
+                "성과1",
+                "성과2",
+                "성과3"
+            ]
+        }
     },
     {
         "id": 2,
         "isOwner": true,
-        "name": "name",
-        "subject": "subjects",
-        "bio": "bio",
+        "name": {
+            "en": "name",
+            "ko": "이름"
+        },
+        "subject": {
+            "en": "subjects",
+            "ko": "과목"
+        },
+        "bio": {
+            "en": "bio",
+            "ko": "소개"
+        },
         "profileImage": null,
-        "education": "highest education",
-        "experience": [
-            "experience1", "experience2", "experience3"
-        ],
-        "achievements": [
-            "achievement1", "achievement2", "achievement3"
-        ]
+        "education": {
+            "en": "highest education",
+            "ko": "최종 학력"
+        },
+        "experience": {
+            "en": [
+                "experience1",
+                "experience2",
+                "experience3"
+            ],
+            "ko": [
+                "경력1",
+                "경력2",
+                "경력3"
+            ]
+        },
+        "achievements": {
+            "en": [
+                "achievement1",
+                "achievement2",
+                "achievement3"
+            ],
+            "ko": [
+                "성과1",
+                "성과2",
+                "성과3"
+            ]
+        }
     },
     {
         "id": 3,
         "isOwner": false,
-        "name": "name",
-        "subject": "subjects",
-        "bio": "bio",
+        "name": {
+            "en": "name",
+            "ko": "이름"
+        },
+        "subject": {
+            "en": "subjects",
+            "ko": "과목"
+        },
+        "bio": {
+            "en": "bio",
+            "ko": "소개"
+        },
         "profileImage": null,
-        "education": "highest education",
-        "experience": [
-            "experience1", "experience2", "experience3"
-        ],
-        "achievements": [
-            "achievement1", "achievement2", "achievement3"
-        ]
+        "education": {
+            "en": "highest education",
+            "ko": "최종 학력"
+        },
+        "experience": {
+            "en": [
+                "experience1",
+                "experience2",
+                "experience3"
+            ],
+            "ko": [
+                "경력1",
+                "경력2",
+                "경력3"
+            ]
+        },
+        "achievements": {
+            "en": [
+                "achievement1",
+                "achievement2",
+                "achievement3"
+            ],
+            "ko": [
+                "성과1",
+                "성과2",
+                "성과3"
+            ]
+        }
     },
     {
         "id": 4,
         "isOwner": false,
-        "name": "name",
-        "subject": "subjects",
-        "bio": "bio",
+        "name": {
+            "en": "name",
+            "ko": "이름"
+        },
+        "subject": {
+            "en": "subjects",
+            "ko": "과목"
+        },
+        "bio": {
+            "en": "bio",
+            "ko": "소개"
+        },
         "profileImage": null,
-        "education": "highest education",
-        "experience": [
-            "experience1", "experience2", "experience3"
-        ],
-        "achievements": [
-            "achievement1", "achievement2", "achievement3"
-        ]
+        "education": {
+            "en": "highest education",
+            "ko": "최종 학력"
+        },
+        "experience": {
+            "en": [
+                "experience1",
+                "experience2",
+                "experience3"
+            ],
+            "ko": [
+                "경력1",
+                "경력2",
+                "경력3"
+            ]
+        },
+        "achievements": {
+            "en": [
+                "achievement1",
+                "achievement2",
+                "achievement3"
+            ],
+            "ko": [
+                "성과1",
+                "성과2",
+                "성과3"
+            ]
+        }
     },
     {
         "id": 5,
         "isOwner": false,
-        "name": "name",
-        "subject": "subjects",
-        "bio": "bio",
+        "name": {
+            "en": "name",
+            "ko": "이름"
+        },
+        "subject": {
+            "en": "subjects",
+            "ko": "과목"
+        },
+        "bio": {
+            "en": "bio",
+            "ko": "소개"
+        },
         "profileImage": null,
-        "education": "highest education",
-        "experience": [
-            "experience1", "experience2", "experience3"
-        ],
-        "achievements": [
-            "achievement1", "achievement2", "achievement3"
-        ]
+        "education": {
+            "en": "highest education",
+            "ko": "최종 학력"
+        },
+        "experience": {
+            "en": [
+                "experience1",
+                "experience2",
+                "experience3"
+            ],
+            "ko": [
+                "경력1",
+                "경력2",
+                "경력3"
+            ]
+        },
+        "achievements": {
+            "en": [
+                "achievement1",
+                "achievement2",
+                "achievement3"
+            ],
+            "ko": [
+                "성과1",
+                "성과2",
+                "성과3"
+            ]
+        }
     },
     {
         "id": 6,
         "isOwner": false,
-        "name": "name",
-        "subject": "subjects",
-        "bio": "bio",
+        "name": {
+            "en": "name",
+            "ko": "이름"
+        },
+        "subject": {
+            "en": "subjects",
+            "ko": "과목"
+        },
+        "bio": {
+            "en": "bio",
+            "ko": "소개"
+        },
         "profileImage": null,
-        "education": "highest education",
-        "experience": [
-            "experience1", "experience2", "experience3"
-        ],
-        "achievements": [
-            "achievement1", "achievement2", "achievement3"
-        ]
+        "education": {
+            "en": "highest education",
+            "ko": "최종 학력"
+        },
+        "experience": {
+            "en": [
+                "experience1",
+                "experience2",
+                "experience3"
+            ],
+            "ko": [
+                "경력1",
+                "경력2",
+                "경력3"
+            ]
+        },
+        "achievements": {
+            "en": [
+                "achievement1",
+                "achievement2",
+                "achievement3"
+            ],
+            "ko": [
+                "성과1",
+                "성과2",
+                "성과3"
+            ]
+        }
     }
 ]
