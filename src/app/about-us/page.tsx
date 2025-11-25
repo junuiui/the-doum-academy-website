@@ -1,4 +1,4 @@
-import MapComponents from "@/components/map";
+import MapComponents from "@/components/Map";
 import TeachersComponent from "../../components/teachers/page";
 import styles from './page.module.css';
 

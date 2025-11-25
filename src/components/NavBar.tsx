@@ -8,12 +8,18 @@ import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [lang, setLang] = useState("ENG");
     const pathname = usePathname();
+
+    const toggleLang = () => {
+        setLang(lang === "ENG" ? "KOR" : "ENG");
+    };
+
 
     const links = [
         { name: 'Courses', href: '/courses' },
         { name: 'About Us', href: '/about-us' },
-        // { name: 'Teachers', href: '/teachers' },
+        // { name: 'Teachers', href: '/teachers' }, // combined to about-us
         { name: 'Achievements', href: '/achievements' },
         { name: 'Gallery', href: '/gallery' },
         { name: 'Book Appointment', href: '/book-appointment' },
@@ -46,6 +52,11 @@ export default function Navbar() {
                             </Link>
                         ))}
                     </div>
+
+                    {/* Language toggle */}
+                    <button className={styles.langBtn} onClick={toggleLang}>
+                        {lang}
+                    </button>
 
                     <button className={styles.menuBtn} onClick={() => setOpen(!open)}>
                         ☰

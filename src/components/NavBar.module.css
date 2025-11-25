@@ -72,6 +72,32 @@
     cursor: pointer;
 }
 
+/* ----- Language Buttons ----- */
+.langBtn {
+    margin-left: 20px;
+    padding: 6px 10px;
+    font-size: 0.9rem;
+    background: #f2f2f2;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.langBtn:hover {
+    background: #e8e8e8;
+}
+
+/* 모바일 버전 */
+.langBtnMobile {
+    margin-top: 10px;
+    width: 100px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    align-self: center;
+}
+
 /* ----- Mobile Dropdown ----- */
 .mobileMenu {
     display: none;
@@ -107,3 +133,4 @@
         transform: translateX(-50%);
     }
 }
+

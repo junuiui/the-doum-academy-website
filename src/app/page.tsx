@@ -6,7 +6,7 @@ export default function Home() {
         <div className={styles.container}>
             <section className={styles.hero}>
                 <h1>Welcome to The Doum Academy</h1>
-                <p>Expert tutoring for middle & high school students to excel in school and prepare for college entrance exams.</p>
+                <p>Brief intro</p>
             </section>  
 
             {/* brief */}
