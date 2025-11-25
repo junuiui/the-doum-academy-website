@@ -1,8 +1,8 @@
 'use client'
-// src/components/NavBar.tsx
 import Link from 'next/link';
 import styles from './NavBar.module.css';
-import logoImage from '../../public/theDoumAcademy.webp';
+import logoImage from '../../public/DoumAcademyLogo_without_letter.jpg';
+
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
@@ -31,7 +31,13 @@ export default function Navbar() {
             <nav className={styles.navbar}>
                 {/* Left: Logo Image */}
                 <div className={styles.navLeft}>
-                    <img src={logoImage.src} alt="The Doum Academy Logo" className={styles.logoImage} />
+                    <Link href="/">
+                        <img
+                            src={logoImage.src}
+                            alt="The Doum Academy Logo"
+                            className={styles.logoImage}
+                        />
+                    </Link>
                 </div>
 
                 {/* Center: Logo Text */}
