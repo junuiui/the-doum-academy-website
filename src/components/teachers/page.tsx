@@ -2,11 +2,10 @@
 
 import styles from "./page.module.css";
 import teachers from "@/data/teachers.json";
-import { useState } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function TeachersComponent() {
-    // 기본 언어를 ENG 로 두고, 나중에 NavBar 의 언어 버튼과 sync 가능
-    const [language, setLanguage] = useState<"en" | "ko">("en");
+    const { lang } = useLanguage();
 
     const owners = teachers.filter((t) => t.isOwner);
     const normalTeachers = teachers.filter((t) => !t.isOwner);
@@ -14,12 +13,12 @@ export default function TeachersComponent() {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>
-                {language === "en" ? "Our Teachers" : "선생님 소개"}
+                {lang === "en" ? "Our Teachers" : "선생님 소개"}
             </h1>
 
             {/* ===== OWNER SECTION ===== */}
             <h2 className={styles.sectionTitle}>
-                {language === "en" ? "Founders" : "설립자"}
+                {lang === "en" ? "Founders" : "설립자"}
             </h2>
 
             <div className={styles.ownerGrid}>
@@ -27,33 +26,33 @@ export default function TeachersComponent() {
                     <div key={t.id} className={styles.ownerCard}>
                         <div className={styles.ownerImage}>
                             {t.profileImage ? (
-                                <img src={t.profileImage} alt={t.name[language]} />
+                                <img src={t.profileImage} alt={t.name[lang]} />
                             ) : (
                                 "No Image"
                             )}
                         </div>
 
                         <div className={styles.ownerInfo}>
-                            <h3 className={styles.teacherName}>{t.name[language]}</h3>
+                            <h3 className={styles.teacherName}>{t.name[lang]}</h3>
 
                             <p className={styles.subject}>
-                                {language === "en" ? "Subject: " : "과목: "}
-                                {t.subject[language]}
+                                {lang === "en" ? "Subject: " : "과목: "}
+                                {t.subject[lang]}
                             </p>
 
-                            <p className={styles.bio}>{t.bio[language]}</p>
+                            <p className={styles.bio}>{t.bio[lang]}</p>
 
                             <p className={styles.education}>
-                                <strong>{language === "en" ? "Education" : "학력"}:</strong>{" "}
-                                {t.education[language]}
+                                <strong>{lang === "en" ? "Education" : "학력"}:</strong>{" "}
+                                {t.education[lang]}
                             </p>
 
                             <div>
                                 <p className={styles.subheading}>
-                                    {language === "en" ? "Experience" : "경력"}:
+                                    {lang === "en" ? "Experience" : "경력"}:
                                 </p>
                                 <ul>
-                                    {t.experience[language].map((exp: string, i: number) => (
+                                    {t.experience[lang].map((exp: string, i: number) => (
                                         <li key={i}>{exp}</li>
                                     ))}
                                 </ul>
@@ -61,10 +60,10 @@ export default function TeachersComponent() {
 
                             <div>
                                 <p className={styles.subheading}>
-                                    {language === "en" ? "Achievements" : "성과"}:
+                                    {lang === "en" ? "Achievements" : "성과"}:
                                 </p>
                                 <ul>
-                                    {t.achievements[language].map((ach: string, i: number) => (
+                                    {t.achievements[lang].map((ach: string, i: number) => (
                                         <li key={i}>{ach}</li>
                                     ))}
                                 </ul>
@@ -76,7 +75,7 @@ export default function TeachersComponent() {
 
             {/* ===== NORMAL TEACHERS ===== */}
             <h2 className={styles.sectionTitle}>
-                {language === "en" ? "Our Instructors" : "강사진"}
+                {lang === "en" ? "Our Instructors" : "강사진"}
             </h2>
 
             <div className={styles.normalList}>
@@ -84,21 +83,21 @@ export default function TeachersComponent() {
                     <div key={t.id} className={styles.normalCard}>
                         <div className={styles.normalImage}>
                             {t.profileImage ? (
-                                <img src={t.profileImage} alt={t.name[language]} />
+                                <img src={t.profileImage} alt={t.name[lang]} />
                             ) : (
                                 "No Image"
                             )}
                         </div>
 
                         <div>
-                            <h3 className={styles.teacherName}>{t.name[language]}</h3>
+                            <h3 className={styles.teacherName}>{t.name[lang]}</h3>
 
                             <p className={styles.subject}>
-                                {language === "en" ? "Subject: " : "과목: "}
-                                {t.subject[language]}
+                                {lang === "en" ? "Subject: " : "과목: "}
+                                {t.subject[lang]}
                             </p>
 
-                            <p className={styles.bio}>{t.bio[language]}</p>
+                            <p className={styles.bio}>{t.bio[lang]}</p>
                         </div>
                     </div>
                 ))}
