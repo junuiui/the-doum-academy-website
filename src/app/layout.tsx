@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { ReactNode } from 'react';
+import { LanguageProvider } from './context/LanguageContext';
 
 export const metadata = {
     title: 'The Doum Academy',
@@ -17,9 +18,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en">
             <body>
-                <Navbar />
-                <main>{children}</main>
-                <Footer />
+                <LanguageProvider>
+                    <Navbar />
+                    <main>
+                        {children}
+                    </main>
+                    <Footer />
+                </LanguageProvider>
+
             </body>
         </html>
     );
