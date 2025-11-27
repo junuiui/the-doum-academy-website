@@ -20,6 +20,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
      * When toggle, it changes the current language
      */
     const toggleLang = () => {
+        console.log(`[Language] ${lang}`)
         setLang((prev) => (prev === 'en' ? 'ko' : 'en'));
     };
 
