@@ -5,16 +5,12 @@ import logoImage from '../../public/DoumAcademyLogo_without_letter.jpg';
 
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useLanguage } from '@/app/context/LanguageContext';
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
-    const [lang, setLang] = useState("ENG");
+    const { lang, toggleLang } = useLanguage();
     const pathname = usePathname();
-
-    const toggleLang = () => {
-        setLang(lang === "ENG" ? "KOR" : "ENG");
-    };
-
 
     const links = [
         { name: 'Service', href: '/service' },
