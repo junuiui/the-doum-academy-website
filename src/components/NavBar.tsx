@@ -77,7 +77,7 @@ export default function Navbar() {
                         key={link.href}
                         href={link.href}
                         className={pathname === link.href ? styles.active : ''}
-                        onClick={() => setOpen(false)} // 클릭하면 메뉴 닫힘
+                        onClick={() => setOpen(false)}
                     >
                         {link.name}
                     </Link>
