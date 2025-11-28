@@ -3,8 +3,13 @@ import styles from './Footer.module.css';
 
 export default function Footer() {
     return (
-        <footer className={styles.footer}>
-            © 2025 The Doum Academy. All rights reserved.
-        </footer>
+        <div className={styles.footer}>
+            <div >
+                Another...
+            </div>
+            <footer>
+                © 2025 The Doum Academy. All rights reserved.
+            </footer>
+        </div>
     );
 }

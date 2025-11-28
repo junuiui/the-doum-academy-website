@@ -24,10 +24,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" className={noto.className}>
-            <body>
+            <body className='layout-body'>
                 <LanguageProvider>
                     <Navbar />
-                    <main>
+                    <main className='layout-main'>
                         {children}
                     </main>
                     <Footer />
