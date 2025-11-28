@@ -46,7 +46,11 @@
         "body": [
             {
                 "en": "A specialized program designed to help students navigate the rigorous academic environment of university",
-                "ko": "We offer coaching on major-specific coursework and effective study habits to ensure high GPA management and a smooth transition into university life"
+                "ko": " 대학 입학 후 겪는 학업적 어려움과 시행착오를 줄여주는 특별 프로그램입니다"
+            },
+            {
+                "en": "We offer coaching on major-specific coursework and effective study habits to ensure high GPA management and a smooth transition into university life",
+                "ko": "대학 수준의 전공 수업 지도 및 효율적인 GPA(학점) 관리법을 코칭하여 성공적인 대학 생활을 이끕니다"
             }
         ]
     }
