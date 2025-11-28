@@ -1,0 +1,53 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "en": "Seamless Learning Roadmap: From K-12 to University",
+            "ko": "초등부터 대학까지, 끊김없는 학습 로드맵"
+        },
+        "body": [
+            {
+                "en": "Target: K-12 Students & 1st/2nd Year University Students",
+                "ko": "대상: K-G12 (입시) 및 대학교 1~2학년"
+            },
+            {
+                "en": "Format: 1:1 Private Tutoring or Small Group Classes",
+                "ko": "방식: 1:1 집중 관리 또는 소수 정예 그룹"
+            },
+            {
+                "en": "We provide a systematic curriculum that ensures academic continuity as students advance through each grade level",
+                "ko": "학년이 바뀌어도 학습의 연속성이 유지되도록 체계적으로 관리합니다"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": {
+            "en": "Personalized Master Plan: 20 Years of Expertise",
+            "ko": "20년 노하우가 집약된 '개인 맞춤형 입시 전략"
+        },
+        "body": [
+            {
+                "en": "Beyond simple tutoring, we offer proven university entrance strategies backed by over 20 years of success data",
+                "ko": "단순 지식 전달을 넘어, 20년 이상의 입시 성공 데이터를 기반으로 확실한 솔루션을 제시합니다"
+            },
+            {
+                "en": "Our Principal and Professor-level experts directly design customized study plans tailored to each student's target university and major",
+                "ko": "원장·교수급 전문가가 학생의 목표 전공과 대학에 맞춰 최적의 학습 플랜을 직접 설계합니다"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": {
+            "en": "University Mentoring: Success Beyond Admission",
+            "ko": "합격을 넘어 '성공적 안착'을 돕는 대학생 멘토링"
+        },
+        "body": [
+            {
+                "en": "A specialized program designed to help students navigate the rigorous academic environment of university",
+                "ko": "We offer coaching on major-specific coursework and effective study habits to ensure high GPA management and a smooth transition into university life"
+            }
+        ]
+    }
+]
