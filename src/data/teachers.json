@@ -1,272 +1,232 @@
-[
-    {
-        "id": 1,
-        "isOwner": true,
-        "name": {
-            "en": "Devin Kim",
-            "ko": "Devin Kim"
-        },
-        "subject": {
-            "en": "Math/Science",
-            "ko": "수학/과학"
-        },
-        "bio": {
-            "en": "22 yearas of ",
-            "ko": "22년 경력의 수학/과학 전문가, 명문대 입시의 가장 확실한 길을 제시합니다."
-        },
-        "profileImage": null,
-        "education": {
-            "en": "SFU Actuarial Science",
-            "ko": "SFU Actuarial Science"
-        },
-        "experience": {
-            "en": [
-                "experience1",
-                "experience2",
-                "experience3"
-            ],
-            "ko": [
-                "경력1",
-                "경력2",
-                "경력3"
-            ]
-        },
-        "achievements": {
-            "en": [
-                "achievement1",
-                "achievement2",
-                "achievement3"
-            ],
-            "ko": [
-                "성과1",
-                "성과2",
-                "성과3"
-            ]
-        }
+{
+    "main-title": {
+        "en": "TODO",
+        "ko": "최고 수준의 강사진 (10 Experts)"
     },
-    {
-        "id": 2,
-        "isOwner": true,
-        "name": {
-            "en": "name",
-            "ko": "이름"
-        },
-        "subject": {
-            "en": "subjects",
-            "ko": "과목"
-        },
-        "bio": {
-            "en": "bio",
-            "ko": "소개"
-        },
-        "profileImage": null,
-        "education": {
-            "en": "highest education",
-            "ko": "최종 학력"
-        },
-        "experience": {
-            "en": [
-                "experience1",
-                "experience2",
-                "experience3"
-            ],
-            "ko": [
-                "경력1",
-                "경력2",
-                "경력3"
-            ]
-        },
-        "achievements": {
-            "en": [
-                "achievement1",
-                "achievement2",
-                "achievement3"
-            ],
-            "ko": [
-                "성과1",
-                "성과2",
-                "성과3"
-            ]
-        }
+    "main-body": {
+        "en": "TODO",
+        "ko": "저희 학원은 캐나다 명문대 출신 및 재학생으로 구성된 총 10명의 전문 강사진이 지도합니다. 모든 강사진은 학생 개개인의 잠재력을 극대화하고 성공적인 대학 진학을 이끌어 온 검증된 교육 전문가들입니다"
     },
-    {
-        "id": 3,
-        "isOwner": false,
-        "name": {
-            "en": "name",
-            "ko": "이름"
+    "director": [
+        {
+            "id": 1,
+            "name": {
+                "en": "Devin Kim",
+                "ko": "Devin Kim"
+            },
+            "subject": {
+                "en": [
+                    "Math (Pre-Calculus, Calculus, AP Calculus, IB Math)",
+                    "Science (Physics, Chemistry, AP/IB Physics, AP/IB Chemistry)",
+                    "Statistics (AP Statistics)"
+                ],
+                "ko": [
+                    "todo",
+                    "todo",
+                    "todo"
+                ]
+            },
+            "bio": {
+                "en": "todo",
+                "ko": "22년 경력의 수학/과학 전문가, 명문대 입시의 가장 확실한 길을 제시합니다."
+            },
+            "profileImage": null,
+            "education": {
+                "en": "todo",
+                "ko": "SFU Mechanical Engineering 입학 후 Actuarial Science 졸업"
+            },
+            "experience": {
+                "en": [
+                    "todo",
+                    "todo"
+                ],
+                "ko": [
+                    "북미 Mechanical Engineering",
+                    "Actuarial & Statistical Analyst"
+                ]
+            },
+            "certificate": {
+                "en": [
+                    ""
+                ],
+                "ko": [
+                    "미국 보험 계리사 CAS 4단계 자격증"
+                ]
+            },
+            "achievements": {
+                "en": "todo",
+                "ko": "2003년부터 Pre-Calculus, Calculus, Physics, Chemistry 분야에서 흔들림 없는 전문성을 쌓아 오셨습니다. 2018년 The Doum academy 공동 설립 후, 현재까지 450명 이상의 졸업생을 배출하며 95%라는 높은 대학 진학률을 이끌었습니다. 복잡한 과학 원리와 수학 공식을 가장 명쾌하게 가르치며, AP/IB등 심화과정까지 완벽하게 대비시켜 학생의 잠재력을 최고로 이끌어냅니다"
+            }
         },
-        "subject": {
-            "en": "subjects",
-            "ko": "과목"
-        },
-        "bio": {
-            "en": "bio",
-            "ko": "소개"
-        },
-        "profileImage": null,
-        "education": {
-            "en": "highest education",
-            "ko": "최종 학력"
-        },
-        "experience": {
-            "en": [
-                "experience1",
-                "experience2",
-                "experience3"
-            ],
-            "ko": [
-                "경력1",
-                "경력2",
-                "경력3"
-            ]
-        },
-        "achievements": {
-            "en": [
-                "achievement1",
-                "achievement2",
-                "achievement3"
-            ],
-            "ko": [
-                "성과1",
-                "성과2",
-                "성과3"
-            ]
+        {
+            "id": 1,
+            "name": {
+                "en": "Kate Buiatti",
+                "ko": "이선민"
+            },
+            "subject": {
+                "en": [
+                    "English & Test Prep (High School English, IELTS, TOEFL)",
+                    "Social Studies (Social Justice, Human Geography, 21st Century History, Geography)"
+                ],
+                "ko": [
+                    "todo",
+                    "todo"
+                ]
+            },
+            "bio": {
+                "en": "todo",
+                "ko": "국제학, 통번역, 유아교육을 아우르는 융합적 교육 전문가, 글로벌 인재의 기본기를 다집니다. 그 어떤 선생보다 지식과 마음을 함께 채우는 인생의 길라잡이, 학생들의 가장 든든한 멘토가 되어줍니다"
+            },
+            "profileImage": null,
+            "education": {
+                "en": "SFU International Studies, UBC Business English & Translation/Interpretation, Douglas College ECE",
+                "ko": "todo"
+            },
+            "experience": {
+                "en": [
+                    "todo",
+                    ""
+                ],
+                "ko": [
+                    "todo",
+                    "todo"
+                ]
+            },
+            "certificate": {
+                "en": [
+                    "todo"
+                ],
+                "ko": [
+                    "todo"
+                ]
+            },
+            "achievements": {
+                "en": "todo",
+                "ko": "SFU, UBC, Douglas College에서 국제학, 통번역, 유아교육을 전공하며 인문⋅사회 분야의 깊이 있는 통찰력과 교육 전문성을 갖추었습니다. 2007년부터 학생들을 지도하며 쌓아온 노하우와 450명 이상의 졸업생을 배출한 경험을 바탕으로, 고학년 영어, IELTS/TOEFL 및 Social 과목에서 독보적인 성과를 만듭니다. 북미 입시의 험난하고 외로운 과정을 누구보다 깊이 이해하기에, Kate 원장님은 단순한 지식 전달을 넘어 학생들의 마음을 보듬는 멘토입니다. 특유의 공감 능력과 이해심으로 학생들이 눈높이에서 소통하며 치열한 입시 경쟁 속에서 아이들이 무너지지 않도록 든든한 버팀목이 되어주십니다"
+            }
         }
-    },
-    {
-        "id": 4,
-        "isOwner": false,
-        "name": {
-            "en": "name",
-            "ko": "이름"
+    ],
+    "instructors": [
+        {
+            "id": 3,
+            "name": {
+                "en": "Dr. Kim",
+                "ko": "Dr. Kim"
+            },
+            "education": {
+                "en": "todo",
+                "ko": "독일 의학박사 (재료공학 전공)"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "20년 경력의 압도적인 이과 전문가. 전 Max-Planck, LG중앙연구소, 한양대/와세다대 연구/교수 경력. 밴쿠버 20년 이상 수학/물리/화학 강의. AP/IB Level 및 대학 1,2학년 (UofT, Waterloo, UBC 등) 전공 수업까지 완벽하게 지도하는 최고 레벨 강사"
+            }
         },
-        "subject": {
-            "en": "subjects",
-            "ko": "과목"
+        {
+            "id": 4,
+            "name": {
+                "en": "Elise Lee",
+                "ko": "이세영"
+            },
+            "education": {
+                "en": "todo",
+                "ko": "UBC - 문과/사회과학"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "문과 전 과목 마스터. English 9-12, Social Studies 전 과목, Biology 9-12까지 지도 가능 (학원 Biology 전문 강사). 학문적 기초 체력을 다져주는 심화 지도 전문가"
+            }
         },
-        "bio": {
-            "en": "bio",
-            "ko": "소개"
+        {
+            "id": 5,
+            "name": {
+                "en": "Jun Hong",
+                "ko": "홍준의"
+            },
+            "education": {
+                "en": "SFU - Computing Science Software Systems",
+                "ko": "SFU - 컴퓨터과학/소프트웨어시스템"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "이과 과목 및 코딩 전문. UBC 재학 중 SFU CS로 전과학 이력. 진의 쌤과 함께 학원 전체 코딩 수업을 지도하며 이과 전반을 책임집니다"
+            }
         },
-        "profileImage": null,
-        "education": {
-            "en": "highest education",
-            "ko": "최종 학력"
+        {
+            "id": 6,
+            "name": {
+                "en": "Yoobeen ",
+                "ko": "유빈"
+            },
+            "education": {
+                "en": "UBC - Science",
+                "ko": "UBC - 이과"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "친화력 최고의 이과 멘토. 부드럽고 명쾌한 수업 진행으로 전 학년 학생들에게 인기가 높음. 이과 전반 및 Biology 12학년까지 지도 가능"
+            }
         },
-        "experience": {
-            "en": [
-                "experience1",
-                "experience2",
-                "experience3"
-            ],
-            "ko": [
-                "경력1",
-                "경력2",
-                "경력3"
-            ]
+        {
+            "id": 7,
+            "name": {
+                "en": "Jin Hong",
+                "ko": "홍진의"
+            },
+            "education": {
+                "en": "SFU - Computer Science",
+                "ko": "SFU - 컴퓨터과학"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "최상위권 STEM 전문가. SFU 수학/CS 과목 공식 Peer Mentor 4년 활동 경력 보유. 고등/대학 수학, 물리학, 코딩, AP 지도. 前 오버워치 프로게이머"
+            }
         },
-        "achievements": {
-            "en": [
-                "achievement1",
-                "achievement2",
-                "achievement3"
-            ],
-            "ko": [
-                "성과1",
-                "성과2",
-                "성과3"
-            ]
+        {
+            "id": 8,
+            "name": {
+                "en": "Derek Lee",
+                "ko": "Derek Lee"
+            },
+            "education": {
+                "en": "UBC - Sauder School of Business",
+                "ko": "UBC - 경영학과"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "비지니스 영어 & STEM 멘토. 영어, 한국어, 스페인어 능통. BC 커리큘럼 기반 Math 및 Economics 12, chemistry 11 지도"
+            }
+        },
+        {
+            "id": 9,
+            "name": {
+                "en": "Jenna",
+                "ko": "Jenna"
+            },
+            "education": {
+                "en": "SFU - Beedie School of Business",
+                "ko": "SFU - 경영학과"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "저학년 학습 습관 형성 전문가. 문이과 9-11학년을 폭넓게 지도. 꾸준학 '학습지 스타일' 관리로 저학년 학생들의 기초 학력을 체계적으로 다져줍니다"
+            }
+        },
+        {
+            "id": 10,
+            "name": {
+                "en": "Vincent",
+                "ko": "Vincent"
+            },
+            "education": {
+                "en": "SFU - Electronic Engineering",
+                "ko": "SFU - 전자 공학"
+            },
+            "core": {
+                "en": "todo",
+                "ko": "최고 레벨 이과 심화 전담. Devin 원장님, Dr. Kim 선생님과 더불어 대학교 2학년 과정까지 지도 가능한 고난도 수학/과학 전문"
+            }
         }
-    },
-    {
-        "id": 5,
-        "isOwner": false,
-        "name": {
-            "en": "name",
-            "ko": "이름"
-        },
-        "subject": {
-            "en": "subjects",
-            "ko": "과목"
-        },
-        "bio": {
-            "en": "bio",
-            "ko": "소개"
-        },
-        "profileImage": null,
-        "education": {
-            "en": "highest education",
-            "ko": "최종 학력"
-        },
-        "experience": {
-            "en": [
-                "experience1",
-                "experience2",
-                "experience3"
-            ],
-            "ko": [
-                "경력1",
-                "경력2",
-                "경력3"
-            ]
-        },
-        "achievements": {
-            "en": [
-                "achievement1",
-                "achievement2",
-                "achievement3"
-            ],
-            "ko": [
-                "성과1",
-                "성과2",
-                "성과3"
-            ]
-        }
-    },
-    {
-        "id": 6,
-        "isOwner": false,
-        "name": {
-            "en": "name",
-            "ko": "이름"
-        },
-        "subject": {
-            "en": "subjects",
-            "ko": "과목"
-        },
-        "bio": {
-            "en": "bio",
-            "ko": "소개"
-        },
-        "profileImage": null,
-        "education": {
-            "en": "highest education",
-            "ko": "최종 학력"
-        },
-        "experience": {
-            "en": [
-                "experience1",
-                "experience2",
-                "experience3"
-            ],
-            "ko": [
-                "경력1",
-                "경력2",
-                "경력3"
-            ]
-        },
-        "achievements": {
-            "en": [
-                "achievement1",
-                "achievement2",
-                "achievement3"
-            ],
-            "ko": [
-                "성과1",
-                "성과2",
-                "성과3"
-            ]
-        }
-    }
-]
+    ]
+}
