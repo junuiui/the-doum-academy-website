@@ -1,10 +1,9 @@
 // src/app/page.tsx
 'use client'
-// import { useLanguage } from './context/LanguageContext';
+
 import styles from './page.module.css';
 
 export default function Home() {
-    // const { lang } = useLanguage();
 
     return (
         <div className={styles.container}>

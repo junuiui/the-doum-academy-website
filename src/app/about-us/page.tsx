@@ -1,13 +1,14 @@
 import MapComponents from "@/components/Map";
 // import TeachersComponent from "../../components/teachers/page";
 import styles from './page.module.css';
+import Teachers from "@/components/Teachers";
 
 export default function AboutUsPage() {
     return (
         <>
             About us Starts here...
 
-            {/* <TeachersComponent /> */}
+            <Teachers />
 
             <div className={styles.campusBox}>
                 <div className={styles.campusSection}>

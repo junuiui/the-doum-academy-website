@@ -5,7 +5,7 @@ import Navbar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { ReactNode } from 'react';
 // import { LanguageProvider } from './context/LanguageContext';
-import { Noto_Sans_KR } from "next/font/google";
+import { Noto_Sans_KR, Teachers } from "next/font/google";
 import Header from '@/components/Header';
 
 const noto = Noto_Sans_KR({
@@ -37,6 +37,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
                 <Header />
                 <Navbar />
+                <main className='layout-main'>
+                    {children}
+                </main>
 
             </body>
         </html>
