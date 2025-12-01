@@ -4,8 +4,9 @@ import './globals.css';
 import Navbar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { ReactNode } from 'react';
-import { LanguageProvider } from './context/LanguageContext';
+// import { LanguageProvider } from './context/LanguageContext';
 import { Noto_Sans_KR } from "next/font/google";
+import Header from '@/components/Header';
 
 const noto = Noto_Sans_KR({
     subsets: ["latin"],
@@ -25,13 +26,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" className={noto.className}>
             <body className='layout-body'>
-                <LanguageProvider>
+                {/* <LanguageProvider>
+                    <Header />
                     <Navbar />
                     <main className='layout-main'>
                         {children}
                     </main>
                     <Footer />
-                </LanguageProvider>
+                </LanguageProvider> */}
+
+                <Header />
+                <Navbar />
 
             </body>
         </html>

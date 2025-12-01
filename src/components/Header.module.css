@@ -1,0 +1,40 @@
+.header {
+    width: 100%;
+    border-bottom: 2px solid #e0e0e0;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    
+}
+
+.headerInner {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoWrap {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.langBtn {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f2f2f2;
+    cursor: pointer;
+}

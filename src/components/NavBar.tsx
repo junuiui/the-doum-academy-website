@@ -1,15 +1,10 @@
 'use client'
 import Link from 'next/link';
 import styles from './NavBar.module.css';
-import logoImage from '../../public/DoumAcademyLogo_without_letter.jpg';
 
-import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useLanguage } from '@/app/context/LanguageContext';
 
 export default function Navbar() {
-    const [open, setOpen] = useState(false);
-    const { lang, toggleLang } = useLanguage();
     const pathname = usePathname();
 
     const links = [
@@ -25,60 +20,18 @@ export default function Navbar() {
     return (
         <>
             <nav className={styles.navbar}>
-                {/* Left: Logo Image */}
-                <div className={styles.navLeft}>
-                    <Link href="/">
-                        <img
-                            src={logoImage.src}
-                            alt="The Doum Academy Logo"
-                            className={styles.logoImage}
-                        />
-                    </Link>
-                </div>
-
-                {/* Center: Logo Text */}
-                <div className={styles.navCenter}>
-                    <span><Link className={styles.logoText} href="/">The Doum Academy</Link></span>
-                </div>
-
-                {/* Right: Links + Mobile Menu Button */}
-                <div className={styles.navRight}>
-                    <div className={styles.navLinks}>
-                        {links.map(link => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={pathname === link.href ? styles.active : ''}
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* Language toggle */}
-                    <button className={styles.langBtn} onClick={toggleLang}>
-                        {lang}
-                    </button>
-
-                    <button className={styles.menuBtn} onClick={() => setOpen(!open)}>
-                        ☰
-                    </button>
+                <div className={styles.navLinks}>
+                    {links.map(link => (
+                        <Link
+                            key={link.href}
+                            href={link.href}
+                            className={pathname === link.href ? styles.active : ''}
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
                 </div>
             </nav>
-
-            {/* Mobile Dropdown */}
-            <div className={`${styles.mobileMenu} ${open ? styles.show : ''}`}>
-                {links.map(link => (
-                    <Link
-                        key={link.href}
-                        href={link.href}
-                        className={pathname === link.href ? styles.active : ''}
-                        onClick={() => setOpen(false)}
-                    >
-                        {link.name}
-                    </Link>
-                ))}
-            </div>
         </>
     );
 }
