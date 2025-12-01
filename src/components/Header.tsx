@@ -3,10 +3,8 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
 import logoImage from '../../public/DoumAcademyLogo_without_letter.jpg';
-// import { useLanguage } from '@/app/context/LanguageContext';
 
 export default function Header() {
-    // const { lang, toggleLang } = useLanguage();
 
     return (
         <header className={styles.header}>

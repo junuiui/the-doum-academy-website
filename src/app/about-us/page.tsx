@@ -1,5 +1,5 @@
 import MapComponents from "@/components/Map";
-import TeachersComponent from "../../components/teachers/page";
+// import TeachersComponent from "../../components/teachers/page";
 import styles from './page.module.css';
 
 export default function AboutUsPage() {
@@ -7,7 +7,7 @@ export default function AboutUsPage() {
         <>
             About us Starts here...
 
-            <TeachersComponent />
+            {/* <TeachersComponent /> */}
 
             <div className={styles.campusBox}>
                 <div className={styles.campusSection}>
