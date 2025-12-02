@@ -8,8 +8,10 @@ export default function AboutUsPage() {
         <>
             About us Starts here...
 
-            <Teachers />
+            {/* Teachers render here */}
+            <Teachers />    
 
+            {/* Map renders here */}
             <div className={styles.campusBox}>
                 <div className={styles.campusSection}>
                     <MapComponents

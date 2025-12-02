@@ -24,7 +24,7 @@ export default function Header() {
 
                 {/* Right: Language */}
                 <button className={styles.langBtn}>
-                    button
+                    EN / KO
                 </button>
             </div>
 
