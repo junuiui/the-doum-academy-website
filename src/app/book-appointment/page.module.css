@@ -1,3 +1,19 @@
+.wrapper {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 150px;
+    
+}
+
 .container {
-    margin-top: 180;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+}
+
+.calendarBox {
+    width: 100%;
 }
