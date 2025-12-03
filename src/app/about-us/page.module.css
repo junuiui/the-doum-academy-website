@@ -1,3 +1,8 @@
+.container {
+    padding: 5%;
+    margin-top: 65px;
+}
+
 .campusBox {
     padding: 5%;
     margin: 0 auto;

@@ -1,8 +1,8 @@
 .container {
-    max-width: 900px;
-    margin: 65px auto;
-    padding: 60px 20px;
+    padding: 5%;
+    margin-top: 65px;
 }
+
 
 .title {
     font-size: 2rem;

@@ -5,8 +5,7 @@ import Teachers from "@/components/Teachers";
 
 export default function AboutUsPage() {
     return (
-        <>
-            About us Starts here...
+        <main className={styles.container}>
 
             {/* Teachers render here */}
             <Teachers />    
@@ -23,6 +22,6 @@ export default function AboutUsPage() {
                         link="https://maps.google.com/maps?width=600&height=400&hl=en&q=Doum%20Academy&t=&z=14&ie=UTF8&iwloc=B&output=embed" />
                 </div>
             </div>
-        </>
+        </main>
     )
 }

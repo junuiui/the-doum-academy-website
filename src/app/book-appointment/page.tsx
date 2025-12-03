@@ -2,8 +2,8 @@ import styles from "./page.module.css"
 
 export default function BookAppointmentPage() {
     return (
-        <div className={styles.wrapper}>
-            <form className={styles.container}>
+        <div className={styles.container}>
+            <form className={styles.form_container}>
                 <div>
                     <label htmlFor="name">Name:</label>
                     <input

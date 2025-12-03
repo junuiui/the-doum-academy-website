@@ -5,7 +5,7 @@ import styles from './Teachers.module.css'
 
 export default function TeachersPage() {
     return (
-        <div className={styles.container}>
+        <div>
             <h1 className={styles.title}>Teachers</h1>
 
             {/* Main Intro */}
