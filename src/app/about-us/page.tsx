@@ -13,6 +13,7 @@ export default function AboutUsPage() {
 
             {/* Map renders here */}
             <div className={styles.campusBox}>
+                <h1 className={styles.title}>Location</h1>
                 <div className={styles.campusSection}>
                     <MapComponents
                         name="Vancouver"

@@ -40,6 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <main className='layout-main'>
                     {children}
                 </main>
+                <Footer />
 
             </body>
         </html>
