@@ -5,7 +5,7 @@ type MapProps = {
     link: string;
 }
 
-export default function MapComponents({ name, link }: MapProps) {
+export default function MapComponent({ name, link }: MapProps) {
     return (
         <div className={styles.campusBox}>
             <h3>{name}</h3>
