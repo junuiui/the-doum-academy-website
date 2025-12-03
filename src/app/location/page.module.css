@@ -2,3 +2,58 @@
     padding: 5%;
     margin-top: 65px;
 }
+
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.menu {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.menu button {
+    padding: 10px 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f8f8f8;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.active {
+    background: #100d74;
+    color: white;
+    border-color: #100d74;
+}
+
+.content {
+    padding: 16px 0;
+}
+
+.mapWrap {
+    width: 100%;
+    height: 350px;
+    margin: 16px 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.mapWrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.actionBtn {
+    margin-top: 10px;
+    padding: 10px 16px;
+    background: #100d74;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
