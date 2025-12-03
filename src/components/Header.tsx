@@ -18,8 +18,8 @@ export default function Header() {
                     />
                 </Link>
 
-                <Link href="/" >
-                    <span className={styles.title}>The Doum Academy</span>
+                <Link href="/" className={styles.title}>
+                    <span >The Doum Academy</span>
                 </Link>
 
                 {/* Right: Language */}
