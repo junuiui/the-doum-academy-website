@@ -14,6 +14,7 @@ export default function Navbar() {
         { name: 'Achievements', href: '/achievements' },
         { name: 'Gallery', href: '/gallery' },
         { name: 'Book Appointment', href: '/book-appointment' },
+        { name: 'Location', href: '/location' },
         { name: 'Contact Us', href: '/contact-us' },
     ];
 
