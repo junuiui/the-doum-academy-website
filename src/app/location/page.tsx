@@ -54,26 +54,31 @@ export default function LocationPage() {
                 )}
 
                 {branch === "vancouver" && (
-                    <div>
-                        <h2>Vancouver Campus</h2>
-                        <p>5678 St. Vancouver, BC</p>
+                    <>
+                        <div>
+                            <h2>Vancouver Campus</h2>
+                            <button>3215 Macdonald St, Vancouver, BC V6L 2N2</button>
 
-                        <MapComponent
-                            name="Vancouver"
-                            link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386.9409216475215!2d-123.16890769068837!3d49.257384111637265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673a86f27b225%3A0xe3d6ce97d84ebedd!2s3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2!5e0!3m2!1sen!2sca!4v1763949854500!5m2!1sen!2sca"
-                        />
+                            <MapComponent
+                                name="Vancouver"
+                                link="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d386.9409216475215!2d-123.16890769068837!3d49.257384111637265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673a86f27b225%3A0xe3d6ce97d84ebedd!2s3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2!5e0!3m2!1sen!2sca!4v1763949854500!5m2!1sen!2sca"
+                            />
 
-                        <button
-                            className={styles.actionBtn}
-                            onClick={() => {
-                                window.open(
-                                    "https://www.google.com/maps/dir/?api=1&destination=VAN_LAT,VAN_LNG&travelmode=driving"
-                                );
-                            }}
-                        >
-                            길찾기 (Driving)
-                        </button>
-                    </div>
+                            <button
+                                className={styles.actionBtn}
+                                onClick={() => {
+                                    window.open(
+                                        "https://www.google.com/maps/dir/?api=1&destination=VAN_LAT,VAN_LNG&travelmode=driving"
+                                    );
+                                }}
+                            >
+                                길찾기 (Driving)
+                            </button>
+                        </div>
+
+                        <div></div>
+                    </>
+
                 )}
             </div>
         </main>
