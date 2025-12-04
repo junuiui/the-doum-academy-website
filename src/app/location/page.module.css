@@ -35,7 +35,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;  /* 왼쪽 넓게, 오른쪽 좁게 */
+    grid-template-columns: 3fr 2fr;  /* 왼쪽 넓게, 오른쪽 좁게 */
     gap: 32px;
     padding-left: 20%;
     padding-right: 20%;
