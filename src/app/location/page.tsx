@@ -33,7 +33,7 @@ export default function LocationPage() {
                 {branch === "portmoody" && (
                     <div>
                         <h2>Port Moody Campus</h2>
-                        <p>1234 St. Port Moody, BC</p>
+                        <button>3003 St Johns St, Port Moody, BC V3H 0L4</button>
 
                         <MapComponent
                             name="Port Moody"
