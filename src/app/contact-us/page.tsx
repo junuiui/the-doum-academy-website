@@ -35,7 +35,7 @@ export default function ContactUsPage() {
                 <div>
                     <label htmlFor="grade">Student Grade:</label>
                     <select id="grade" name="grade">
-                        <option value="">Select</option>
+                        <option value="" disabled>Select</option>
                         <option value="Elementary">Elementary</option>
                         <option value="Middle School">Middle School</option>
                         <option value="High School">High School</option>
