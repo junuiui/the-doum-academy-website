@@ -13,8 +13,8 @@ export default function MapComponent({ name, link, showName }: MapProps) {
             <iframe
                 src={link}
                 width="100%"
-                height="300"
-                style={{ border: 0 }}
+                height="500"
+                style={{ border: 2 }}
                 loading="lazy"
                 allowFullScreen
             ></iframe>
