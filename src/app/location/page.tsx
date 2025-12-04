@@ -3,9 +3,19 @@
 import { useState } from 'react';
 import styles from './page.module.css';
 import MapComponent from '@/components/Map';
+import copyToClipboard from '@/utils/copy';
+import Toast from '@/components/Toast';
 
 export default function LocationPage() {
     const [branch, setBranch] = useState("portmoody");
+    const [toastVisible, setToastVisible] = useState(false);
+
+    const handleCopy = async (text: string) => {
+        await copyToClipboard(text);
+        setToastVisible(true);
+        setTimeout(() => setToastVisible(false), 1800);
+    };
+
 
     return (
         <main className={styles.container}>
@@ -32,8 +42,8 @@ export default function LocationPage() {
             <div className={styles.content}>
                 {branch === "portmoody" && (
                     <div>
-                        <h2>Port Moody Campus</h2>
-                        <button>3003 St Johns St, Port Moody, BC V3H 0L4</button>
+                        <h2>Port Moody</h2>
+                        <button onClick={() => handleCopy("3003 St Johns St, Port Moody, BC V3H 0L4")}>3003 St Johns St, Port Moody, BC V3H 0L4</button>
 
                         <MapComponent
                             name="Port Moody"
@@ -56,8 +66,8 @@ export default function LocationPage() {
                 {branch === "vancouver" && (
                     <>
                         <div>
-                            <h2>Vancouver Campus</h2>
-                            <button>3215 Macdonald St, Vancouver, BC V6L 2N2</button>
+                            <h2>Vancouver</h2>
+                            <button onClick={() => handleCopy("3215 Macdonald St, Vancouver, BC V6L 2N2")}>3215 Macdonald St, Vancouver, BC V6L 2N2</button>
 
                             <MapComponent
                                 name="Vancouver"
@@ -81,6 +91,8 @@ export default function LocationPage() {
 
                 )}
             </div>
+
+            <Toast message="Address Copied" visible={toastVisible} />
         </main>
     );
 }
