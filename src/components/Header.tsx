@@ -8,14 +8,14 @@ import { usePathname, useRouter } from 'next/navigation';
 export default function Header() {
     const pathname = usePathname();
     const router = useRouter();
-    
+
     const isKo = pathname.startsWith("/ko");
 
-    const toggleLang = () => {
-        if (isKo) {
-            router.push(pathname.replace(/^\/ko/, '') || '/'); // KOR --> ENG
+    const toggleLang = (lang: 'ko' | 'en') => {
+        if (lang === 'ko') {
+            if (!isKo) router.push('/ko' + pathname); // EN -> KO
         } else {
-            router.push('/ko' + pathname);  // ENG --> KOR
+            if (isKo) router.push(pathname.replace(/^\/ko/, '') || '/'); // KO -> EN
         }
     };
 
@@ -35,10 +35,25 @@ export default function Header() {
                     <span>{isKo ? '도움 아카데미' : 'The Doum Academy'}</span>
                 </Link>
 
-                {/* Right: Language */}
-                <button className={styles.langBtn} onClick={toggleLang}>
-                    {isKo ? 'EN' : 'KO'}
-                </button>
+                {/* Language Toggle */}
+                <div className={styles.langToggleWrapper}>
+                    <div
+                        className={styles.langToggleBackground}
+                        style={{ transform: isKo ? 'translateX(100%)' : 'translateX(0%)' }}
+                    />
+                    <button
+                        onClick={() => toggleLang('en')}
+                        className={!isKo ? styles.activeText : ''}
+                    >
+                        EN
+                    </button>
+                    <button
+                        onClick={() => toggleLang('ko')}
+                        className={isKo ? styles.activeText : ''}
+                    >
+                        KR
+                    </button>
+                </div>
             </div>
         </header>
     );
