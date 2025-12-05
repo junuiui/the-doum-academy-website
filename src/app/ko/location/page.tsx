@@ -33,7 +33,7 @@ export default function LocationPage() {
                 <div className={styles.left}>
                     {branch === "portmoody" && (
                         <div>
-                            <h2>Port Moody</h2>
+                            <h2>포트무디</h2>
                             <button
                                 onClick={() => {
                                     window.open(
@@ -56,33 +56,33 @@ export default function LocationPage() {
                                     className={styles.actionBtn}
                                     onClick={() => {
                                         window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=PORT_MOODY_LAT,PORT_MOODY_LNG&travelmode=driving"
+                                            "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4&travelmode=driving"
                                         );
                                     }}
                                 >
-                                    길찾기 (Driving)
+                                    길찾기 (차)
                                 </button>
 
                                 <button
                                     className={styles.actionBtn}
                                     onClick={() => {
                                         window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=PORT_MOODY_LAT,PORT_MOODY_LNG&travelmode=transit"
+                                            "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4&travelmode=transit"
                                         );
                                     }}
                                 >
-                                    길찾기 (Transit)
+                                    길찾기 (대중교통)
                                 </button>
 
                                 <button
                                     className={styles.actionBtn}
                                     onClick={() => {
                                         window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=PORT_MOODY_LAT,PORT_MOODY_LNG&travelmode=walking"
+                                            "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4&travelmode=walking"
                                         );
                                     }}
                                 >
-                                    길찾기 (Walking)
+                                    길찾기 (걷기)
                                 </button>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ export default function LocationPage() {
                     {branch === "vancouver" && (
                         <>
                             <div>
-                                <h2>Vancouver</h2>
+                                <h2>밴쿠버</h2>
                                 <button
                                     onClick={() => {
                                         window.open(
@@ -108,16 +108,40 @@ export default function LocationPage() {
                                     showName={false}
                                 />
 
-                                <button
-                                    className={styles.actionBtn}
-                                    onClick={() => {
-                                        window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=VAN_LAT,VAN_LNG&travelmode=driving"
-                                        );
-                                    }}
-                                >
-                                    길찾기 (Driving)
-                                </button>
+                                <div className={styles.actionBtns}>
+                                    <button
+                                        className={styles.actionBtn}
+                                        onClick={() => {
+                                            window.open(
+                                                "https://www.google.com/maps/dir/?api=1&destination=3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2&travelmode=driving"
+                                            );
+                                        }}
+                                    >
+                                        운전
+                                    </button>
+
+                                    <button
+                                        className={styles.actionBtn}
+                                        onClick={() => {
+                                            window.open(
+                                                "https://www.google.com/maps/dir/?api=1&destination=3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2&travelmode=transit"
+                                            );
+                                        }}
+                                    >
+                                        대중교통
+                                    </button>
+
+                                    <button
+                                        className={styles.actionBtn}
+                                        onClick={() => {
+                                            window.open(
+                                                "https://www.google.com/maps/dir/?api=1&destination=3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2&travelmode=walking"
+                                            );
+                                        }}
+                                    >
+                                        걷기
+                                    </button>
+                                </div>
                             </div>
                         </>
                     )}
@@ -125,10 +149,10 @@ export default function LocationPage() {
 
                 {/* Right Column — Hours of Operation */}
                 <div className={styles.right}>
-                    <h2>Hours of Operation</h2>
+                    <h2>영업 시간</h2>
                     <ul>
-                        <li>Mon – Fri: 4:00 PM – 10:00 PM</li>
-                        <li>Sat/Sun: Closed</li>
+                        <li>월 – 금: 4:00 PM – 10:00 PM</li>
+                        <li>토/일: 휴무</li>
                     </ul>
                 </div>
             </div>

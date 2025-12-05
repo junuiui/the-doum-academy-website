@@ -15,19 +15,19 @@ export default function ContactUsPage() {
             <form className={styles.form_container}>
                 {/* Name */}
                 <div>
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="name">이름:</label>
                     <input type="text" id="name" name="name" required />
                 </div>
 
                 {/* Email */}
                 <div>
-                    <label htmlFor="email">Email:</label>
+                    <label htmlFor="email">이메일:</label>
                     <input type="email" id="email" name="email" required />
                 </div>
 
                 {/* Phone */}
                 <div>
-                    <label htmlFor="phone">Phone:</label>
+                    <label htmlFor="phone">전화번호:</label>
                     <input type="tel" id="phone" name="phone" />
                 </div>
 
