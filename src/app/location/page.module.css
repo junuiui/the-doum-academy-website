@@ -18,6 +18,12 @@
     margin-bottom: 24px;
 }
 
+.active {
+    background: #100d74;
+    color: white;     
+    border-color: #100d74;
+}
+
 .menu button {
     padding: 10px 18px;
     border: 2px solid #ccc;
@@ -25,11 +31,12 @@
     background: #f8f8f8;
     cursor: pointer;
     font-size: 16px;
+    align-items: center;
 }
 
-.active {
+.menu button.active {
     background: #100d74;
-    color: blue;
+    color: white;
     border-color: #100d74;
 }
 
@@ -57,11 +64,7 @@
     height: fit-content;
 }
 
-.content {
-    padding: 16px 0;
-}
-
-.copyBtn  {
+.directMapBtn  {
     border-color: aqua;
     padding: 5px;
     border: round;

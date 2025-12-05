@@ -9,10 +9,10 @@ export default function LocationPage() {
 
     return (
         <main className={styles.container}>
-            <h1 className={styles.title}>찾아오시는 길</h1>
+            <h1 className={styles.title}>Locations</h1>
 
             {/* Branch Selector */}
-            <menu className={styles.menu}>
+            <div className={styles.menu}>
                 <button
                     className={branch === "portmoody" ? styles.active : ""}
                     onClick={() => setBranch("portmoody")}
@@ -26,7 +26,7 @@ export default function LocationPage() {
                 >
                     Vancouver
                 </button>
-            </menu>
+            </div>
 
             {/* Content */}
             <div className={styles.grid}>
@@ -40,7 +40,7 @@ export default function LocationPage() {
                                         "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4"
                                     );
                                 }}
-                                className={styles.copyBtn}
+                                className={styles.directMapBtn}
                             >
                                 3003 St Johns St, Port Moody, BC V3H 0L4
                             </button>
