@@ -60,7 +60,7 @@ export default function LocationPage() {
                                         );
                                     }}
                                 >
-                                    길찾기 (차)
+                                    운전
                                 </button>
 
                                 <button
@@ -71,7 +71,7 @@ export default function LocationPage() {
                                         );
                                     }}
                                 >
-                                    길찾기 (대중교통)
+                                    대중교통
                                 </button>
 
                                 <button
@@ -82,7 +82,7 @@ export default function LocationPage() {
                                         );
                                     }}
                                 >
-                                    길찾기 (걷기)
+                                    걷기
                                 </button>
                             </div>
                         </div>

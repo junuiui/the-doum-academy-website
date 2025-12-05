@@ -56,33 +56,33 @@ export default function LocationPage() {
                                     className={styles.actionBtn}
                                     onClick={() => {
                                         window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=PORT_MOODY_LAT,PORT_MOODY_LNG&travelmode=driving"
+                                            "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4&travelmode=driving"
                                         );
                                     }}
                                 >
-                                    길찾기 (Driving)
+                                    Driving
                                 </button>
 
                                 <button
                                     className={styles.actionBtn}
                                     onClick={() => {
                                         window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=PORT_MOODY_LAT,PORT_MOODY_LNG&travelmode=transit"
+                                            "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4&travelmode=transit"
                                         );
                                     }}
                                 >
-                                    길찾기 (Transit)
+                                    Transit
                                 </button>
 
                                 <button
                                     className={styles.actionBtn}
                                     onClick={() => {
                                         window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=PORT_MOODY_LAT,PORT_MOODY_LNG&travelmode=walking"
+                                            "https://www.google.com/maps/dir/?api=1&destination=3003%20St%20Johns%20St%2C%20Port%20Moody%2C%20BC%20V3H%200L4&travelmode=walking"
                                         );
                                     }}
                                 >
-                                    길찾기 (Walking)
+                                    Walking
                                 </button>
                             </div>
                         </div>
@@ -108,16 +108,40 @@ export default function LocationPage() {
                                     showName={false}
                                 />
 
-                                <button
-                                    className={styles.actionBtn}
-                                    onClick={() => {
-                                        window.open(
-                                            "https://www.google.com/maps/dir/?api=1&destination=VAN_LAT,VAN_LNG&travelmode=driving"
-                                        );
-                                    }}
-                                >
-                                    길찾기 (Driving)
-                                </button>
+                                <div className={styles.actionBtns}>
+                                    <button
+                                        className={styles.actionBtn}
+                                        onClick={() => {
+                                            window.open(
+                                                "https://www.google.com/maps/dir/?api=1&destination=3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2&travelmode=driving"
+                                            );
+                                        }}
+                                    >
+                                        Driving
+                                    </button>
+
+                                    <button
+                                        className={styles.actionBtn}
+                                        onClick={() => {
+                                            window.open(
+                                                "https://www.google.com/maps/dir/?api=1&destination=3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2&travelmode=transit"
+                                            );
+                                        }}
+                                    >
+                                        Transit
+                                    </button>
+
+                                    <button
+                                        className={styles.actionBtn}
+                                        onClick={() => {
+                                            window.open(
+                                                "https://www.google.com/maps/dir/?api=1&destination=3215%20Macdonald%20St%2C%20Vancouver%2C%20BC%20V6L%202N2&travelmode=walking"
+                                            );
+                                        }}
+                                    >
+                                        Walking
+                                    </button>
+                                </div>
                             </div>
                         </>
                     )}
