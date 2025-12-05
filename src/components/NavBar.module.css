@@ -1,14 +1,15 @@
 .navbar {
+    position: sticky;
+    top: 65px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 12px 20px;
     box-sizing: border-box;
-    position: fixed;
     border-bottom: 2px solid #e0e0e0;
+    z-index: 1;
     background-color: #fff;
-    margin-top: 65px; /* Measured by Header height */
 }
 
 .navLinks {
@@ -23,10 +24,10 @@
 }
 
 .navLinks a:hover {
-    color:blue
+    font-weight: 1000;
 }
 
 .active {
-    color: #0070f3;
-    border-bottom: 2px solid #0070f3;
+    color: #000;
+    border-bottom: 2px solid #000;
 }
