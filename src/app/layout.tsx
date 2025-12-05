@@ -26,22 +26,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     return (
         <html lang="en" className={noto.className}>
             <body className='layout-body'>
-                {/* <LanguageProvider>
-                    <Header />
-                    <Navbar />
-                    <main className='layout-main'>
-                        {children}
-                    </main>
-                    <Footer />
-                </LanguageProvider> */}
-
                 <Header />
                 <Navbar />
                 <main className='layout-main'>
                     {children}
                 </main>
                 <Footer />
-
             </body>
         </html>
     );

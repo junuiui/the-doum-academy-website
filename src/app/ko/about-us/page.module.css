@@ -1,0 +1,14 @@
+.container {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.campusBox {
+    margin: 0 auto;
+}
+
+.campusSection {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+}
