@@ -8,6 +8,7 @@
     flex-direction: column;
     gap: 20px;
     background-color: beige;
+    width: 100%;
 }
 
 .form h1 {
@@ -19,7 +20,7 @@
 
 .row {
     display: flex;
-    gap: 20px;
+    
 }
 
 .field {
@@ -27,6 +28,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+    margin: 2%;
 }
 
 .field label {
@@ -35,23 +37,35 @@
 }
 
 .field input,
-.field select,
-.field textarea {
-    width: 100%;
+.field select {
+    width: 70%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
+
+    /* center inner */
+    /* margin: 0 auto; */
+}
+
+.field textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    /* margin: 10px; */
 }
 
 .submitBtn {
-    margin-top: 10px;
+    width: 50%;
     padding: 12px;
     background: #0070f3;
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
+    margin: 10px auto;
 }
 
 .submitBtn:hover {
