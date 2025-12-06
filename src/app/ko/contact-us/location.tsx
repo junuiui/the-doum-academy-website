@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './page.module.css';
+import styles from './location.module.css';
 import MapComponent from '@/components/Map';
 
-export default function LocationPage() {
+export default function Location() {
     const [branch, setBranch] = useState("portmoody");
 
     return (
-        <main className={styles.container}>
+        <>
             <h1 className={styles.title}>찾아오시는 길</h1>
 
             {/* Branch Selector */}
@@ -156,6 +156,6 @@ export default function LocationPage() {
                     </ul>
                 </div>
             </div>
-        </main>
+        </>
     );
 }

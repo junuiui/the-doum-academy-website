@@ -1,3 +1,4 @@
+import Location from './location'
 import styles from './page.module.css'
 
 /**
@@ -10,6 +11,10 @@ import styles from './page.module.css'
 export default function ContactUsPage() {
     return (
         <main className={styles.container}>
+
+            {/* Location */}
+            <Location />
+
             <h1 className={styles.title}>Contact Us</h1>
 
             <form className={styles.form_container}>
