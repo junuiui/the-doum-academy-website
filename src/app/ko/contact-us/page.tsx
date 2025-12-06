@@ -12,12 +12,12 @@ export default function ContactUsPage() {
                 <div className={styles.row}>
                     <div className={styles.field}>
                         <label htmlFor="name">이름</label>
-                        <input id="name" name="name" required />
+                        <input id="name" name="name" placeholder='홍길동' required />
                     </div>
 
                     <div className={styles.field}>
                         <label htmlFor="email">이메일</label>
-                        <input id="email" name="email" type="email" required />
+                        <input id="email" name="email" placeholder='example@gmail.com' type="email" required />
                     </div>
                 </div>
 
@@ -25,7 +25,7 @@ export default function ContactUsPage() {
                 <div className={styles.row}>
                     <div className={styles.field}>
                         <label htmlFor="phone">전화번호</label>
-                        <input id="phone" name="phone" />
+                        <input id="phone" name="phone" placeholder='xxx xxx xxxx'  />
                     </div>
 
                     <div className={styles.field}>
@@ -43,7 +43,7 @@ export default function ContactUsPage() {
                 {/* Row 3: Message */}
                 <div className={styles.field}>
                     <label htmlFor="message">내용</label>
-                    <textarea id="message" name="message" rows={5} required />
+                    <textarea id="message" name="message" placeholder='메시지' rows={5} required />
                 </div>
 
                 <button type="submit" className={styles.submitBtn}>보내기</button>

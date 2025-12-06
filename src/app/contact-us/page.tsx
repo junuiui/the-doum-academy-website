@@ -1,77 +1,55 @@
-import Location from './location'
-import styles from './page.module.css'
-
-/**
- * Todo:
- *  1. Need to ask what sections are needed
- *  2. 
- * 
- */
+import Location from './location';
+import styles from './page.module.css';
 
 export default function ContactUsPage() {
     return (
         <main className={styles.container}>
+            
+            <form className={styles.form}>
 
-            {/* Location */}
-            <Location />
+                <h1 className={styles.title}>Contact Us</h1>
+                {/* Row 1: Name + Email */}
+                <div className={styles.row}>
+                    <div className={styles.field}>
+                        <label htmlFor="name">Name</label>
+                        <input id="name" name="name" placeholder='Gildong Hong' required />
+                    </div>
 
-            <h1 className={styles.title}>Contact Us</h1>
-
-            <form className={styles.form_container}>
-                {/* Name */}
-                <div>
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" required />
+                    <div className={styles.field}>
+                        <label htmlFor="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder='example@gmail.com' required />
+                    </div>
                 </div>
 
-                {/* Email */}
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
+                {/* Row 2: Phone + Inquiry */}
+                <div className={styles.row}>
+                    <div className={styles.field}>
+                        <label htmlFor="phone">Phone</label>
+                        <input id="phone" name="phone" placeholder='xxx xxx xxxx' />
+                    </div>
+
+                    <div className={styles.field}>
+                        <label htmlFor="topic">Inquiries</label>
+                        <select id="topic" name="topic">
+                            <option value="" disabled>select</option>
+                            <option value="Tutoring">Tutoring</option>
+                            <option value="Registration">Registration</option>
+                            <option value="Billing">Billing</option>
+                            <option value="General">General</option>
+                        </select>
+                    </div>
                 </div>
 
-                {/* Phone */}
-                <div>
-                    <label htmlFor="phone">Phone:</label>
-                    <input type="tel" id="phone" name="phone" />
+                {/* Row 3: Message */}
+                <div className={styles.field}>
+                    <label htmlFor="message">Message</label>
+                    <textarea id="message" name="message" placeholder='Your Message' rows={5} required />
                 </div>
 
-                {/* Student Grade */}
-                <div>
-                    <label htmlFor="grade">Student Grade:</label>
-                    <select id="grade" name="grade">
-                        <option value="" disabled>Select</option>
-                        <option value="Elementary">Elementary</option>
-                        <option value="Middle School">Middle School</option>
-                        <option value="High School">High School</option>
-                    </select>
-                </div>
-
-                {/* Inquiry Type */}
-                <div>
-                    <label htmlFor="topic">Reason for Inquiry:</label>
-                    <select id="topic" name="topic" required>
-                        <option value="">Select</option>
-                        <option value="Tutoring">Tutoring</option>
-                        <option value="Registration">Registration</option>
-                        <option value="Billing">Billing</option>
-                        <option value="General">General</option>
-                    </select>
-                </div>
-
-                {/* Message */}
-                <div>
-                    <label htmlFor="message">Message:</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        required
-                    ></textarea>
-                </div>
-
-                <button type="submit">Submit</button>
+                <button type="submit" className={styles.submitBtn}>Submit</button>
             </form>
+
+            <Location />
         </main>
-    )
+    );
 }
