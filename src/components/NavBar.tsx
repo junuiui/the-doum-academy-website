@@ -13,7 +13,7 @@ export default function Navbar() {
         { nameEn: 'Achievements', nameKo: '성과', href: '/achievements' },
         { nameEn: 'Gallery', nameKo: '갤러리', href: '/gallery' },
         { nameEn: 'Book Appointment', nameKo: '예약하기', href: '/book-appointment' },
-        { nameEn: 'Location', nameKo: '찾아오시는 길', href: '/location' },
+        // { nameEn: 'Location', nameKo: '찾아오시는 길', href: '/location' }, MOVED to Contact us
         { nameEn: 'Contact Us', nameKo: '문의하기', href: '/contact-us' },
     ];
 
