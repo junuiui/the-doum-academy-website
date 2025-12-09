@@ -1,0 +1,22 @@
+.section {
+    margin-bottom: 4rem;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.imageWrapper {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    border: 1px solid #ddd;
+}
+
+/* button {
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+    cursor: pointer;
+} */
