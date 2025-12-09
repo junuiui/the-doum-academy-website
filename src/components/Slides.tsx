@@ -29,7 +29,7 @@ export default function Slides({ year, images }: Props) {
                 <div className={styles.imageWrapper}>
                     <Image
                         src={images[index]}
-                        alt={`${year} acceptance letter`}
+                        alt={`${images[index]} acceptance letter`}
                         fill
                         style={{ objectFit: 'contain' }}
                     />

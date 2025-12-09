@@ -2,3 +2,9 @@
     padding-left: 2%;
     padding-right: 2%;
 }
+
+/* page.module.css */
+.active {
+    background: black;
+    color: white;
+}
