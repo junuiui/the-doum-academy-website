@@ -51,6 +51,10 @@ export default function AchievementPage() {
                     images={[
                         '/achievements/example1.png',
                         '/achievements/example2.png',
+                        '/achievements/example3.png',
+                        '/achievements/example4.png',
+                        '/achievements/example5.png',
+                        '/achievements/example6.png',
                     ]}
                 />
             )}
@@ -59,8 +63,12 @@ export default function AchievementPage() {
                 <Slides
                     year={2024}
                     images={[
-                        '/acceptance/2024/a1.jpg',
-                        '/acceptance/2024/a2.png',
+                        '/achievements/example1.png',
+                        '/achievements/example2.png',
+                        '/achievements/example3.png',
+                        '/achievements/example4.png',
+                        '/achievements/example5.png',
+                        '/achievements/example6.png',
                     ]}
                 />
             )}
@@ -69,8 +77,12 @@ export default function AchievementPage() {
                 <Slides
                     year={2023}
                     images={[
-                        '/acceptance/2023/a1.jpg',
-                        '/acceptance/2023/a2.png',
+                        '/achievements/example1.png',
+                        '/achievements/example2.png',
+                        '/achievements/example3.png',
+                        '/achievements/example4.png',
+                        '/achievements/example5.png',
+                        '/achievements/example6.png',
                     ]}
                 />
             )}

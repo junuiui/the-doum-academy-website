@@ -1,22 +1,63 @@
 .section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    text-align: center;
 }
 
-.slider {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.imageWrapper {
+.carousel {
     position: relative;
-    width: 500px;
-    height: 350px;
-    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+    overflow: hidden;
 }
 
-/* button {
-    padding: 0.5rem 1rem;
-    font-size: 18px;
+.center {
+    position: relative;
+    width: 520px;
+    height: 100%;
+    z-index: 2;
+}
+
+.side {
+    position: absolute;
+    width: 320px;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+}
+
+.left {
+    left: calc(50% - 420px);
+}
+
+.right {
+    right: calc(50% - 420px);
+}
+
+.blur {
+    filter: blur(6px);
+    opacity: 0.6;
+    object-fit: cover;
+}
+
+.main {
+    object-fit: contain;
+}
+
+.counter {
+    margin-top: 0.75rem;
+    font-size: 14px;
+    color: #666;
+}
+
+.controls {
+    margin-top: 0.5rem;
+}
+
+.controls button {
+    font-size: 20px;
+    padding: 4px 10px;
+    margin: 0 6px;
     cursor: pointer;
-} */
+}

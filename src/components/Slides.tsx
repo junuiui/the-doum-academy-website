@@ -1,8 +1,7 @@
-
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
+import { useState } from 'react'
 import styles from './Slides.module.css'
 
 type Props = {
@@ -13,29 +12,52 @@ type Props = {
 export default function Slides({ year, images }: Props) {
     const [index, setIndex] = useState(0)
 
-    const prev = () =>
-        setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
-
-    const next = () =>
-        setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+    const prevIndex = (index - 1 + images.length) % images.length
+    const nextIndex = (index + 1) % images.length
 
     return (
         <section className={styles.section}>
             <h2>{year}</h2>
 
-            <div className={styles.slider}>
-                <button onClick={prev}>&lt;</button>
-
-                <div className={styles.imageWrapper}>
+            <div className={styles.carousel}>
+                {/* left */}
+                <div className={`${styles.side} ${styles.left}`}>
                     <Image
-                        src={images[index]}
-                        alt={`${images[index]} acceptance letter`}
+                        src={images[prevIndex]}
+                        alt="previous"
                         fill
-                        style={{ objectFit: 'contain' }}
+                        className={styles.blur}
                     />
                 </div>
 
-                <button onClick={next}>&gt;</button>
+                {/* center */}
+                <div className={styles.center}>
+                    <Image
+                        src={images[index]}
+                        alt="current"
+                        fill
+                        className={styles.main}
+                    />
+                </div>
+
+                {/* right */}
+                <div className={`${styles.side} ${styles.right}`}>
+                    <Image
+                        src={images[nextIndex]}
+                        alt="next"
+                        fill
+                        className={styles.blur}
+                    />
+                </div>
+            </div>
+
+            <div className={styles.counter}>
+                {index + 1} / {images.length}
+            </div>
+
+            <div className={styles.controls}>
+                <button onClick={() => setIndex(prevIndex)}>‹</button>
+                <button onClick={() => setIndex(nextIndex)}>›</button>
             </div>
         </section>
     )
