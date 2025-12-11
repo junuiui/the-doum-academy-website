@@ -1,6 +1,17 @@
 import Location from './location';
 import styles from './page.module.css';
 
+const subjects = [
+    'English', 
+    'Social Studies',
+    'Chemistry',
+    'Physics',
+    'Biology',
+    'Math (Pre-Calculus)',
+    'Calculus',
+    // .. more
+]
+
 export default function ContactUsPage() {
     return (
         <main className={styles.container}>
@@ -44,10 +55,10 @@ export default function ContactUsPage() {
                 <div className={styles.field}>
                     <label>Subjects</label>
                     <div className={styles.subjects}>
-                        {['English', 'Math', 'Science', 'Social Studies', 'History', 'Art'].map((subject) => (
-                            <label key={subject} className={styles.subjectBtn}>
+                        {subjects.map((subject) => (
+                            <label className={styles.subjectBtn}>
                                 <input type="checkbox" name="subjects" value={subject} />
-                                {subject}
+                                <span>{subject}</span>
                             </label>
                         ))}
                     </div>
