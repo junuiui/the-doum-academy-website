@@ -79,14 +79,6 @@
     position: relative;
 }
 
-.subjectBtn span {
-    pointer-events: none;
-    /* 텍스트에 클릭 이벤트 막음 */
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
 .subjectBtn input {
     position: absolute;
     opacity: 0;
@@ -96,9 +88,21 @@
     cursor: pointer;
 }
 
+.subjectBtn span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+
 .subjectBtn input:checked+span {
     background-color: #0070f3;
     color: white;
     border-color: #0070f3;
     border-radius: 6px;
 }
+
