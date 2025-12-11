@@ -73,7 +73,8 @@ export default function Slides({ title, images }: Props) {
                     </div>
                 ))}
             </div>
-
+            
+            {/* Slide button (dots) */}
             {totalPages > 1 && (
                 <div
                     className={`${styles.dots} ${isLastPageNotFull ? styles.tightDots : ''}`}
@@ -88,9 +89,11 @@ export default function Slides({ title, images }: Props) {
                 </div>
             )}
 
+            {/* When click, Modal appears */}
             {modalIndex !== null && (
                 <div className={styles.modalOverlay} onClick={closeModal}>
                     <div className={styles.modalContentWrapper} onClick={e => e.stopPropagation()}>
+                        {/* Prev Button */}
                         <button
                             className={`${styles.navButton} ${styles.left} ${modalIndex === 0 ? styles.disabled : ''}`}
                             onClick={prevImage}
@@ -98,8 +101,10 @@ export default function Slides({ title, images }: Props) {
                             ◀
                         </button>
 
+                        {/* Main Image */}
                         <img src={images[modalIndex]} alt={`photo-modal-${modalIndex}`} />
 
+                        {/* Next Button */}
                         <button
                             className={`${styles.navButton} ${styles.right} ${modalIndex === images.length - 1 ? styles.disabled : ''}`}
                             onClick={nextImage}
@@ -107,6 +112,7 @@ export default function Slides({ title, images }: Props) {
                             ▶
                         </button>
 
+                        {/* Close Button */}
                         <button className={styles.closeButton} onClick={closeModal}>
                             ✕
                         </button>

@@ -1,5 +1,4 @@
 .container {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -12,8 +11,6 @@
     gap: 12px;
 }
 
-
-
 .item {
     position: relative;
     width: 100%;
@@ -23,7 +20,6 @@
     border: 2px solid #000;
     transition: transform 0.2s ease;
 }
-
 
 .item img {
     object-fit: cover;
@@ -79,26 +75,21 @@
 .modalContentWrapper {
     position: relative;
     width: 90vw;
-    /* wrapper 충분히 넓게 */
     max-width: 1200px;
-    /* 최대 너비 */
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* 이미지 중앙 정렬 + max 크기 제한 */
 .modalContentWrapper img {
     max-width: 80%;
-    /* wrapper의 80%만 사용 */
     max-height: 100%;
     object-fit: contain;
     display: block;
     z-index: 1;
 }
 
-/* 버튼 */
 .navButton {
     position: absolute;
     top: 50%;
@@ -119,7 +110,6 @@
 .navButton.right {
     right: 0;
 }
-
 
 .navButton.disabled {
     opacity: 0.3;
