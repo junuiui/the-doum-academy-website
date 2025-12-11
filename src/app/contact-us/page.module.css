@@ -20,7 +20,7 @@
 
 .row {
     display: flex;
-    
+
 }
 
 .field {
@@ -56,6 +56,40 @@
     font-size: 14px;
     /* margin: 10px; */
 }
+
+.subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.subjectBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    transition: all 0.2s;
+}
+
+.subjectBtn input {
+    display: none;
+    /* 체크박스 숨김 */
+}
+
+.subjectBtn input:checked+&,
+.subjectBtn input:checked+span {
+    background-color: #0070f3;
+    color: white;
+    border-color: #0070f3;
+}
+
 
 .submitBtn {
     width: 50%;

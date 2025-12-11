@@ -4,7 +4,7 @@ import styles from './page.module.css';
 export default function ContactUsPage() {
     return (
         <main className={styles.container}>
-            
+
             <form className={styles.form}>
 
                 <h1 className={styles.title}>Contact Us</h1>
@@ -40,7 +40,20 @@ export default function ContactUsPage() {
                     </div>
                 </div>
 
-                {/* Row 3: Message */}
+                {/* Row 3: Subjects */}
+                <div className={styles.field}>
+                    <label>Subjects</label>
+                    <div className={styles.subjects}>
+                        {['English', 'Math', 'Science', 'Social Studies', 'History', 'Art'].map((subject) => (
+                            <label key={subject} className={styles.subjectBtn}>
+                                <input type="checkbox" name="subjects" value={subject} />
+                                {subject}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Row 4: Message */}
                 <div className={styles.field}>
                     <label htmlFor="message">Message</label>
                     <textarea id="message" name="message" placeholder='Your Message' rows={5} required />
