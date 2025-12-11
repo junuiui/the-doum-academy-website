@@ -10,7 +10,7 @@ export default function AchievementPage() {
         <main className={styles.container}>
             <h1>Achievements</h1>
             <Slides
-                year={2025}
+                title={2025}
                 images={[
                     '/achievements/example1.png',
                     '/achievements/example2.png',
@@ -40,7 +40,7 @@ export default function AchievementPage() {
             />
 
             <Slides
-                year={2024}
+                title={2024}
                 images={[
                     '/achievements/example1.png',
                     '/achievements/example2.png',
@@ -52,7 +52,7 @@ export default function AchievementPage() {
             />
 
             <Slides
-                year={2023}
+                title={2023}
                 images={[
                     '/achievements/example1.png',
                     '/achievements/example2.png',
@@ -66,3 +66,10 @@ export default function AchievementPage() {
         </main>
     )
 }
+
+
+/**
+ * 
+ * TODO:
+ *  1. Add summary
+ */

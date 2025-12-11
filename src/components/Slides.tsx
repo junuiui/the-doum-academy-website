@@ -5,11 +5,11 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './Slides.module.css'
 
 type Props = {
-    year: number
+    title: number
     images: string[]
 }
 
-export default function Slides({ year, images }: Props) {
+export default function Slides({ title, images }: Props) {
     const ROWS = 4
     const COLS = 5
     const PER_PAGE = ROWS * COLS
@@ -64,7 +64,7 @@ export default function Slides({ year, images }: Props) {
 
     return (
         <main className={styles.container}>
-            <h2>{year}</h2>
+            <h2>{title}</h2>
 
             <div className={styles.grid}>
                 {currentImages.map((src, i) => (
