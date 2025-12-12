@@ -73,7 +73,7 @@ export default function Slides({ title, images }: Props) {
                     </div>
                 ))}
             </div>
-            
+
             {/* Slide button (dots) */}
             {totalPages > 1 && (
                 <div

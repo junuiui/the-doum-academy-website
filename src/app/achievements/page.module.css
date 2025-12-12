@@ -1,9 +1,20 @@
 .container {
     padding-left: 2%;
     padding-right: 2%;
+    display: flex;
+    gap: 40px;
 }
 
 /* page.module.css */
+.active {
+    background: black;
+    color: white;
+}
+
+.container > div {
+    flex: 1; /* 두 div가 너비 반반 */
+}
+
 .active {
     background: black;
     color: white;
