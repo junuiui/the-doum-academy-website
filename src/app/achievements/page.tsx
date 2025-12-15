@@ -3,6 +3,8 @@
 import Slides from '@/components/Slides'
 import styles from './page.module.css'
 import { useState } from 'react'
+import rawData from '@/data/achievement.json'
+import StatsSection from '@/components/stats/StatsSections'
 
 export default function AchievementPage() {
 
@@ -65,9 +67,10 @@ export default function AchievementPage() {
                 />
 
             </div>
-            
+
             <div>
                 <h1>Stats</h1>
+                <StatsSection rawData={rawData} />
             </div>
 
 

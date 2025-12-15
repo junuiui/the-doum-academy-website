@@ -1,8 +1,10 @@
 .container {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 40px;
     padding-left: 2%;
     padding-right: 2%;
-    display: flex;
-    gap: 40px;
+    padding-top: 40px;
 }
 
 /* page.module.css */
@@ -12,10 +14,16 @@
 }
 
 .container > div {
-    flex: 1; /* 두 div가 너비 반반 */
+    flex: 1;
 }
 
 .active {
     background: black;
     color: white;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
