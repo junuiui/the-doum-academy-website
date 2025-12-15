@@ -5,6 +5,7 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     padding: 2%;
+    background-color: #fff;
 }
 
 .grid {
@@ -34,38 +35,63 @@
 }
 
 /* dots */
-.dots {
+.paginationContainer {
     display: flex;
     justify-content: center;
-    gap: 8px;
+    align-items: center;
+    gap: 0.5rem;
     margin-top: 20px;
 }
 
-.tightDots {
-    margin-top: 8px;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    border: none;
+/* Arrow Buttons */
+.paginationArrow {
+    padding: 0.25rem;
+    border-radius: 9999px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.2s;
+    background: transparent;
+    border: none;
+    color: #100d74;
 }
 
-.dot:hover {
-    background: #aaa;
+.paginationArrow:hover {
+    background-color: #f3f3f3;
 }
 
-.active {
-    width: 40px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: #0070f3;
+.paginationArrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
+/* Dots Container */
+.paginationDots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Dot Buttons */
+.paginationDot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 9999px;
+    background-color: #d1d5db;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.paginationDot:hover {
+    background-color: #9ca3af;
+}
+
+/* Active Dot */
+.paginationDotActive {
+    width: 2rem;
+    background-color: #100d74;
+}
+
+
+/* Modal */
 .modalOverlay {
     position: fixed;
     top: 0;

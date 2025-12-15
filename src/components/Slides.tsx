@@ -4,6 +4,11 @@ import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 import styles from './Slides.module.css'
 
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
+
+
 type Props = {
     title: number | 'ALL'
     images: string[]
@@ -73,51 +78,75 @@ export default function Slides({ title, images }: Props) {
                 ))}
             </div>
 
-            {/* Pagination dots */}
+            {/* Pagination with arrows */}
             {totalPages > 1 && (
-                <div className={`${styles.dots} ${isLastPageNotFull ? styles.tightDots : ''}`}>
-                    {Array.from({ length: totalPages }).map((_, currentPageIndex) => (
-                        <button
-                            key={currentPageIndex}
-                            className={`${styles.dot} ${currentPageIndex === page ? styles.active : ''}`}
-                            onClick={() => setPage(currentPageIndex)}
-                        />
-                    ))}
-                </div>
-            )}
+                <div className={styles.paginationContainer}>
+                    {/* Left Arrow */}
+                    <button
+                        className={styles.paginationArrow}
+                        onClick={() => setPage(Math.max(page - 1, 0))}
+                        disabled={page === 0}
+                    >
+                        <IoIosArrowBack size={40} />
+                    </button>
 
+                    {/* Dots */}
+                    <div className={styles.paginationDots}>
+                        {Array.from({ length: totalPages }).map((_, i) => (
+                            <button
+                                key={i}
+                                className={`${styles.paginationDot} ${i === page ? styles.paginationDotActive : ''}`}
+                                onClick={() => setPage(i)}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Right Arrow */}
+                    <button
+                        className={styles.paginationArrow}
+                        onClick={() => setPage(Math.min(page + 1, totalPages - 1))}
+                        disabled={page === totalPages - 1}
+                    >
+                        <IoIosArrowForward size={40} />
+                    </button>
+                </div>
+
+            )
+            }
 
             {/* Modal */}
-            {modalIndex !== null && (
-                <div
-                    className={styles.modalOverlay}
-                    onClick={closeModal}
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                >
-                    <div className={styles.modalContentWrapper} onClick={e => e.stopPropagation()}>
-                        <button
-                            className={`${styles.navButton} ${styles.left} ${modalIndex === 0 ? styles.disabled : ''}`}
-                            onClick={prevImage}
-                        >
-                            ◀
-                        </button>
+            {
+                modalIndex !== null && (
+                    <div
+                        className={styles.modalOverlay}
+                        onClick={closeModal}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
+                    >
+                        <div className={styles.modalContentWrapper} onClick={e => e.stopPropagation()}>
+                            <button
+                                className={`${styles.navButton} ${styles.left} ${modalIndex === 0 ? styles.disabled : ''}`}
+                                onClick={prevImage}
+                            >
+                                ◀
+                            </button>
 
-                        <img src={images[modalIndex]} alt={`photo-modal-${modalIndex}`} />
+                            <img src={images[modalIndex]} alt={`photo-modal-${modalIndex}`} />
 
-                        <button
-                            className={`${styles.navButton} ${styles.right} ${modalIndex === images.length - 1 ? styles.disabled : ''}`}
-                            onClick={nextImage}
-                        >
-                            ▶
-                        </button>
+                            <button
+                                className={`${styles.navButton} ${styles.right} ${modalIndex === images.length - 1 ? styles.disabled : ''}`}
+                                onClick={nextImage}
+                            >
+                                ▶
+                            </button>
 
-                        <button className={styles.closeButton} onClick={closeModal}>
-                            ✕
-                        </button>
+                            <button className={styles.closeButton} onClick={closeModal}>
+                                ✕
+                            </button>
+                        </div>
                     </div>
-                </div>
-            )}
-        </section>
+                )
+            }
+        </section >
     )
 }
