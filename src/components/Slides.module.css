@@ -52,6 +52,7 @@
     background: #ccc;
     border: none;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .dot:hover {
@@ -59,7 +60,10 @@
 }
 
 .active {
-    background: #333;
+    width: 40px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #0070f3;
 }
 
 .modalOverlay {

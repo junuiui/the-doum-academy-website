@@ -76,15 +76,16 @@ export default function Slides({ title, images }: Props) {
             {/* Pagination dots */}
             {totalPages > 1 && (
                 <div className={`${styles.dots} ${isLastPageNotFull ? styles.tightDots : ''}`}>
-                    {Array.from({ length: totalPages }).map((_, i) => (
+                    {Array.from({ length: totalPages }).map((_, currentPageIndex) => (
                         <button
-                            key={i}
-                            className={`${styles.dot} ${i === page ? styles.active : ''}`}
-                            onClick={() => setPage(i)}
+                            key={currentPageIndex}
+                            className={`${styles.dot} ${currentPageIndex === page ? styles.active : ''}`}
+                            onClick={() => setPage(currentPageIndex)}
                         />
                     ))}
                 </div>
             )}
+
 
             {/* Modal */}
             {modalIndex !== null && (
