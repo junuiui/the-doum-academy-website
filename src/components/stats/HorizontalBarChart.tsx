@@ -1,4 +1,4 @@
-import styles from './stats.module.css'
+import styles from './HorizontalBarChart.module.css'
 
 type Props = {
     title: string

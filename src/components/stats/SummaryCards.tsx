@@ -1,4 +1,4 @@
-import styles from './stats.module.css'
+import styles from './SummaryCards.module.css'
 
 type Props = {
     totalOffers: number
@@ -23,7 +23,12 @@ export default function SummaryCards({
     )
 }
 
-function Card({ title, value }: { title: string; value: string | number }) {
+type CardProp = {
+    title: string;
+    value: string | number;
+}
+
+function Card({ title, value }: CardProp) {
     return (
         <div className={styles.card}>
             <div className={styles.cardTitle}>{title}</div>

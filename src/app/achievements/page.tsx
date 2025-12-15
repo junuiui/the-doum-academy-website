@@ -72,7 +72,7 @@ type YearFilter = number | typeof ALL
 
 const years: YearFilter[] = [
     ALL,
-    ...Object.keys(images).map(Number).sort((a,b) => b - a),
+    ...Object.keys(images).map(Number).sort((a, b) => b - a),
 ]
 
 
@@ -83,8 +83,8 @@ export default function AchievementPage() {
 
     const slidesImages =
         selectedYear === 'ALL'
-            ? Object.values(images).flat() 
-            : images[selectedYear] || [] 
+            ? Object.values(images).flat()
+            : images[selectedYear] || []
 
     return (
         <main className={styles.container}>

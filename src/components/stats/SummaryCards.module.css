@@ -1,0 +1,29 @@
+
+.summary {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #f6f6f6;
+    border-radius: 14px;
+    padding: 20px;
+    min-width: 100px;
+}
+
+.card:hover {
+    size: 100px;
+}
+
+.cardTitle {
+    font-size: 13px;
+    color: #666;
+}
+
+.cardValue {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
