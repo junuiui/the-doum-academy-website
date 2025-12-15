@@ -1,25 +1,51 @@
 .container {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* Header */
+.mainHeader {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Year Tabs */
+.yearTabs {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 8px;
+}
+
+.yearTabs button {
+    padding: 16px 24px;
+    min-width: 90px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.5s ease;
+}
+
+.yearTabs button:hover {
+    background-color: lightgray;
+}
+
+.yearTabs button.active {
+    background-color: #0070f3;
+    color: white;
+    border-color: #0070f3;
+}
+
+/* Content */
+.grid {
     display: grid;
-    grid-template-columns: 2.2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 40px;
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 40px;
-}
-
-/* page.module.css */
-.active {
-    background: black;
-    color: white;
-}
-
-.container > div {
-    flex: 1;
-}
-
-.active {
-    background: black;
-    color: white;
 }
 
 @media (max-width: 900px) {
