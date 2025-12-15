@@ -1,19 +1,14 @@
 /* src/components/Footer.module.css */
-
 .footer {
     font-size: x-small;
     text-align: center;
     padding: 16px;
-    background-color: #f5f5f5;
+    background: #fffff7;
+    border: 2px solid #e0e0e0;
     color: #666;
-    vertical-align: center;
-}
 
-.socials {
-    margin-top: 10;
     display: flex;
-    padding-top: 10px;
-    background-color: #f5f5f5;
+    align-items: center;
     justify-content: center;
 }
 

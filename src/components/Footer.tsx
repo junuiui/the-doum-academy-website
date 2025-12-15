@@ -11,13 +11,6 @@ export default function Footer() {
 
     return (
         <div>
-            <div className={styles.socials}>
-                <FaInstagram 
-                    className={styles.icon} 
-                    onClick={openInstagram}
-                />
-            </div>
-
             <footer className={styles.footer}>
                 © 2025 The Doum Academy. All rights reserved.
             </footer>
