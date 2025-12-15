@@ -5,37 +5,35 @@ import { useState, useEffect, useRef } from 'react'
 import styles from './Slides.module.css'
 
 type Props = {
-    title: number
+    title: number | 'ALL'
     images: string[]
 }
 
-export default function Slides({ title, images }: Props) {
-    const ROWS = 4
-    const COLS = 5
-    const PER_PAGE = ROWS * COLS
+const ROWS = 3
+const COLS = 4
+const PER_PAGE = ROWS * COLS
 
+export default function Slides({ title, images }: Props) {
     const [page, setPage] = useState(0)
     const [modalIndex, setModalIndex] = useState<number | null>(null)
+
+    useEffect(() => {
+        setPage(0)
+        setModalIndex(null)
+    }, [images])
 
     const totalPages = Math.ceil(images.length / PER_PAGE)
     const start = page * PER_PAGE
     const currentImages = images.slice(start, start + PER_PAGE)
 
-    const isLastPageNotFull =
-        page === totalPages - 1 && currentImages.length < PER_PAGE
+    const isLastPageNotFull = page === totalPages - 1 && currentImages.length < PER_PAGE
 
     const openModal = (i: number) => setModalIndex(start + i)
     const closeModal = () => setModalIndex(null)
+    const prevImage = () => modalIndex !== null && modalIndex > 0 && setModalIndex(modalIndex - 1)
+    const nextImage = () => modalIndex !== null && modalIndex < images.length - 1 && setModalIndex(modalIndex + 1)
 
-    const prevImage = () => {
-        if (modalIndex !== null && modalIndex > 0) setModalIndex(modalIndex - 1)
-    }
-
-    const nextImage = () => {
-        if (modalIndex !== null && modalIndex < images.length - 1) setModalIndex(modalIndex + 1)
-    }
-
-    // keyboard arrow
+    // keyboard navigation
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (modalIndex === null) return
@@ -47,7 +45,7 @@ export default function Slides({ title, images }: Props) {
         return () => window.removeEventListener('keydown', handleKey)
     }, [modalIndex])
 
-    // touch event
+    // touch navigation
     const touchStartX = useRef(0)
     const touchEndX = useRef(0)
 
@@ -63,9 +61,10 @@ export default function Slides({ title, images }: Props) {
     }
 
     return (
-        <main className={styles.container}>
-            <h2>{title}</h2>
+        <section className={styles.container}>
+            <h2>Acceptance Letters - {title}</h2>
 
+            {/* Grid */}
             <div className={styles.grid}>
                 {currentImages.map((src, i) => (
                     <div key={i} className={styles.item} onClick={() => openModal(i)}>
@@ -74,11 +73,9 @@ export default function Slides({ title, images }: Props) {
                 ))}
             </div>
 
-            {/* Slide button (dots) */}
+            {/* Pagination dots */}
             {totalPages > 1 && (
-                <div
-                    className={`${styles.dots} ${isLastPageNotFull ? styles.tightDots : ''}`}
-                >
+                <div className={`${styles.dots} ${isLastPageNotFull ? styles.tightDots : ''}`}>
                     {Array.from({ length: totalPages }).map((_, i) => (
                         <button
                             key={i}
@@ -89,11 +86,15 @@ export default function Slides({ title, images }: Props) {
                 </div>
             )}
 
-            {/* When click, Modal appears */}
+            {/* Modal */}
             {modalIndex !== null && (
-                <div className={styles.modalOverlay} onClick={closeModal}>
+                <div
+                    className={styles.modalOverlay}
+                    onClick={closeModal}
+                    onTouchStart={handleTouchStart}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <div className={styles.modalContentWrapper} onClick={e => e.stopPropagation()}>
-                        {/* Prev Button */}
                         <button
                             className={`${styles.navButton} ${styles.left} ${modalIndex === 0 ? styles.disabled : ''}`}
                             onClick={prevImage}
@@ -101,10 +102,8 @@ export default function Slides({ title, images }: Props) {
                             ◀
                         </button>
 
-                        {/* Main Image */}
                         <img src={images[modalIndex]} alt={`photo-modal-${modalIndex}`} />
 
-                        {/* Next Button */}
                         <button
                             className={`${styles.navButton} ${styles.right} ${modalIndex === images.length - 1 ? styles.disabled : ''}`}
                             onClick={nextImage}
@@ -112,14 +111,12 @@ export default function Slides({ title, images }: Props) {
                             ▶
                         </button>
 
-                        {/* Close Button */}
                         <button className={styles.closeButton} onClick={closeModal}>
                             ✕
                         </button>
                     </div>
                 </div>
             )}
-
-        </main>
+        </section>
     )
 }
