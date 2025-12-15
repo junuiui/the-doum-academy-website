@@ -6,8 +6,7 @@ import styles from './Slides.module.css'
 
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-
-
+import { IoIosClose } from "react-icons/io";
 
 type Props = {
     title: number | 'ALL'
@@ -124,24 +123,28 @@ export default function Slides({ title, images }: Props) {
                         onTouchEnd={handleTouchEnd}
                     >
                         <div className={styles.modalContentWrapper} onClick={e => e.stopPropagation()}>
+                            
+                            {/* Left Arrow */}
                             <button
                                 className={`${styles.navButton} ${styles.left} ${modalIndex === 0 ? styles.disabled : ''}`}
                                 onClick={prevImage}
                             >
-                                ◀
+                                <IoIosArrowBack size={40} />
                             </button>
 
                             <img src={images[modalIndex]} alt={`photo-modal-${modalIndex}`} />
 
+                            {/* Right Arrow */}
                             <button
                                 className={`${styles.navButton} ${styles.right} ${modalIndex === images.length - 1 ? styles.disabled : ''}`}
                                 onClick={nextImage}
                             >
-                                ▶
+                                <IoIosArrowForward size={40} />
                             </button>
 
+                            {/* Close Button */}
                             <button className={styles.closeButton} onClick={closeModal}>
-                                ✕
+                                <IoIosClose size={40} />
                             </button>
                         </div>
                     </div>
