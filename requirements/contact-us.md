@@ -52,3 +52,6 @@ General Information
     -카카오톡 ID는 전화번호 미입력 시 필수 처리
     -학년은 드롭다운 (Grade 7–12 / Gap Year 등)
     -개인정보 수집 동의 체크박스 (하단) 
+
+## My think
+- too complicated?
