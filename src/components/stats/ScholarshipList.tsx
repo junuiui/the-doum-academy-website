@@ -1,16 +1,6 @@
 import { TbCurrencyDollarCanadian } from "react-icons/tb";
 import styles from './ScholarshipList.module.css'
 
-// type ScholarshipItem = {
-//     name: string
-//     university: string
-//     amount: number
-// }
-
-// type Props = {
-//     scholarships: ScholarshipItem[]
-// }
-
 // ScholarshipList.tsx
 type ScholarshipItem = {
     Name: string;
@@ -26,13 +16,15 @@ type Props = {
 }
 
 export default function ScholarshipList({ scholarships }: Props) {
-    console.log(scholarships)
+    // console.log(scholarships)
+
     return (
         <div className={styles.container}>
-            <div className={styles.header}>
-                <h3>Scholarships</h3>
-            </div>
 
+            {/* Header */}
+            <h2>Scholarships</h2>
+            
+            {/* Scholarship cards */}
             <div className={styles.listContainer}>
                 {scholarships.map((scholarship, index) => (
                     <div key={index} className={styles.listItem}>

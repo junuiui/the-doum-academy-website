@@ -2,28 +2,8 @@
     background-color: #fff;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-}
+    padding: 2%;
 
-.header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.header h3 {
-    color: #1e3a8a;
-    /* blue */
-    font-size: 1.125rem;
-    font-weight: 600;
-}
-
-.icon {
-    color: #16a34a;
-    /* green */
-    width: 20px;
-    height: 20px;
 }
 
 .listContainer {
