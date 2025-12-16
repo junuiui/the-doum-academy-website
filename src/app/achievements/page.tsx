@@ -116,12 +116,11 @@ export default function AchievementPage() {
             <div className={styles.grid}>
 
                 {/* Slides */}
-                <div className={styles.slide}>
+                <div>
                     <Slides title={selectedYear} images={slidesImages} />
                 </div>
 
                 <div>
-                    <h1>Stats</h1>
                     <StatsSection rawData={rawData} />
                 </div>
 

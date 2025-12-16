@@ -1,24 +1,23 @@
 import styles from './SummaryCards.module.css'
 
 type Props = {
-    totalOffers: number
-    totalScholarship: number
-    scholarshipCount: number
+    totalOffers: number;
+    totalScholarship: number;
+    scholarshipCount: number;
 }
 
-export default function SummaryCards({
-    totalOffers,
-    totalScholarship,
-    scholarshipCount
-}: Props) {
+export default function SummaryCards({ totalOffers, totalScholarship, scholarshipCount }: Props) {
     return (
-        <div className={styles.summary}>
-            <Card title="Total Offers" value={totalOffers} />
-            <Card title="Scholarships" value={scholarshipCount} />
-            <Card
-                title="Total Amount"
-                value={`$${totalScholarship.toLocaleString()}`}
-            />
+        <div className={styles.container}>
+            <h2>Summary</h2>
+            <div className={styles.summary}>
+                <Card title="Total Offers" value={totalOffers} />
+                <Card title="Scholarships" value={scholarshipCount} />
+                <Card
+                    title="Total Amount"
+                    value={`$${totalScholarship.toLocaleString()}`}
+                />
+            </div>
         </div>
     )
 }

@@ -5,7 +5,7 @@
         "School": "University of Toronto",
         "Major": "Studies in Commerce",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Gyulim Kim",
@@ -21,7 +21,7 @@
         "School": "University of British Columbia",
         "Major": "-",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Nayeon Kwak",
@@ -29,7 +29,7 @@
         "School": "Simon Fraser University",
         "Major": "Health Sciences",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Dawon Lee",
@@ -37,7 +37,7 @@
         "School": "Simon Fraser University",
         "Major": "Communication, Art and Technology (FCAT)",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Dawon Lee",
@@ -45,7 +45,7 @@
         "School": "University of British Columbia",
         "Major": "Applied Biology",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yejin Cho",
@@ -53,7 +53,7 @@
         "School": "Simon Fraser University",
         "Major": "Business Administration",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yejin Cho",
@@ -61,7 +61,7 @@
         "School": "University of Toronto",
         "Major": "Social Sciences",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yejin Cho",
@@ -69,7 +69,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Arts: Social Sciences & Humanities",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Lyra Harumi Visan",
@@ -77,7 +77,7 @@
         "School": "University of Toronto",
         "Major": "Mathematical and Physical Sciences",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Seojin Yun",
@@ -85,7 +85,7 @@
         "School": "Simon Fraser University",
         "Major": "Software System",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Seojin Yun",
@@ -93,7 +93,7 @@
         "School": "University of Toronto",
         "Major": "Chemical and Physical Sciences",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Seojin Yun",
@@ -101,7 +101,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Arts: Social Sciences & Humanities",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Seojin Yun",
@@ -109,7 +109,7 @@
         "School": "University of Toronto",
         "Major": "Social Sciences ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Seojin Yun",
@@ -117,7 +117,7 @@
         "School": "University of British Columbia",
         "Major": "Arts",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Seojin Yun",
@@ -141,7 +141,7 @@
         "School": "Western University",
         "Major": "Commercial Aviation Management",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Sihyeon Woo",
@@ -149,7 +149,7 @@
         "School": "Emily Carr University",
         "Major": "Fine Arts - Illustration",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Sihyeon Woo",
@@ -157,7 +157,7 @@
         "School": "OCAD University",
         "Major": "Illustration",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Jung Won",
@@ -165,7 +165,7 @@
         "School": "University of Toronto",
         "Major": "Commerce",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Jung Won",
@@ -173,7 +173,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Management (BBA)",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Juwon Kim",
@@ -181,7 +181,7 @@
         "School": "Simon Fraser University",
         "Major": "Arts and Social Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Juwon Kim",
@@ -189,7 +189,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Arts: Social Sciences & Humanities",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Juwon Kim",
@@ -197,7 +197,7 @@
         "School": "University of Toronto",
         "Major": "Social Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Juwon Kim",
@@ -205,7 +205,7 @@
         "School": "University of British Columbia",
         "Major": "Arts",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junmo Lee",
@@ -213,7 +213,7 @@
         "School": "University of British Columbia",
         "Major": "Foestry",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junmo Lee",
@@ -221,7 +221,7 @@
         "School": "University of British Columbia",
         "Major": "Computer Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junmo Lee",
@@ -229,7 +229,7 @@
         "School": "Simon Fraser University",
         "Major": "Computing Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junhwan Kim",
@@ -237,7 +237,7 @@
         "School": "University of Toronto",
         "Major": "Computer Science, Mathematics and Statistics",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junhwan Kim",
@@ -245,7 +245,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Physical and Environmental Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junhwan Kim",
@@ -253,7 +253,7 @@
         "School": "University of British Columbia",
         "Major": "Applied Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Junhwan Kim",
@@ -277,7 +277,7 @@
         "School": "Simon Fraser University",
         "Major": "Computing Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyuntai Cho",
@@ -285,7 +285,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Computer Science ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyuntai Cho",
@@ -293,7 +293,7 @@
         "School": "University of British Columbia",
         "Major": "Foestry",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyesung Kevin Kim",
@@ -301,15 +301,7 @@
         "School": "Embry-Riddle Aeronautical University",
         "Major": "Aeronautical Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
-    },
-    {
-        "Name": "",
-        "Year": "",
-        "School": "",
-        "Major": "",
-        "Scholarship Name": "",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Tony Min",
@@ -317,7 +309,7 @@
         "School": "University of British Columbia",
         "Major": "Food Nutrition and Health ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Tony Min",
@@ -325,7 +317,7 @@
         "School": "University of British Columbia",
         "Major": "Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Tony Min",
@@ -333,7 +325,7 @@
         "School": "University of Toronto",
         "Major": "Life Science ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Tony Min",
@@ -349,7 +341,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Psychology & Health Studies",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Sooyeon Kim",
@@ -357,7 +349,7 @@
         "School": "University of Toronto",
         "Major": "Communication, Culture, Information and Technology",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Sooyeon Kim",
@@ -365,7 +357,7 @@
         "School": "University of British Columbia",
         "Major": "Arts",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yoonji Lee",
@@ -389,7 +381,7 @@
         "School": "University of Toronto",
         "Major": "Mathematical and Physical Sciences",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Jimin Phang",
@@ -397,7 +389,7 @@
         "School": "University of British Columbia",
         "Major": "Foestry",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Jimin Phang",
@@ -413,7 +405,7 @@
         "School": "Simon Fraser University",
         "Major": "Biomedical Physiology",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Andrew Sim",
@@ -421,7 +413,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Life Science (Health Science Stream)",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Andrew Sim",
@@ -429,7 +421,7 @@
         "School": "University of Toronto",
         "Major": "Kinesiology",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Taeuk Kim",
@@ -453,7 +445,7 @@
         "School": "Queen's University",
         "Major": "Science Honours",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Taeuk Kim",
@@ -469,7 +461,7 @@
         "School": "University of British Columbia",
         "Major": "Nursing",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyunsoo Cho",
@@ -477,7 +469,7 @@
         "School": "University of Waterloo",
         "Major": "Honours Mathematics/Financial Analysis and Risk Management, Co-op",
         "Scholarship Name": "",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyunsoo Cho",
@@ -485,7 +477,7 @@
         "School": "University of Waterloo",
         "Major": "Honours Mathematics, Co-op",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyunsoo Cho",
@@ -493,7 +485,7 @@
         "School": "Simon Fraser University",
         "Major": "Computing Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Michaela Song",
@@ -501,7 +493,7 @@
         "School": "University of Toronto",
         "Major": "Life Science ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Michaela Song",
@@ -509,7 +501,7 @@
         "School": "University of Toronto",
         "Major": "Co-op Life Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Michaela Song",
@@ -517,7 +509,7 @@
         "School": "University of Toronto",
         "Major": "Life Science ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyeuk Song",
@@ -525,7 +517,7 @@
         "School": "University of Toronto",
         "Major": "Life Science ",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Hyeuk Song",
@@ -533,15 +525,7 @@
         "School": "University of Toronto",
         "Major": "Chemical and Physical Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
-    },
-    {
-        "Name": "",
-        "Year": "",
-        "School": "",
-        "Major": "",
-        "Scholarship Name": "",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Thomas Lee",
@@ -549,7 +533,7 @@
         "School": "University of British Columbia",
         "Major": "Food Nutrition and Health Program",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yewon Shin",
@@ -557,7 +541,7 @@
         "School": "Queen's University",
         "Major": "Music",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yewon Shin",
@@ -565,7 +549,7 @@
         "School": "University of British Columbia",
         "Major": "Arts",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Daehyeon Woo",
@@ -573,7 +557,7 @@
         "School": "University of British Columbia",
         "Major": "Vantage One Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Daehyeon Woo",
@@ -589,7 +573,7 @@
         "School": "University of Toronto",
         "Major": "Arts and Science",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Jeongbin Choe",
@@ -597,7 +581,7 @@
         "School": "University of Toronto",
         "Major": "Social Sciences and Humanities",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Yegrina Lim",
@@ -608,20 +592,12 @@
         "Scholarship Amount": 1500
     },
     {
-        "Name": "",
-        "Year": "",
-        "School": "",
-        "Major": "",
-        "Scholarship Name": "",
-        "Scholarship Amount": ""
-    },
-    {
         "Name": "Minsuk Joo",
         "Year": 2022,
         "School": "University of Toronto",
         "Major": "Mathematical and Physical Sciences",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     },
     {
         "Name": "Minsuk Joo",
@@ -653,6 +629,6 @@
         "School": "Simon Fraser University",
         "Major": "Arts and Social Sciences (FASS)",
         "Scholarship Name": "-",
-        "Scholarship Amount": ""
+        "Scholarship Amount": 0
     }
 ]

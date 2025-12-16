@@ -1,12 +1,19 @@
 import HorizontalBarChart from './HorizontalBarChart'
 import SummaryCards from './SummaryCards'
+import styles from './StatsSection.module.css'
+
+import schoolColors from '../../data/schoolColor.json'
+import departmentColors from '../../data/majorColor.json'
+
 import {
     cleanData,
     countBySchool,
     countByMajorCategory,
     scholarshipBySchool,
+    scholarshipByName,
     RecordItem
 } from './data'
+import ScholarshipList from './ScholarshipList'
 
 type Props = {
     rawData: RecordItem[]
@@ -16,14 +23,16 @@ export default function StatsSection({ rawData }: Props) {
     const data = cleanData(rawData)
 
     const schoolData = countBySchool(data)
-    const majorData = countByMajorCategory(data)
+    // const majorData = countByMajorCategory(data)
     const scholarshipData = scholarshipBySchool(data)
+    const scholarshipDataName = scholarshipByName(data);
 
     const totalScholarship = scholarshipData.reduce((a, b) => a + b.value, 0)
-    const scholarshipCount = data.filter(d => typeof d['Scholarship Amount'] === 'number').length
+    const scholarshipCount = data.filter(d => d['Scholarship Amount'] > 0).length
+    console.log(scholarshipDataName)
 
     return (
-        <section>
+        <section className={styles.container}>
             <SummaryCards
                 totalOffers={data.length}
                 scholarshipCount={scholarshipCount}
@@ -31,18 +40,22 @@ export default function StatsSection({ rawData }: Props) {
             />
 
             <HorizontalBarChart
-                title="Offers by University"
+                title="University Breakdown"
                 data={schoolData}
+                colors={schoolColors}
             />
 
+            {/* 
             <HorizontalBarChart
                 title="Offers by Major Category"
                 data={majorData}
-            />
+                colors={departmentColors}
+            /> */}
 
-            <HorizontalBarChart
+            <ScholarshipList
                 title="Scholarship Amount by University"
-                data={scholarshipData}
+                scholarships={scholarshipDataName}
+                
             />
         </section>
     )
