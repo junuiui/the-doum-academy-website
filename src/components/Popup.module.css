@@ -1,0 +1,54 @@
+/* Popup box */
+.popup {
+    position: relative;
+    bottom: 30px;
+    right: 30px;
+
+    width: 320px;
+    padding: 20px;
+
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+
+    z-index: 1000;
+}
+
+/* Close (X) */
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Content */
+.popup h3 {
+    margin-bottom: 12px;
+}
+
+.popup ul {
+    padding-left: 18px;
+    margin-bottom: 16px;
+}
+
+.popup li {
+    margin-bottom: 6px;
+}
+
+/* Actions */
+.actions {
+    text-align: right;
+}
+
+.actions button {
+    border: none;
+    background: none;
+    color: #0070f3;
+    cursor: pointer;
+    font-size: 14px;
+}
