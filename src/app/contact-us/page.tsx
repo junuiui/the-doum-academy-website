@@ -1,238 +1,311 @@
-'use client';
+'use client'
 
 import { useState } from 'react';
+import {
+    User,
+    GraduationCap,
+    School,
+    Phone,
+    MessageSquare,
+    BookOpen,
+    Send
+} from 'lucide-react';
 import { Location } from './location';
 import styles from './page.module.css';
 
-const inquiryOptions = [
+const inquiries = [
     'Online Courses',
     'School Courses',
     'Summer School',
     'AP Courses',
-    'English Test',
-    'University Admission',
-    'General Inquiry'
-];
+    'English Tests',
+    'Other'
+] as const;
 
 const subjects = [
-    'English 10',
-    'English 11',
-    'English 12',
-    'Pre-Calculus 10',
-    'Pre-Calculus 11',
-    'Pre-Calculus 12',
+    'English 10', 'English 11', 'English 12',
+    'Pre-Calculus 10', 'Pre-Calculus 11', 'Pre-Calculus 12',
     'Calculus 12',
     'Science 10',
-    'Chemistry 11',
-    'Chemistry 12',
-    'Physics 11',
-    'Physics 12',
-    'Biology 11',
-    'Biology 12',
-    'Social Studies 10',
-    'Social Studies 12',
-    'Other Course' // user inputs
-];
+    'Chemistry 11', 'Chemistry 12',
+    'Physics 11', 'Physics 12',
+    'Biology 11', 'Biology 12',
+    'Social Studies 10', 'Social Studies 12',
+    'Other Course'
+] as const;
 
-export default function ContactUsPage() {
-    const [inquiry, setInquiry] = useState('');
-    const [subject, setSubject] = useState('');
-    const [otherType, setOtherType] = useState('');
-    const [phone, setPhone] = useState('');
-    const [kakao, setKakao] = useState('');
+const grades = [
+    'Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5',
+    'Grade 6', 'Grade 7', 'Grade 8', 'Grade 9',
+    'Grade 10', 'Grade 11', 'Grade 12',
+    'Gap Year', 'Post-Secondary'
+] as const;
+
+const englishTests = [
+    'IELTS', 'CELPIP', 'TOEFL'
+] as const;
+
+type Inquiry = typeof inquiries[number];
+type Subject = typeof subjects[number];
+type Grade = typeof grades[number];
+type EnglishTest = typeof englishTests[number];
+
+type Form = {
+    studentName: string;
+    grade: Grade | '';
+    schoolName: string;
+    phone: string;
+    kakao: string;
+    inquiry: Inquiry | '';
+    subject: Subject | '';
+    englishTest: EnglishTest | '';
+    apCourse: string;
+    otherCourse: string;
+    message: string;
+};
+
+export default function ContactUs() {
     const [submitted, setSubmitted] = useState(false);
+
+    const [form, setForm] = useState<Form>({
+        studentName: '',
+        grade: '',
+        schoolName: '',
+        phone: '',
+        kakao: '',
+        inquiry: '',
+        subject: '',
+        englishTest: '',
+        apCourse: '',
+        otherCourse: '',
+        message: '',
+    });
+
+    const updateForm = <K extends keyof Form>(key: K, value: Form[K]) => {
+        setForm(prev => ({
+            ...prev,
+            [key]: value
+        }));
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        console.log(form); // TODO: send to server
         setSubmitted(true);
-        // TODO: send data to server / email
+        alert('Your inquiry has been successfully submitted. We will contact you as soon as possible.');
     };
 
     return (
-        <main className={styles.container}>
-            <h1>Contact Us</h1>
+        <div className={styles.pageContainer}>
+            <div className={styles.mainContent}>
+                <div className={styles.twoColumnGrid}>
 
-            <form className={styles.form} onSubmit={handleSubmit}>
+                    {/* Location */}
+                    <section className={styles.locationSection}>
+                        <Location />
+                    </section>
 
-                {/* Student Name */}
-                <div>
-                    <label>Student Name *</label>
-                    <input required placeholder="Student Name" />
+                    {/* Form */}
+                    <section className={styles.formSection}>
+                        <div className={styles.formCard}>
+                            <div className={styles.formHeader}>
+                                <h2 className={styles.formTitle}>Send us a message</h2>
+                                <p className={styles.formDescription}>
+                                    Fill out the form below and we'll get back to you as soon as possible
+                                </p>
+                            </div>
+
+                            <form className={styles.form} onSubmit={handleSubmit}>
+
+                                {/* Student Name */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <User size={18} className={styles.labelIcon} />
+                                        Student Name *
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        required
+                                        value={form.studentName}
+                                        onChange={(e) => updateForm('studentName', e.target.value)}
+                                        placeholder="Enter student's full name"
+                                    />
+                                </div>
+
+                                {/* Grade */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <GraduationCap size={18} className={styles.labelIcon} />
+                                        Grade *
+                                    </label>
+                                    <select
+                                        className={styles.select}
+                                        required
+                                        value={form.grade}
+                                        onChange={(e) => updateForm('grade', e.target.value as Grade)}
+                                    >
+                                        <option value="">Select Grade</option>
+                                        {grades.map(g => (
+                                            <option key={g} value={g}>{g}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                {/* School */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <School size={18} className={styles.labelIcon} />
+                                        School Name *
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        required
+                                        value={form.schoolName}
+                                        onChange={(e) => updateForm('schoolName', e.target.value)}
+                                        placeholder="Current school name"
+                                    />
+                                </div>
+
+                                {/* Phone */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <Phone size={18} className={styles.labelIcon} />
+                                        Phone Number {!form.kakao && '*'}
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        value={form.phone}
+                                        onChange={(e) => updateForm('phone', e.target.value)}
+                                        placeholder="xxx xxx xxxx"
+                                        required={!form.kakao}
+                                    />
+                                </div>
+
+                                {/* Kakao */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <MessageSquare size={18} className={styles.labelIcon} />
+                                        KakaoTalk ID {!form.phone && '*'}
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        value={form.kakao}
+                                        onChange={(e) => updateForm('kakao', e.target.value)}
+                                        placeholder="Enter your KakaoTalk ID"
+                                        required={!form.phone}
+                                    />
+                                    <p className={styles.helperText}>
+                                        Please provide either phone number or KakaoTalk ID
+                                    </p>
+                                </div>
+
+                                {/* Inquiry Type */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <BookOpen size={18} className={styles.labelIcon} />
+                                        Inquiry Type *
+                                    </label>
+                                    <select
+                                        className={styles.select}
+                                        required
+                                        value={form.inquiry}
+                                        onChange={(e) => {
+                                            updateForm('inquiry', e.target.value as Inquiry);
+                                            updateForm('subject', '');
+                                            updateForm('englishTest', '');
+                                        }}
+                                    >
+                                        <option value="">Select Inquiry Type</option>
+                                        {inquiries.map(opt => (
+                                            <option key={opt} value={opt}>{opt}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                {/* Subject */}
+                                {(form.inquiry === 'Online Courses' ||
+                                    form.inquiry === 'School Courses' ||
+                                    form.inquiry === 'Summer School') && (
+                                        <div className={styles.formGroup}>
+                                            <label className={styles.label}>Subject *</label>
+                                            <select
+                                                className={styles.select}
+                                                required
+                                                value={form.subject}
+                                                onChange={(e) => updateForm('subject', e.target.value as Subject)}
+                                            >
+                                                <option value="">Select Subject</option>
+                                                {subjects.map(sub => (
+                                                    <option key={sub} value={sub}>{sub}</option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    )}
+
+                                {/* AP */}
+                                {form.inquiry === 'AP Courses' && (
+                                    <div className={styles.formGroup}>
+                                        <label className={styles.label}>AP Course Name *</label>
+                                        <input
+                                            className={styles.input}
+                                            required
+                                            value={form.apCourse}
+                                            onChange={(e) => updateForm('apCourse', e.target.value)}
+                                            placeholder="e.g. AP Calculus BC"
+                                        />
+                                    </div>
+                                )}
+
+                                {/* English Test */}
+                                {form.inquiry === 'English Tests' && (
+                                    <div className={styles.formGroup}>
+                                        <label className={styles.label}>English Test *</label>
+                                        <select
+                                            className={styles.select}
+                                            required
+                                            value={form.englishTest}
+                                            onChange={(e) => updateForm('englishTest', e.target.value as EnglishTest)}
+                                        >
+                                            <option value="">Select Test</option>
+                                            <option>IELTS</option>
+                                            <option>TOEFL</option>
+                                            <option>CELPIP</option>
+                                        </select>
+                                    </div>
+                                )}
+
+                                {/* Message */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>Message</label>
+                                    <textarea
+                                        className={styles.textarea}
+                                        rows={5}
+                                        value={form.message}
+                                        onChange={(e) => updateForm('message', e.target.value)}
+                                        disabled={submitted}
+                                        placeholder="Please describe your situation, goals, and schedule."
+                                    />
+                                </div>
+
+                                {/* Privacy */}
+                                <div className={styles.checkboxGroup}>
+                                    <label className={styles.checkboxLabel}>
+                                        <input type="checkbox" className={styles.checkbox} required />
+                                        <span>I agree to the collection and use of personal information. *</span>
+                                    </label>
+                                </div>
+
+                                {/* Submit */}
+                                <button type="submit" className={styles.submitButton}>
+                                    <Send size={20} />
+                                    <span>Submit Inquiry</span>
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+
                 </div>
-
-                {/* 
-                    Grade 
-                    - Requirement:
-                        - Grade 1 - 12 & Post-Secondary
-                */}
-                <div>
-                    <label>Grade *</label>
-                    <select required>
-                        <option value="">Select Grade</option>
-                        <option>Kindergarten</option>
-                        <option>Grade 1</option>
-                        <option>Grade 2</option>
-                        <option>Grade 3</option>
-                        <option>Grade 4</option>
-                        <option>Grade 5</option>
-                        <option>Grade 6</option>
-                        <option>Grade 7</option>
-                        <option>Grade 8</option>
-                        <option>Grade 9</option>
-                        <option>Grade 10</option>
-                        <option>Grade 11</option>
-                        <option>Grade 12</option>
-                        <option>Gap Year</option>
-                        <option>Post-Secondary</option>
-                    </select>
-                </div>
-
-                {/* 
-                    School Name 
-                    - Requirement
-                        - 
-                */}
-                <div>
-                    <label>School Name *</label>
-                    <input required placeholder="School Name" />
-                </div>
-
-                {/* Phone Number */}
-                <div>
-                    <label>Phone Number</label>
-                    <input
-                        placeholder="xxx xxx xxxx"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        required={!kakao}
-                    />
-                </div>
-
-                {/* Kakao ID */}
-                <div>
-                    <label>KakaoTalk ID</label>
-                    <input
-                        placeholder="kakao_id"
-                        value={kakao}
-                        onChange={(e) => setKakao(e.target.value)}
-                        required={!phone}
-                    />
-                </div>
-
-                {/* Inquiry Type */}
-                <div>
-                    <label>Inquiry Type *</label>
-                    <select
-                        required
-                        value={inquiry}
-                        onChange={(e) => {
-                            setInquiry(e.target.value);
-                            setSubject('');
-                            setOtherType('');
-                        }}
-                    >
-                        <option value="">Select Inquiry</option>
-                        {inquiryOptions.map(opt => (
-                            <option key={opt} value={opt}>{opt}</option>
-                        ))}
-                    </select>
-                </div>
-
-                {/* Subject */}
-                {inquiry && (
-                    <div>
-                        <label>Subject *</label>
-                        <select
-                            required
-                            value={subject}
-                            onChange={(e) => setSubject(e.target.value)}
-                        >
-                            <option value="">Select Subject</option>
-                            {subjects.map(sub => (
-                                <option key={sub} value={sub}>{sub}</option>
-                            ))}
-                        </select>
-                    </div>
-                )}
-
-                {/* Other Course Type */}
-                {subject === 'Other Course' && (
-                    <div>
-                        <label>Other Subject *</label>
-                        <select
-                            required
-                            value={otherType}
-                            onChange={(e) => setOtherType(e.target.value)}
-                        >
-                            <option value="">Select</option>
-                            <option value="ap">AP Courses</option>
-                            <option value="eng">English Tests</option>
-                        </select>
-                    </div>
-                )}
-
-                {/* AP Course Input */}
-                {otherType === 'ap' && (
-                    <div>
-                        <label>AP Course Name *</label>
-                        <input required placeholder="e.g. AP Calculus BC" />
-                    </div>
-                )}
-
-                {/* English Test */}
-                {otherType === 'eng' && (
-                    <div>
-                        <label>English Test *</label>
-                        <select required>
-                            <option value="">Select Test</option>
-                            <option>IELTS</option>
-                            <option>TOEFL</option>
-                            <option>CELPIP</option>
-                        </select>
-                    </div>
-                )}
-
-                {/* Choosing the Location */}
-                <div>
-                    <label>Choose preferred Location</label>
-                    <div>
-                        <input type="radio" id="port-moody" name="location" value="port-moody" />
-                        <label htmlFor="port-moody">Port Moody</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="vancouver" name="location" value="vancouver" />
-                        <label htmlFor="vancouver">Vancouver</label>
-                    </div>
-
-                </div>
-
-                {/* Message */}
-                <div>
-                    <label>Message</label>
-                    <textarea
-                        rows={5}
-                        placeholder={
-                            submitted
-                                ? 'Your inquiry has been successfully submitted. We will contact you as soon as possible.'
-                                : `Please describe in as much detail as possible the consultation you are requesting and the reason for your application.
-(For example: your current learning situation, target school/grade, exam schedule, etc.)`
-                        }
-                    />
-                </div>
-
-                {/* Privacy Agreement */}
-                <div>
-                    <label>
-                        <input type="checkbox" required /> I agree to the collection and use of personal information.
-                    </label>
-                </div>
-
-                {/* Submit */}
-                <button type="submit">Submit</button>
-            </form>
-
-            <Location />
-        </main>
+            </div>
+        </div>
     );
 }
