@@ -168,15 +168,15 @@ export function Location() {
 
                         {/* Quick Info Card */}
                         <div className={styles.infoCard}>
-                            <h3 className={styles.infoTitle}>Visit Us Today</h3>
+                            <h3 className={styles.infoTitle}>Info title </h3>
                             <p className={styles.infoDescription}>
-                                Drop by for a campus tour or speak with our admissions team. No appointment necessary during operating hours.
+                                information body
                             </p>
                             <div className={styles.infoBadge}>
                                 <p>
-                                    <strong>Free Parking Available</strong>
+                                    <strong>Additional Info title</strong>
                                 </p>
-                                <p>Visitor parking at all locations</p>
+                                <p>Additional info body </p>
                             </div>
                         </div>
                     </div>
