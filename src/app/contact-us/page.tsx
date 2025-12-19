@@ -1,13 +1,17 @@
 'use client';
 
 import { useState } from 'react';
-import Location from './location';
+import { Location } from './location';
 import styles from './page.module.css';
 
 const inquiryOptions = [
     'Online Courses',
     'School Courses',
-    'Summer School'
+    'Summer School',
+    'AP Courses',
+    'English Test',
+    'University Admission',
+    'General Inquiry'
 ];
 
 const subjects = [
@@ -27,7 +31,7 @@ const subjects = [
     'Biology 12',
     'Social Studies 10',
     'Social Studies 12',
-    'Other Course'
+    'Other Course' // user inputs
 ];
 
 export default function ContactUsPage() {
@@ -56,7 +60,11 @@ export default function ContactUsPage() {
                     <input required placeholder="Student Name" />
                 </div>
 
-                {/* Grade */}
+                {/* 
+                    Grade 
+                    - Requirement:
+                        - Grade 1 - 12 & Post-Secondary
+                */}
                 <div>
                     <label>Grade *</label>
                     <select required>
@@ -79,7 +87,11 @@ export default function ContactUsPage() {
                     </select>
                 </div>
 
-                {/* School Name */}
+                {/* 
+                    School Name 
+                    - Requirement
+                        - 
+                */}
                 <div>
                     <label>School Name *</label>
                     <input required placeholder="School Name" />
@@ -180,6 +192,21 @@ export default function ContactUsPage() {
                     </div>
                 )}
 
+                {/* Choosing the Location */}
+                <div>
+                    <label>Choose preferred Location</label>
+                    <div>
+                        <input type="radio" id="port-moody" name="location" value="port-moody" />
+                        <label htmlFor="port-moody">Port Moody</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="vancouver" name="location" value="vancouver" />
+                        <label htmlFor="vancouver">Vancouver</label>
+                    </div>
+
+                </div>
+
                 {/* Message */}
                 <div>
                     <label>Message</label>
@@ -187,9 +214,9 @@ export default function ContactUsPage() {
                         rows={5}
                         placeholder={
                             submitted
-                                ? '문의가 성공적으로 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.'
-                                : `원하시는 상담 내용과 상담을 신청하신 이유를 가능한 한 구체적으로 작성해 주세요.
-(예: 현재 학습 상황, 목표 학교/학년, 시험 일정 등)`
+                                ? 'Your inquiry has been successfully submitted. We will contact you as soon as possible.'
+                                : `Please describe in as much detail as possible the consultation you are requesting and the reason for your application.
+(For example: your current learning situation, target school/grade, exam schedule, etc.)`
                         }
                     />
                 </div>
@@ -197,7 +224,7 @@ export default function ContactUsPage() {
                 {/* Privacy Agreement */}
                 <div>
                     <label>
-                        <input type="checkbox" required /> 개인정보 수집 및 이용에 동의합니다.
+                        <input type="checkbox" required /> I agree to the collection and use of personal information.
                     </label>
                 </div>
 

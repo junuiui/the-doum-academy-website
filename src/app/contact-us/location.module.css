@@ -1,98 +1,341 @@
+.container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+}
+
+.header {
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
 .title {
-    font-size: 28px;
+    color: #111827;
+    margin: 0;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+.content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.branchSelector {
     display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
     justify-content: center;
-    font-weight: 700;
-    margin-bottom: 24px;
 }
 
-.menu {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
-}
-
-.active {
-    background: #100d74;
-    color: white;     
-    border-color: #100d74;
-}
-
-.menu button {
-    padding: 10px 18px;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    background: #f8f8f8;
+.branchButton {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none;
     cursor: pointer;
-    font-size: 16px;
-    align-items: center;
+    transition: all 0.3s ease;
+    background: white;
+    color: #374151;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.menu button.active {
-    background: #100d74;
+.branchButton:hover {
+    background: #f9fafb;
+}
+
+.branchButton.active {
+    background: #4f46e5;
     color: white;
-    border-color: #100d74;
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3);
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 3fr 2fr;  /* 왼쪽 넓게, 오른쪽 좁게 */
-    gap: 32px;
-    padding-left: 20%;
-    padding-right: 20%;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
 .left {
-    padding: 20px;
-    background: #fafafa;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    height: fit-content;
+    gap: 1.5rem;
 }
 
 .right {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 8px;
-    height: fit-content;
-}
-
-.directMapBtn  {
-    border-color: aqua;
-    padding: 5px;
-    border: round;
-}
-
-.mapWrap {
-    width: 100%;
-    height: 350px;
-    margin: 16px 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.mapWrap iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.actionBtns {
-    margin: 10px;
-    padding: 10px 16px;
     display: flex;
-    justify-content: center;
-    gap: 12px;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
+.card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
 
-.actionBtn {
-    padding: 10px 16px;
-    background: #100d74;
-    color: white;
-    border-radius: 6px;
+.cardTitle {
+    color: #111827;
+    margin: 0 0 1.5rem 0;
+}
+
+.addressButton {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: linear-gradient(to right, #eef2ff, #dbeafe);
     border: none;
+    border-radius: 0.75rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.addressButton:hover {
+    background: linear-gradient(to right, #e0e7ff, #bfdbfe);
+}
+
+.addressButton:hover .mapIcon {
+    transform: scale(1.1);
+}
+
+.mapIcon {
+    color: #4f46e5;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.addressContent {
+    flex: 1;
+}
+
+.addressText {
+    color: #111827;
+    margin: 0;
+}
+
+.directionsText {
+    color: #4f46e5;
+    margin: 0.25rem 0 0 0;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.contactLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.contactLink:hover {
+    background: #f3f4f6;
+}
+
+.contactIcon {
+    color: #6b7280;
+}
+
+.contactText {
+    color: #111827;
+    margin: 0;
+}
+
+.mapContainer {
+    margin-bottom: 1.5rem;
+}
+
+.directionsSection {
+    margin-top: 1.5rem;
+}
+
+.directionsLabel {
+    color: #374151;
+    margin: 0 0 0.75rem 0;
+}
+
+.directionsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.directionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.directionButton:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+.drivingButton {
+    background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+}
+
+.drivingButton:hover {
+    background: linear-gradient(to bottom right, #2563eb, #1d4ed8);
+}
+
+.transitButton {
+    background: linear-gradient(to bottom right, #22c55e, #16a34a);
+}
+
+.transitButton:hover {
+    background: linear-gradient(to bottom right, #16a34a, #15803d);
+}
+
+.walkingButton {
+    background: linear-gradient(to bottom right, #a855f7, #9333ea);
+}
+
+.walkingButton:hover {
+    background: linear-gradient(to bottom right, #9333ea, #7e22ce);
+}
+
+.hoursHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.clockIcon {
+    color: #4f46e5;
+}
+
+.hoursTitle {
+    color: #111827;
+    margin: 0;
+}
+
+.hoursContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hoursItem {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.hoursItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.hoursDays {
+    color: #111827;
+    margin: 0 0 0.25rem 0;
+}
+
+.hoursTime {
+    color: #4f46e5;
+    margin: 0;
+}
+
+.hoursTime.closed {
+    color: #dc2626;
+}
+
+.infoCard {
+    background: linear-gradient(to bottom right, #4f46e5, #3b82f6);
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    color: white;
+}
+
+.infoTitle {
+    margin: 0 0 1rem 0;
+}
+
+.infoDescription {
+    color: #e0e7ff;
+    margin-bottom: 1rem;
+}
+
+.infoBadge {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.infoBadge p {
+    color: #e0e7ff;
+    margin: 0;
+}
+
+.infoBadge p:first-child {
+    margin-bottom: 0.25rem;
+}
+
+@media (min-width: 640px) {
+    .branchSelector {
+        justify-content: flex-start;
+    }
+
+    .contactGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .headerContent {
+        padding: 2rem 1.5rem;
+    }
+
+    .content {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .headerContent {
+        padding: 2rem 2rem;
+    }
+
+    .content {
+        padding: 3rem 2rem;
+    }
 }

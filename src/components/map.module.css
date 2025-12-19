@@ -1,24 +1,12 @@
-
 .campusBox {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.campusBox h3 {
-    margin-bottom: 12px;
-    font-size: 20px;
-    font-weight: 600;
-    text-align: center;
+    width: 100%;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb
 }
 
 .campusBox iframe {
-    border-radius: 12px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .campusSection {
-        flex-direction: column;
-    }
+    width: 100%;
+    display: block;
 }
