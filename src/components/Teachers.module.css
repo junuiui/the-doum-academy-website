@@ -1,52 +1,204 @@
-.section {
-    margin-bottom: 40px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
+/* Title */
+.title {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 2rem;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 4rem;
+}
+
+.mainTitle {
+    color: #334155;
+    margin-bottom: 1rem;
+}
+
+.mainBody {
+    color: #64748b;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    color: #1e293b;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* Directors Grid */
 .grid {
     display: grid;
-    gap: 28px;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
-/* cards */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Director Cards */
 .card {
-    background: #fafafa;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.imageContainer {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #f1f5f9;
 }
 
 .profileImage {
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%;
     object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 16px;
-    background-color: #e5e5e5;
 }
 
 .cardContent {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    padding: 1.5rem;
 }
 
 .name {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
+    color: #1e293b;
+    margin-bottom: 0.75rem;
 }
 
 .bio {
-    font-size: 14px;
-    color: #555;
-    margin: 0;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.subSection {
+    margin-bottom: 1.25rem;
 }
 
 .subSection strong {
     display: block;
-    margin-bottom: 4px;
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+.subSection p {
+    color: #64748b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.subSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subSection li {
+    color: #64748b;
+    padding: 0.25rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.subSection li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+}
+
+/* Instructors Grid */
+.instructorGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .instructorGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .instructorGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Instructor Cards */
+.instructorCard {
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.instructorCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.instructorImageContainer {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f1f5f9;
+}
+
+.instructorImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.instructorContent {
+    padding: 1.25rem;
+}
+
+.instructorName {
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.instructorInfo {
+    margin-bottom: 0.75rem;
+}
+
+.instructorInfo:last-child {
+    margin-bottom: 0;
+}
+
+.instructorInfo strong {
+    display: block;
+    color: #334155;
+    margin-bottom: 0.25rem;
+}
+
+.instructorInfo p {
+    color: #64748b;
+    margin: 0;
+    line-height: 1.5;
 }

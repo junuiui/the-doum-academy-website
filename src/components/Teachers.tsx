@@ -12,7 +12,7 @@ export default function TeachersPage() {
     const lang = isKo ? 'ko' : 'en'
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1 className={styles.title}>
                 {lang === 'ko' ? '선생님 소개' : 'Teachers'}
             </h1>
@@ -37,11 +37,13 @@ export default function TeachersPage() {
                     {data.director.map((d) => (
                         <div key={d.id} className={styles.card}>
                             {/* Image */}
-                            <img
-                                src={d.profileImage || '/placeholder.png'}
-                                alt={d.name[lang]}
-                                className={styles.profileImage}
-                            />
+                            <div className={styles.imageContainer}>
+                                <img
+                                    src={d.profileImage || 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop'}
+                                    alt={d.name[lang]}
+                                    className={styles.profileImage}
+                                />
+                            </div>
 
                             {/* Text Content */}
                             <div className={styles.cardContent}>
@@ -57,14 +59,14 @@ export default function TeachersPage() {
 
                                 <div className={styles.subSection}>
                                     <strong>
-                                        {lang === 'ko' ? '학력:' : 'Education:'}
+                                        {lang === 'ko' ? '학력' : 'Education'}
                                     </strong>
                                     <p>{d.education[lang]}</p>
                                 </div>
 
                                 <div className={styles.subSection}>
                                     <strong>
-                                        {lang === 'ko' ? '과목:' : 'Subjects:'}
+                                        {lang === 'ko' ? '과목' : 'Subjects'}
                                     </strong>
                                     <ul>
                                         {d.subject[lang].map((s, index) => (
@@ -75,7 +77,7 @@ export default function TeachersPage() {
 
                                 <div className={styles.subSection}>
                                     <strong>
-                                        {lang === 'ko' ? '경력:' : 'Experience:'}
+                                        {lang === 'ko' ? '경력' : 'Experience'}
                                     </strong>
                                     <ul>
                                         {d.experience[lang].map((exp, i) => (
@@ -86,7 +88,7 @@ export default function TeachersPage() {
 
                                 <div className={styles.subSection}>
                                     <strong>
-                                        {lang === 'ko' ? '자격증:' : 'Certificates:'}
+                                        {lang === 'ko' ? '자격증' : 'Certificates'}
                                     </strong>
                                     <ul>
                                         {d.certificate[lang].map((c, i) => (
@@ -97,7 +99,7 @@ export default function TeachersPage() {
 
                                 <div className={styles.subSection}>
                                     <strong>
-                                        {lang === 'ko' ? '성과:' : 'Achievements:'}
+                                        {lang === 'ko' ? '성과' : 'Achievements'}
                                     </strong>
                                     <p>{d.achievements[lang]}</p>
                                 </div>
@@ -113,32 +115,34 @@ export default function TeachersPage() {
                     {lang === 'ko' ? '강사 소개' : 'Instructors'}
                 </h2>
 
-                <div className={styles.grid}>
+                <div className={styles.instructorGrid}>
                     {data.instructors.map((ins) => (
-                        <div key={ins.id} className={styles.card}>
+                        <div key={ins.id} className={styles.instructorCard}>
                             {/* Image */}
-                            <img
-                                src={ins.profileImage || '/placeholder.png'}
-                                alt={ins.name[lang]}
-                                className={styles.profileImage}
-                            />
+                            <div className={styles.instructorImageContainer}>
+                                <img
+                                    src={ins.profileImage || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop'}
+                                    alt={ins.name[lang]}
+                                    className={styles.instructorImage}
+                                />
+                            </div>
 
                             {/* Text Content */}
-                            <div className={styles.cardContent}>
-                                <h3 className={styles.name}>
+                            <div className={styles.instructorContent}>
+                                <h3 className={styles.instructorName}>
                                     {ins.name[lang]}
                                 </h3>
 
-                                <div className={styles.subSection}>
+                                <div className={styles.instructorInfo}>
                                     <strong>
-                                        {lang === 'ko' ? '학력:' : 'Education:'}
+                                        {lang === 'ko' ? '학력' : 'Education'}
                                     </strong>
                                     <p>{ins.education[lang]}</p>
                                 </div>
 
-                                <div className={styles.subSection}>
+                                <div className={styles.instructorInfo}>
                                     <strong>
-                                        {lang === 'ko' ? '전문 분야:' : 'Core:'}
+                                        {lang === 'ko' ? '전문 분야' : 'Core'}
                                     </strong>
                                     <p>{ins.core[lang]}</p>
                                 </div>
