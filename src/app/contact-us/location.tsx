@@ -4,7 +4,7 @@ import MapComponent from '@/components/Map';
 import styles from './location.module.css';
 
 // TODO
-const locationData = {
+export const locationData = {
     portmoody: {
         name: 'Port Moody',
         address: '3003 St Johns St, Port Moody, BC V3H 0L4',
