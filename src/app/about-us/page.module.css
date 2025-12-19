@@ -1,6 +1,7 @@
 .container {
-    padding-left: 2%;
-    padding-right: 2%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 .campusBox {

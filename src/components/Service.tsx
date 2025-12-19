@@ -1,16 +1,14 @@
-"use client";
-
-import styles from "./page.module.css";
+import styles from "./Service.module.css";
 import services from "@/data/services.json";
 
-export default function ServicePage() {
+export function Service() {
 
     const lang = 'en';
 
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>
-                {lang === "en" ? "Our Services" : "서비스 안내"}
+                Our Services
             </h1>
 
             {services.map((service) => (
@@ -20,7 +18,7 @@ export default function ServicePage() {
                         {service.title[lang]}
                     </h2>
 
-                    {/* Body 리스트 */}
+                    {/* Body */}
                     <ul className={styles.bodyList}>
                         {service.body.map((item, i) => (
                             <li key={i}>
