@@ -8,7 +8,7 @@ export default function Navbar() {
     const isKo = pathname.startsWith("/ko");
 
     const links = [
-        { nameEn: 'Service', nameKo: '서비스', href: '/service' },
+        // { nameEn: 'Service', nameKo: '서비스', href: '/service' }, // MOVED to About-us
         { nameEn: 'About Us', nameKo: '소개', href: '/about-us' },
         { nameEn: 'Achievements', nameKo: '성과', href: '/achievements' },
         { nameEn: 'Gallery', nameKo: '갤러리', href: '/gallery' },
