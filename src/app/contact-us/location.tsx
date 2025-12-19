@@ -42,12 +42,12 @@ export function Location() {
     return (
         <div className={styles.container}>
             {/* Header */}
-            <div className={styles.header}>
+            {/* <div className={styles.header}>
                 <div className={styles.headerContent}>
                     <h1 className={styles.title}>Our Locations</h1>
                     <p className={styles.subtitle}>Visit us at one of our conveniently located campuses</p>
                 </div>
-            </div>
+            </div> */}
 
             <div className={styles.content}>
                 {/* Branch Selector */}

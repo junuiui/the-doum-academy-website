@@ -165,6 +165,7 @@
 .contactText {
     color: #111827;
     margin: 0;
+    font-size: 13px;
 }
 
 .mapContainer {
@@ -234,6 +235,7 @@
     align-items: center;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
+    font-size: 13px;
 }
 
 .clockIcon {
