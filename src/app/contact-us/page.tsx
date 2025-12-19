@@ -10,7 +10,7 @@ import {
     BookOpen,
     Send
 } from 'lucide-react';
-import { Location } from './location';
+import { Location, locationData } from './location';
 import styles from './page.module.css';
 
 const inquiries = [
@@ -61,25 +61,28 @@ type Form = {
     englishTest: EnglishTest | '';
     apCourse: string;
     otherCourse: string;
+    location: keyof typeof locationData | '';
     message: string;
 };
 
-export default function ContactUs() {
-    const [submitted, setSubmitted] = useState(false);
+const initialForm: Form = {
+    studentName: '',
+    grade: '',
+    schoolName: '',
+    phone: '',
+    kakao: '',
+    inquiry: '',
+    subject: '',
+    englishTest: '',
+    apCourse: '',
+    otherCourse: '',
+    location: 'portmoody',
+    message: '',
+};
 
-    const [form, setForm] = useState<Form>({
-        studentName: '',
-        grade: '',
-        schoolName: '',
-        phone: '',
-        kakao: '',
-        inquiry: '',
-        subject: '',
-        englishTest: '',
-        apCourse: '',
-        otherCourse: '',
-        message: '',
-    });
+export default function ContactUs() {
+
+    const [form, setForm] = useState<Form>(initialForm);
 
     const updateForm = <K extends keyof Form>(key: K, value: Form[K]) => {
         setForm(prev => ({
@@ -91,8 +94,10 @@ export default function ContactUs() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log(form); // TODO: send to server
-        setSubmitted(true);
+
         alert('Your inquiry has been successfully submitted. We will contact you as soon as possible.');
+
+        setForm(initialForm); // reset the form
     };
 
     return (
@@ -115,7 +120,10 @@ export default function ContactUs() {
                                 </p>
                             </div>
 
-                            <form className={styles.form} onSubmit={handleSubmit}>
+                            <form
+                                key={Date.now()}
+                                className={styles.form}
+                                onSubmit={handleSubmit}>
 
                                 {/* Student Name */}
                                 <div className={styles.formGroup}>
@@ -274,6 +282,24 @@ export default function ContactUs() {
                                     </div>
                                 )}
 
+                                {/* Location Selection */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>Location *</label>
+                                    <div className={styles.locationButtons}>
+                                        {Object.keys(locationData).map((key) => (
+                                            <button
+                                                key={key}
+                                                type="button"
+                                                className={`${styles.locationButton} ${form.location === key ? styles.locationButtonActive : ''
+                                                    }`}
+                                                onClick={() => updateForm('location', key as keyof typeof locationData)}
+                                            >
+                                                {locationData[key as keyof typeof locationData].name}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
                                 {/* Message */}
                                 <div className={styles.formGroup}>
                                     <label className={styles.label}>Message</label>
@@ -282,7 +308,6 @@ export default function ContactUs() {
                                         rows={5}
                                         value={form.message}
                                         onChange={(e) => updateForm('message', e.target.value)}
-                                        disabled={submitted}
                                         placeholder="Please describe your situation, goals, and schedule."
                                     />
                                 </div>
