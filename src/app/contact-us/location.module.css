@@ -98,17 +98,18 @@
 /* Address button */
 .addressButton {
     width: 100%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem;
+    padding: 0.5rem;
     background: linear-gradient(to right, #eef2ff, #dbeafe);
     border: none;
     border-radius: 0.75rem;
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
+    font-size: 1rem;
 }
 
 .addressButton:hover {
@@ -122,28 +123,24 @@
 .mapIcon {
     color: #4f46e5;
     flex-shrink: 0;
-    margin-top: 0.25rem;
     transition: transform 0.3s ease;
 }
 
 .addressContent {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.25rem; /* 텍스트 간 간격 */
 }
 
 .addressText {
     color: #111827;
+    margin: 1rem 0rem;
 }
 
 .directionsText {
     color: #4f46e5;
-    margin-top: 0.25rem;
+    /* margin-top: 0.25rem; */
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0rem 0.25rem;
 }
 
 /* Conatct */
@@ -176,7 +173,7 @@
 .contactText {
     color: #111827;
     margin: 0;
-    font-size: 13px;
+    font-size: 1rem;
 }
 
 /* =====================

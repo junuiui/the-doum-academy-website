@@ -117,7 +117,7 @@ export function Location() {
 
                         {/* Direction Buttons */}
                         <div className={styles.directionsSection}>
-                            <p className={styles.directionsLabel}>Get Directions</p>
+                            <p className={styles.directionsLabel}></p>
                             <div className={styles.directionsGrid}>
                                 <button
                                     onClick={() => openDirections('driving')}
