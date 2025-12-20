@@ -50,16 +50,16 @@ export function Location() {
             </div>
 
             {/* Branch Selector */}
-            <div className={styles.branchSelector}>
+            <div className={styles.locationButtons}>
                 <button
                     onClick={() => setBranch('portmoody')}
-                    className={`${styles.branchButton} ${branch === 'portmoody' ? styles.active : ''}`}
+                    className={`${styles.locationButton} ${branch === 'portmoody' ? styles.locationButtonActive : ''}`}
                 >
                     Port Moody
                 </button>
                 <button
                     onClick={() => setBranch('vancouver')}
-                    className={`${styles.branchButton} ${branch === 'vancouver' ? styles.active : ''}`}
+                    className={`${styles.locationButton} ${branch === 'vancouver' ? styles.locationButtonActive : ''}`}
                 >
                     Vancouver
                 </button>
