@@ -134,71 +134,77 @@ export default function ContactUsForm() {
                                 />
                             </div>
 
-                            {/* Grade */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>
-                                    <GraduationCap size={18} className={styles.labelIcon} />
-                                    Grade *
-                                </label>
-                                <select
-                                    className={styles.select}
-                                    required
-                                    value={form.grade}
-                                    onChange={(e) => updateForm('grade', e.target.value as Grade)}
-                                >
-                                    <option value="">Select Grade</option>
-                                    {grades.map(g => (
-                                        <option key={g} value={g}>{g}</option>
-                                    ))}
-                                </select>
+                            {/* Grade + School */}
+                            <div className={styles.formRow}>
+                                {/* Grade */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <GraduationCap size={18} className={styles.labelIcon} />
+                                        Grade *
+                                    </label>
+                                    <select
+                                        className={styles.select}
+                                        required
+                                        value={form.grade}
+                                        onChange={(e) => updateForm('grade', e.target.value as Grade)}
+                                    >
+                                        <option value="">Select Grade</option>
+                                        {grades.map(g => (
+                                            <option key={g} value={g}>{g}</option>
+                                        ))}
+                                    </select>
+                                </div>
+
+                                {/* School */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <School size={18} className={styles.labelIcon} />
+                                        School Name *
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        required
+                                        value={form.schoolName}
+                                        onChange={(e) => updateForm('schoolName', e.target.value)}
+                                        placeholder="Current school name"
+                                    />
+                                </div>
                             </div>
 
-                            {/* School */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>
-                                    <School size={18} className={styles.labelIcon} />
-                                    School Name *
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    required
-                                    value={form.schoolName}
-                                    onChange={(e) => updateForm('schoolName', e.target.value)}
-                                    placeholder="Current school name"
-                                />
-                            </div>
+                            {/* Contact Information group */}
+                            <div className={styles.formRow}>
+                                {/* Phone */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <Phone size={18} className={styles.labelIcon} />
+                                        Phone Number {!form.kakao && '*'}
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        value={form.phone}
+                                        onChange={(e) => updateForm('phone', e.target.value)}
+                                        placeholder="xxx xxx xxxx"
+                                        required={!form.kakao}
+                                    />
+                                </div>
 
-                            {/* Phone */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>
-                                    <Phone size={18} className={styles.labelIcon} />
-                                    Phone Number {!form.kakao && '*'}
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    value={form.phone}
-                                    onChange={(e) => updateForm('phone', e.target.value)}
-                                    placeholder="xxx xxx xxxx"
-                                    required={!form.kakao}
-                                />
-                            </div>
-
-                            {/* Kakao */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>
-                                    <MessageSquare size={18} className={styles.labelIcon} />
-                                    KakaoTalk ID {!form.phone && '*'}
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    value={form.kakao}
-                                    onChange={(e) => updateForm('kakao', e.target.value)}
-                                    placeholder="Enter your KakaoTalk ID"
-                                    required={!form.phone}
-                                />
-                                <p className={styles.helperText}>
-                                    Please provide either phone number or KakaoTalk ID
-                                </p>
+                                {/* Kakao */}
+                                <div className={styles.formGroup}>
+                                    <label className={styles.label}>
+                                        <MessageSquare size={18} className={styles.labelIcon} />
+                                        KakaoTalk ID {!form.phone && '*'}
+                                    </label>
+                                    <input
+                                        className={styles.input}
+                                        value={form.kakao}
+                                        onChange={(e) => updateForm('kakao', e.target.value)}
+                                        placeholder="Enter your KakaoTalk ID"
+                                        required={!form.phone}
+                                    />
+                                    <p className={styles.helperText}>
+                                        Please provide either phone number or KakaoTalk ID
+                                    </p>
+                                </div>
                             </div>
 
                             {/* Inquiry Type */}

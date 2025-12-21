@@ -43,9 +43,9 @@ export function Location() {
         <div className={styles.container}>
             {/* Header */}
             <div className={styles.locationHeader}>
-                <h2 className={styles.locationTitle}>locaiton title</h2>
+                <h2 className={styles.locationTitle}>Our Location</h2>
                 <p className={styles.locationDescription}>
-                    location description
+                    Click below for directions and see how easy it is to reach us.
                 </p>
             </div>
 
