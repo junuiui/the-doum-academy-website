@@ -108,7 +108,7 @@ export default function ContactUsForm() {
         setTimeout(() => {
             setToastVisible(false);
             setSubmitting(false);
-        }, 3000);
+        }, 5000);
 
         setForm(initialForm);
     };
