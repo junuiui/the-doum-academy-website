@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 import logoImage from '../../../public/DoumAcademyLogo_without_letter.jpg';
 import { usePathname, useRouter } from 'next/navigation';
+import Navbar from './NavBar';
 
 export default function Header() {
     const pathname = usePathname();
@@ -29,11 +30,14 @@ export default function Header() {
                         alt="The Doum Academy Logo"
                         className={styles.logo}
                     />
+                    <Link href={isKo ? '/ko' : '/'} className={styles.title}>
+                        <span>{isKo ? '도움 아카데미' : 'The Doum Academy'}</span>
+                    </Link>
                 </Link>
 
-                <Link href={isKo ? '/ko' : '/'} className={styles.title}>
-                    <span>{isKo ? '도움 아카데미' : 'The Doum Academy'}</span>
-                </Link>
+                <div className={styles.nav}>
+                    <Navbar />
+                </div>
 
                 {/* Language Toggle */}
                 <div className={styles.langToggleWrapper}>

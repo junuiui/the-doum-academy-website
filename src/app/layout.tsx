@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <html lang="en" className={noto.className}>
             <body className='layout-body'>
                 <Header />
-                <Navbar />
+                {/* <Navbar /> */}
                 <main className='layout-main'>
                     {children}
                 </main>
