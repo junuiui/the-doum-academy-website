@@ -1,15 +1,14 @@
 .container {
-    max-width: 1200px;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 2rem 0rem;
+    width: 100%;
 }
 
-.campusBox {
-    margin: 0 auto;
-}
-
-.campusSection {
-    display: flex;
-    gap: 24px;
-    margin-top: 40px;
+.columnGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }

@@ -7,27 +7,31 @@ export function Service() {
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.title}>
-                Our Services
-            </h1>
-
-            {services.map((service) => (
-                <div key={service.id} className={styles.card}>
-                    {/* Title */}
-                    <h2 className={styles.cardTitle}>
-                        {service.title[lang]}
+            <section className={styles.serviceCard}>
+                <div className={styles.serviceHeader}>
+                    <h2 className={styles.title}>
+                        Our Services
                     </h2>
-
-                    {/* Body */}
-                    <ul className={styles.bodyList}>
-                        {service.body.map((item, i) => (
-                            <li key={i}>
-                                {item[lang]}
-                            </li>
-                        ))}
-                    </ul>
                 </div>
-            ))}
+
+                {services.map((service) => (
+                    <div key={service.id} className={styles.card}>
+                        {/* Title */}
+                        <h4 className={styles.cardTitle}>
+                            {service.title[lang]}
+                        </h4>
+
+                        {/* Body */}
+                        <ul className={styles.bodyList}>
+                            {service.body.map((item, i) => (
+                                <li key={i}>
+                                    {item[lang]}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </section>
         </div>
     );
 }

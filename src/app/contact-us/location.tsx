@@ -41,147 +41,149 @@ export function Location() {
 
     return (
         <div className={styles.container}>
-            {/* Header */}
-            <div className={styles.locationHeader}>
-                <h2 className={styles.locationTitle}>Our Location</h2>
-                <p className={styles.locationDescription}>
-                    Click below for directions and see how easy it is to reach us.
-                </p>
-            </div>
-
-            {/* Branch Selector */}
-            <div className={styles.locationButtons}>
-                <button
-                    onClick={() => setBranch('portmoody')}
-                    className={`${styles.locationButton} ${branch === 'portmoody' ? styles.locationButtonActive : ''}`}
-                >
-                    Port Moody
-                </button>
-                <button
-                    onClick={() => setBranch('vancouver')}
-                    className={`${styles.locationButton} ${branch === 'vancouver' ? styles.locationButtonActive : ''}`}
-                >
-                    Vancouver
-                </button>
-            </div>
-
-            {/* Main Content Grid */}
-            <div className={styles.grid}>
-
-                {/* Row 1-  Map & Directions */}
-                <div className={styles.main}>
-                    {/* Location Info Card */}
-                    <div className={styles.card}>
-                        <h2 className={styles.cardTitle}>{currentLocation.name} Campus</h2>
-
-                        {/* Address with Icon */}
-                        <button
-                            onClick={() => openDirections()}
-                            className={styles.addressButton}
-                        >
-                            <MapPin className={styles.mapIcon} size={24} />
-                            <div className={styles.addressContent}>
-                                <p className={styles.addressText}>{currentLocation.address}</p>
-                                <p className={styles.directionsText}>
-                                    Click for directions <Navigation size={14} />
-                                </p>
-                            </div>
-                        </button>
-
-                        {/* Contact Info */}
-                        <div className={styles.contactGrid}>
-                            <a
-                                href={`tel:${currentLocation.phone}`}
-                                className={styles.contactLink}
-                            >
-                                <Phone className={styles.contactIcon} size={20} />
-                                <div>
-                                    <p className={styles.contactText}>{currentLocation.phone}</p>
-                                </div>
-                            </a>
-                            <a
-                                href={`mailto:${currentLocation.email}`}
-                                className={styles.contactLink}
-                            >
-                                <Mail className={styles.contactIcon} size={20} />
-                                <div>
-                                    <p className={styles.contactText}>{currentLocation.email}</p>
-                                </div>
-                            </a>
-                        </div>
-
-                        {/* Map */}
-                        <div className={styles.mapContainer}>
-                            <MapComponent link={currentLocation.mapEmbedLink} />
-                        </div>
-
-                        {/* Direction Buttons */}
-                        <div className={styles.directionsSection}>
-                            <p className={styles.directionsLabel}></p>
-                            <div className={styles.directionsGrid}>
-                                <button
-                                    onClick={() => openDirections('driving')}
-                                    className={`${styles.directionButton} ${styles.drivingButton}`}
-                                >
-                                    <Car size={24} />
-                                    <span>Driving</span>
-                                </button>
-                                <button
-                                    onClick={() => openDirections('transit')}
-                                    className={`${styles.directionButton} ${styles.transitButton}`}
-                                >
-                                    <Train size={24} />
-                                    <span>Transit</span>
-                                </button>
-                                <button
-                                    onClick={() => openDirections('walking')}
-                                    className={`${styles.directionButton} ${styles.walkingButton}`}
-                                >
-                                    <Footprints size={24} />
-                                    <span>Walking</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <section className={styles.locationCard}>
+                {/* Header */}
+                <div className={styles.locationHeader}>
+                    <h2 className={styles.locationTitle}>Our Location</h2>
+                    <p className={styles.locationDescription}>
+                        Click below for directions and see how easy it is to reach us.
+                    </p>
                 </div>
 
-                {/*  Row 2 Col 2 -  Hours of Operation */}
-                <div className={styles.hours}>
-                    <div className={styles.card}>
-                        <div className={styles.hoursHeader}>
-                            <Clock className={styles.clockIcon} size={28} />
-                            <h3 className={styles.hoursTitle}>Hours of Operation</h3>
-                        </div>
+                {/* Branch Selector */}
+                <div className={styles.locationButtons}>
+                    <button
+                        onClick={() => setBranch('portmoody')}
+                        className={`${styles.locationButton} ${branch === 'portmoody' ? styles.locationButtonActive : ''}`}
+                    >
+                        Port Moody
+                    </button>
+                    <button
+                        onClick={() => setBranch('vancouver')}
+                        className={`${styles.locationButton} ${branch === 'vancouver' ? styles.locationButtonActive : ''}`}
+                    >
+                        Vancouver
+                    </button>
+                </div>
 
-                        <div className={styles.hoursContent}>
-                            {hoursOfOperation.map((schedule, index) => (
-                                <div key={index} className={styles.hoursItem}>
-                                    <p className={styles.hoursDays}>{schedule.days}</p>
-                                    <p className={`${styles.hoursTime} ${schedule.hours === 'Closed' ? styles.closed : ''}`}>
-                                        {schedule.hours}
+                {/* Main Content Grid */}
+                <div className={styles.grid}>
+
+                    {/* Row 1-  Map & Directions */}
+                    <div className={styles.main}>
+                        {/* Location Info Card */}
+                        <div className={styles.card}>
+                            <h2 className={styles.cardTitle}>{currentLocation.name} Campus</h2>
+
+                            {/* Address with Icon */}
+                            <button
+                                onClick={() => openDirections()}
+                                className={styles.addressButton}
+                            >
+                                <MapPin className={styles.mapIcon} size={24} />
+                                <div className={styles.addressContent}>
+                                    <p className={styles.addressText}>{currentLocation.address}</p>
+                                    <p className={styles.directionsText}>
+                                        Click for directions <Navigation size={14} />
                                     </p>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
+                            </button>
 
-                {/* Row 2 Col 2 - Quick Info Card */}
-                <div className={styles.info}>
-                    <div className={styles.infoCard}>
-                        <h3 className={styles.infoTitle}>Info title </h3>
-                        <p className={styles.infoDescription}>
-                            information body
-                        </p>
-                        <div className={styles.infoBadge}>
-                            <p>
-                                <strong>Additional Info title</strong>
+                            {/* Contact Info */}
+                            <div className={styles.contactGrid}>
+                                <a
+                                    href={`tel:${currentLocation.phone}`}
+                                    className={styles.contactLink}
+                                >
+                                    <Phone className={styles.contactIcon} size={20} />
+                                    <div>
+                                        <p className={styles.contactText}>{currentLocation.phone}</p>
+                                    </div>
+                                </a>
+                                <a
+                                    href={`mailto:${currentLocation.email}`}
+                                    className={styles.contactLink}
+                                >
+                                    <Mail className={styles.contactIcon} size={20} />
+                                    <div>
+                                        <p className={styles.contactText}>{currentLocation.email}</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            {/* Map */}
+                            <div className={styles.mapContainer}>
+                                <MapComponent link={currentLocation.mapEmbedLink} />
+                            </div>
+
+                            {/* Direction Buttons */}
+                            <div className={styles.directionsSection}>
+                                <p className={styles.directionsLabel}></p>
+                                <div className={styles.directionsGrid}>
+                                    <button
+                                        onClick={() => openDirections('driving')}
+                                        className={`${styles.directionButton} ${styles.drivingButton}`}
+                                    >
+                                        <Car size={24} />
+                                        <span>Driving</span>
+                                    </button>
+                                    <button
+                                        onClick={() => openDirections('transit')}
+                                        className={`${styles.directionButton} ${styles.transitButton}`}
+                                    >
+                                        <Train size={24} />
+                                        <span>Transit</span>
+                                    </button>
+                                    <button
+                                        onClick={() => openDirections('walking')}
+                                        className={`${styles.directionButton} ${styles.walkingButton}`}
+                                    >
+                                        <Footprints size={24} />
+                                        <span>Walking</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/*  Row 2 Col 2 -  Hours of Operation */}
+                    <div className={styles.hours}>
+                        <div className={styles.card}>
+                            <div className={styles.hoursHeader}>
+                                <Clock className={styles.clockIcon} size={28} />
+                                <h3 className={styles.hoursTitle}>Hours of Operation</h3>
+                            </div>
+
+                            <div className={styles.hoursContent}>
+                                {hoursOfOperation.map((schedule, index) => (
+                                    <div key={index} className={styles.hoursItem}>
+                                        <p className={styles.hoursDays}>{schedule.days}</p>
+                                        <p className={`${styles.hoursTime} ${schedule.hours === 'Closed' ? styles.closed : ''}`}>
+                                            {schedule.hours}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Row 2 Col 2 - Quick Info Card */}
+                    <div className={styles.info}>
+                        <div className={styles.infoCard}>
+                            <h3 className={styles.infoTitle}>Info title </h3>
+                            <p className={styles.infoDescription}>
+                                information body
                             </p>
-                            <p>Additional info body </p>
+                            <div className={styles.infoBadge}>
+                                <p>
+                                    <strong>Additional Info title</strong>
+                                </p>
+                                <p>Additional info body </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

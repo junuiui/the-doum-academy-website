@@ -115,236 +115,232 @@ export default function ContactUsForm() {
 
     return (
         <div className={styles.pageContainer}>
-            <div className={styles.columnGrid}>
+            {/* Form */}
+            <section className={styles.formCard}>
+                <div className={styles.formHeader}>
+                    <h2 className={styles.formTitle}>Send us a message</h2>
+                    <p className={styles.formDescription}>
+                        Fill out the form below and we'll get back to you as soon as possible
+                    </p>
+                </div>
 
-                {/* Form */}
-                <section className={styles.formSection}>
-                    <div className={styles.formCard}>
-                        <div className={styles.formHeader}>
-                            <h2 className={styles.formTitle}>Send us a message</h2>
-                            <p className={styles.formDescription}>
-                                Fill out the form below and we'll get back to you as soon as possible
-                            </p>
+                <form
+                    key={Date.now()}
+                    className={styles.form}
+                    onSubmit={handleSubmit}>
+
+                    {/* Student Name */}
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>
+                            <User size={18} className={styles.labelIcon} />
+                            Student Name *
+                        </label>
+                        <input
+                            className={styles.input}
+                            required
+                            value={form.studentName}
+                            onChange={(e) => updateForm('studentName', e.target.value)}
+                            placeholder="Enter student's full name"
+                        />
+                    </div>
+
+                    {/* Grade + School */}
+                    <div className={styles.formRow}>
+                        {/* Grade */}
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>
+                                <GraduationCap size={18} className={styles.labelIcon} />
+                                Grade *
+                            </label>
+                            <select
+                                className={styles.select}
+                                required
+                                value={form.grade}
+                                onChange={(e) => updateForm('grade', e.target.value as Grade)}
+                            >
+                                <option value="">Select Grade</option>
+                                {grades.map(g => (
+                                    <option key={g} value={g}>{g}</option>
+                                ))}
+                            </select>
                         </div>
 
-                        <form
-                            key={Date.now()}
-                            className={styles.form}
-                            onSubmit={handleSubmit}>
+                        {/* School */}
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>
+                                <School size={18} className={styles.labelIcon} />
+                                School Name *
+                            </label>
+                            <input
+                                className={styles.input}
+                                required
+                                value={form.schoolName}
+                                onChange={(e) => updateForm('schoolName', e.target.value)}
+                                placeholder="Current school name"
+                            />
+                        </div>
+                    </div>
 
-                            {/* Student Name */}
+                    {/* Contact Information group */}
+                    <div className={styles.formRow}>
+                        {/* Phone */}
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>
+                                <Phone size={18} className={styles.labelIcon} />
+                                Phone Number {!form.kakao && '*'}
+                            </label>
+                            <input
+                                className={styles.input}
+                                value={form.phone}
+                                onChange={(e) => updateForm('phone', e.target.value)}
+                                placeholder="xxx xxx xxxx"
+                                required={!form.kakao}
+                            />
+                        </div>
+
+                        {/* Kakao */}
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>
+                                <MessageSquare size={18} className={styles.labelIcon} />
+                                KakaoTalk ID {!form.phone && '*'}
+                            </label>
+                            <input
+                                className={styles.input}
+                                value={form.kakao}
+                                onChange={(e) => updateForm('kakao', e.target.value)}
+                                placeholder="Enter your KakaoTalk ID"
+                                required={!form.phone}
+                            />
+                            <p className={styles.helperText}>
+                                Please provide either phone number or KakaoTalk ID
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Inquiry Type */}
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>
+                            <BookOpen size={18} className={styles.labelIcon} />
+                            Inquiry Type *
+                        </label>
+                        <select
+                            className={styles.select}
+                            required
+                            value={form.inquiry}
+                            onChange={(e) => {
+                                updateForm('inquiry', e.target.value as Inquiry);
+                                updateForm('subject', '');
+                                updateForm('englishTest', '');
+                            }}
+                        >
+                            <option value="">Select Inquiry Type</option>
+                            {inquiries.map(opt => (
+                                <option key={opt} value={opt}>{opt}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    {/* Subject */}
+                    {(form.inquiry === 'Online Courses' ||
+                        form.inquiry === 'School Courses' ||
+                        form.inquiry === 'Summer School') && (
                             <div className={styles.formGroup}>
-                                <label className={styles.label}>
-                                    <User size={18} className={styles.labelIcon} />
-                                    Student Name *
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    required
-                                    value={form.studentName}
-                                    onChange={(e) => updateForm('studentName', e.target.value)}
-                                    placeholder="Enter student's full name"
-                                />
-                            </div>
-
-                            {/* Grade + School */}
-                            <div className={styles.formRow}>
-                                {/* Grade */}
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>
-                                        <GraduationCap size={18} className={styles.labelIcon} />
-                                        Grade *
-                                    </label>
-                                    <select
-                                        className={styles.select}
-                                        required
-                                        value={form.grade}
-                                        onChange={(e) => updateForm('grade', e.target.value as Grade)}
-                                    >
-                                        <option value="">Select Grade</option>
-                                        {grades.map(g => (
-                                            <option key={g} value={g}>{g}</option>
-                                        ))}
-                                    </select>
-                                </div>
-
-                                {/* School */}
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>
-                                        <School size={18} className={styles.labelIcon} />
-                                        School Name *
-                                    </label>
-                                    <input
-                                        className={styles.input}
-                                        required
-                                        value={form.schoolName}
-                                        onChange={(e) => updateForm('schoolName', e.target.value)}
-                                        placeholder="Current school name"
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Contact Information group */}
-                            <div className={styles.formRow}>
-                                {/* Phone */}
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>
-                                        <Phone size={18} className={styles.labelIcon} />
-                                        Phone Number {!form.kakao && '*'}
-                                    </label>
-                                    <input
-                                        className={styles.input}
-                                        value={form.phone}
-                                        onChange={(e) => updateForm('phone', e.target.value)}
-                                        placeholder="xxx xxx xxxx"
-                                        required={!form.kakao}
-                                    />
-                                </div>
-
-                                {/* Kakao */}
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>
-                                        <MessageSquare size={18} className={styles.labelIcon} />
-                                        KakaoTalk ID {!form.phone && '*'}
-                                    </label>
-                                    <input
-                                        className={styles.input}
-                                        value={form.kakao}
-                                        onChange={(e) => updateForm('kakao', e.target.value)}
-                                        placeholder="Enter your KakaoTalk ID"
-                                        required={!form.phone}
-                                    />
-                                    <p className={styles.helperText}>
-                                        Please provide either phone number or KakaoTalk ID
-                                    </p>
-                                </div>
-                            </div>
-
-                            {/* Inquiry Type */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>
-                                    <BookOpen size={18} className={styles.labelIcon} />
-                                    Inquiry Type *
-                                </label>
+                                <label className={styles.label}>Subject *</label>
                                 <select
                                     className={styles.select}
                                     required
-                                    value={form.inquiry}
-                                    onChange={(e) => {
-                                        updateForm('inquiry', e.target.value as Inquiry);
-                                        updateForm('subject', '');
-                                        updateForm('englishTest', '');
-                                    }}
+                                    value={form.subject}
+                                    onChange={(e) => updateForm('subject', e.target.value as Subject)}
                                 >
-                                    <option value="">Select Inquiry Type</option>
-                                    {inquiries.map(opt => (
-                                        <option key={opt} value={opt}>{opt}</option>
+                                    <option value="">Select Subject</option>
+                                    {subjects.map(sub => (
+                                        <option key={sub} value={sub}>{sub}</option>
                                     ))}
                                 </select>
                             </div>
+                        )}
 
-                            {/* Subject */}
-                            {(form.inquiry === 'Online Courses' ||
-                                form.inquiry === 'School Courses' ||
-                                form.inquiry === 'Summer School') && (
-                                    <div className={styles.formGroup}>
-                                        <label className={styles.label}>Subject *</label>
-                                        <select
-                                            className={styles.select}
-                                            required
-                                            value={form.subject}
-                                            onChange={(e) => updateForm('subject', e.target.value as Subject)}
-                                        >
-                                            <option value="">Select Subject</option>
-                                            {subjects.map(sub => (
-                                                <option key={sub} value={sub}>{sub}</option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                )}
+                    {/* AP */}
+                    {form.inquiry === 'AP Courses' && (
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>AP Course Name *</label>
+                            <input
+                                className={styles.input}
+                                required
+                                value={form.apCourse}
+                                onChange={(e) => updateForm('apCourse', e.target.value)}
+                                placeholder="e.g. AP Calculus BC"
+                            />
+                        </div>
+                    )}
 
-                            {/* AP */}
-                            {form.inquiry === 'AP Courses' && (
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>AP Course Name *</label>
-                                    <input
-                                        className={styles.input}
-                                        required
-                                        value={form.apCourse}
-                                        onChange={(e) => updateForm('apCourse', e.target.value)}
-                                        placeholder="e.g. AP Calculus BC"
-                                    />
-                                </div>
-                            )}
-
-                            {/* English Test */}
-                            {form.inquiry === 'English Tests' && (
-                                <div className={styles.formGroup}>
-                                    <label className={styles.label}>English Test *</label>
-                                    <select
-                                        className={styles.select}
-                                        required
-                                        value={form.englishTest}
-                                        onChange={(e) => updateForm('englishTest', e.target.value as EnglishTest)}
-                                    >
-                                        <option value="">Select Test</option>
-                                        <option>IELTS</option>
-                                        <option>TOEFL</option>
-                                        <option>CELPIP</option>
-                                    </select>
-                                </div>
-                            )}
-
-                            {/* Location Selection */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>Location *</label>
-                                <div className={styles.locationButtons}>
-                                    {Object.keys(locationData).map((key) => (
-                                        <button
-                                            key={key}
-                                            type="button"
-                                            className={`${styles.locationButton} ${form.location === key ? styles.locationButtonActive : ''
-                                                }`}
-                                            onClick={() => updateForm('location', key as keyof typeof locationData)}
-                                        >
-                                            {locationData[key as keyof typeof locationData].name}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Message */}
-                            <div className={styles.formGroup}>
-                                <label className={styles.label}>Message</label>
-                                <textarea
-                                    className={styles.textarea}
-                                    rows={5}
-                                    value={form.message}
-                                    onChange={(e) => updateForm('message', e.target.value)}
-                                    placeholder="Please describe your situation, goals, and schedule."
-                                />
-                            </div>
-
-                            {/* Privacy */}
-                            <div className={styles.checkboxGroup}>
-                                <label className={styles.checkboxLabel}>
-                                    <input type="checkbox" className={styles.checkbox} required />
-                                    <span>I agree to the collection and use of personal information. *</span>
-                                </label>
-                            </div>
-
-                            {/* Submit */}
-                            <button type="submit"
-                                className={styles.submitButton}
-                                disabled={submitting}
+                    {/* English Test */}
+                    {form.inquiry === 'English Tests' && (
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>English Test *</label>
+                            <select
+                                className={styles.select}
+                                required
+                                value={form.englishTest}
+                                onChange={(e) => updateForm('englishTest', e.target.value as EnglishTest)}
                             >
-                                <Send size={20} />
-                                <span>Submit Inquiry</span>
-                            </button>
-                        </form>
+                                <option value="">Select Test</option>
+                                <option>IELTS</option>
+                                <option>TOEFL</option>
+                                <option>CELPIP</option>
+                            </select>
+                        </div>
+                    )}
+
+                    {/* Location Selection */}
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Location *</label>
+                        <div className={styles.locationButtons}>
+                            {Object.keys(locationData).map((key) => (
+                                <button
+                                    key={key}
+                                    type="button"
+                                    className={`${styles.locationButton} ${form.location === key ? styles.locationButtonActive : ''
+                                        }`}
+                                    onClick={() => updateForm('location', key as keyof typeof locationData)}
+                                >
+                                    {locationData[key as keyof typeof locationData].name}
+                                </button>
+                            ))}
+                        </div>
                     </div>
-                </section>
-            </div>
+
+                    {/* Message */}
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Message</label>
+                        <textarea
+                            className={styles.textarea}
+                            rows={5}
+                            value={form.message}
+                            onChange={(e) => updateForm('message', e.target.value)}
+                            placeholder="Please describe your situation, goals, and schedule."
+                        />
+                    </div>
+
+                    {/* Privacy */}
+                    <div className={styles.checkboxGroup}>
+                        <label className={styles.checkboxLabel}>
+                            <input type="checkbox" className={styles.checkbox} required />
+                            <span>I agree to the collection and use of personal information. *</span>
+                        </label>
+                    </div>
+
+                    {/* Submit */}
+                    <button type="submit"
+                        className={styles.submitButton}
+                        disabled={submitting}
+                    >
+                        <Send size={20} />
+                        <span>Submit Inquiry</span>
+                    </button>
+                </form>
+            </section>
+
             <Toast
                 message={toastMessage}
                 visible={toastVisible}

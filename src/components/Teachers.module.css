@@ -1,17 +1,31 @@
 .container {
-    max-width: 1200px;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 
-/* Title */
+.teacherCard {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+/* HEADER */
+.teacherHeader {
+    margin-bottom: 2rem;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f3f4f6;
+}
+
 .title {
     text-align: center;
-    color: #1e293b;
-    margin-bottom: 2rem;
+    color: #111827;
+    margin: 0 0 0.5rem 0;
 }
 
-/* Sections */
 .section {
     margin-bottom: 4rem;
 }
@@ -19,13 +33,17 @@
 .mainTitle {
     color: #334155;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .mainBody {
+    text-align: left;
     color: #64748b;
     line-height: 1.7;
     max-width: 800px;
-    margin: 0 auto;
+    margin-left: 3rem;
+    margin-right: auto;
+    align-items: left;
 }
 
 .sectionTitle {
@@ -33,6 +51,7 @@
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #e2e8f0;
+    text-align: center;
 }
 
 /* Directors Grid */

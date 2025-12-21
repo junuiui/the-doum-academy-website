@@ -8,7 +8,6 @@ export default function ContactUs() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.columnGrid}>
-
                 {/* Contact Us */}
                 <section>
                     <ContactUsForm />

@@ -9,11 +9,20 @@ import { Service } from '@/components/Service';
 export default function AboutUsPage() {
     return (
         <main className={styles.container}>
-            <Service />
 
-            {/* Teachers render here */}
-            <Teachers />
+            <div className={styles.columnGrid}>
 
+                <section>
+                    <Service />
+                </section>
+
+
+                {/* Teachers render here */}
+                <section>
+                    <Teachers />
+                </section>
+
+            </div>
         </main>
     )
 }
