@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { MapPin, Image as ImageIcon } from 'lucide-react';
-import { ImageFallBack } from '@/components/ImageFallBack';
+import { ImageFallBack } from '@/components/ui/ImageFallBack';
 import styles from './page.module.css';
 
 const galleryData = {
