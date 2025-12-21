@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import styles from './location.module.css';
-import MapComponent from '@/components/Map';
+import MapComponent from '@/components/ui/Map';
 
 export default function Location() {
     const [branch, setBranch] = useState("portmoody");

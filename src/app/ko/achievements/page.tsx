@@ -1,6 +1,6 @@
 'use client'
 
-import Slides from '@/components/Slides'
+import Slides from '@/components/features/Slides'
 import styles from './page.module.css'
 import { useState } from 'react'
 

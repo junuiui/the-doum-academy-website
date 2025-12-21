@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Clock, Phone, Mail, Car, Train, Footprints, Navigation } from 'lucide-react';
-import MapComponent from '@/components/Map';
+import MapComponent from '@/components/ui/Map';
 import styles from './location.module.css';
 
 // TODO

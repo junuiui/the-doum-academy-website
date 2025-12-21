@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import styles from './page.module.css';
-import { Popup } from '@/components/Popup';
+import { Popup } from '@/components/ui/Popup';
 import { Award, Users, GraduationCap, TrendingUp, X, ArrowRight, Star, Quote } from 'lucide-react';
 
 const DUMMY_POPUP = [

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import styles from './Header.module.css';
-import logoImage from '../../public/DoumAcademyLogo_without_letter.jpg';
+import logoImage from '../../../public/DoumAcademyLogo_without_letter.jpg';
 import { usePathname, useRouter } from 'next/navigation';
 
 export default function Header() {

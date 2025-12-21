@@ -1,12 +1,12 @@
 // src/app/layout.tsx
 import './globals.css';
 
-import Navbar from '@/components/NavBar';
-import Footer from '@/components/Footer';
+import Navbar from '@/components/ui/NavBar';
+import Footer from '@/components/ui/Footer';
 import { ReactNode } from 'react';
 // import { LanguageProvider } from './context/LanguageContext';
 import { Noto_Sans_KR, Teachers } from "next/font/google";
-import Header from '@/components/Header';
+import Header from '@/components/ui/Header';
 
 const noto = Noto_Sans_KR({
     subsets: ["latin"],

@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 import { locationData } from './location';
 import styles from './ContactUsForm.module.css';
-import Toast from '@/components/Toast';
+import Toast from '@/components/ui/Toast';
 
 const inquiries = [
     'Online Courses',

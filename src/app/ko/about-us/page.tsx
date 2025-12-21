@@ -1,7 +1,7 @@
-import MapComponent from "@/components/Map";
+import MapComponent from "@/components/ui/Map";
 // import TeachersComponent from "../../components/teachers/page";
 import styles from './page.module.css';
-import Teachers from "@/components/Teachers";
+import Teachers from "@/components/features/Teachers";
 
 export default function AboutUsPage() {
     return (
