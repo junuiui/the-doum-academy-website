@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { locationData } from './location';
 import styles from './ContactUsForm.module.css';
+import Toast from '@/components/Toast';
 
 const inquiries = [
     'Online Courses',
@@ -82,6 +83,10 @@ const initialForm: Form = {
 
 export default function ContactUsForm() {
 
+    const [toastVisible, setToastVisible] = useState(false);
+    const [toastMessage, setToastMessage] = useState('');
+    const [submitting, setSubmitting] = useState(false);
+
     const [form, setForm] = useState<Form>(initialForm);
 
     const updateForm = <K extends keyof Form>(key: K, value: Form[K]) => {
@@ -93,11 +98,19 @@ export default function ContactUsForm() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(form); // TODO: send to server
+        if (submitting) return;
 
-        alert('Your inquiry has been successfully submitted. We will contact you as soon as possible.');
+        setSubmitting(true);
 
-        setForm(initialForm); // reset the form
+        setToastMessage('Your inquiry has been successfully submitted. We will contact you as soon as possible.');
+        setToastVisible(true);
+
+        setTimeout(() => {
+            setToastVisible(false);
+            setSubmitting(false);
+        }, 3000);
+
+        setForm(initialForm);
     };
 
     return (
@@ -321,7 +334,10 @@ export default function ContactUsForm() {
                             </div>
 
                             {/* Submit */}
-                            <button type="submit" className={styles.submitButton}>
+                            <button type="submit"
+                                className={styles.submitButton}
+                                disabled={submitting}
+                            >
                                 <Send size={20} />
                                 <span>Submit Inquiry</span>
                             </button>
@@ -329,6 +345,10 @@ export default function ContactUsForm() {
                     </div>
                 </section>
             </div>
+            <Toast
+                message={toastMessage}
+                visible={toastVisible}
+            />
         </div>
     );
 }
