@@ -30,9 +30,9 @@ export default function Header() {
                         alt="The Doum Academy Logo"
                         className={styles.logo}
                     />
-                    <Link href={isKo ? '/ko' : '/'} className={styles.title}>
-                        <span>{isKo ? '도움 아카데미' : 'The Doum Academy'}</span>
-                    </Link>
+                    <span className={styles.title}>
+                        {isKo ? '도움 아카데미' : 'The Doum Academy'}
+                    </span>
                 </Link>
 
                 <div className={styles.nav}>
