@@ -1,30 +1,21 @@
-.navbar {
-    position: sticky;
-    top: 65px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    /* border-bottom: 2px solid #e0e0e0; */
-    z-index: 1;
-    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-}
-
 .navLinks {
     display: flex;
     gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    left: 50%;
 }
 
 .navLinks a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    padding-bottom: 4px;
 }
 
 .navLinks a:hover {
-    font-weight: 1000;
+    color: #000;
 }
 
 .active {

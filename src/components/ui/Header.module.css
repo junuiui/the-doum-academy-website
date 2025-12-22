@@ -5,7 +5,12 @@
     position: sticky;
     top: 0;
     z-index: 100;
+}
 
+.nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .headerInner {
@@ -13,6 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logoWrap {
