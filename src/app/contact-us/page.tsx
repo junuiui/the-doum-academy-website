@@ -1,7 +1,7 @@
 'use client'
 
-import { Location } from './location';
-import ContactUsForm from './ContactUsForm';
+import { Location } from '../../components/features/location';
+import ContactUsForm from '../../components/features/ContactUsForm';
 import styles from './page.module.css';
 
 export default function ContactUs() {
