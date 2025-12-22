@@ -1,14 +1,6 @@
-'use client'
-
 import { useState } from 'react';
 import {
-    User,
-    GraduationCap,
-    School,
-    Phone,
-    MessageSquare,
-    BookOpen,
-    Send
+    User, GraduationCap, School, Phone, MessageSquare, BookOpen, Send
 } from 'lucide-react';
 import { locationData } from './location';
 import styles from './ContactUsForm.module.css';
