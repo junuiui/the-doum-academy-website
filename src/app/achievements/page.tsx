@@ -87,43 +87,39 @@ export default function AchievementPage() {
             : images[selectedYear] || []
 
     return (
-        <main className={styles.container}>
+        <main className={styles.pageContainer}>
+            <div className={styles.achievementCard}>
+                {/* Main Header */}
+                <div className={styles.mainHeader}>
+                    <h2>Student Achievements</h2>
+                    <p>Our Students' Success Stories</p>
+                </div>
+                {/* Year Tabs */}
+                <div className={styles.yearTabs}>
+                    {years.map((year) => (
+                        <button
+                            key={year}
+                            onClick={() => setSelectedYear(year)}
+                            className={selectedYear === year ? styles.active : ''}
+                        >
+                            {year}
+                        </button>
+                    )
 
-            {/* Main Header */}
-            <div className={styles.mainHeader}>
-                <h1>Student Achievements</h1>
-                <p>Our Students' Success Stories</p>
-            </div>
-
-            {/* Year Tabs */}
-            <div className={styles.yearTabs}>
-                {years.map((year) => (
-                    <button
-                        key={year}
-                        onClick={() => setSelectedYear(year)}
-                        className={selectedYear === year ? styles.active : ''}
-                    >
-                        {year}
-                    </button>
-                )
-
-                )}
-            </div>
-
-
-
-            {/* Content */}
-            <div className={styles.grid}>
-
-                {/* Slides */}
-                <div>
-                    <Slides title={selectedYear} images={slidesImages} />
+                    )}
                 </div>
 
-                <div>
-                    <StatsSection rawData={rawData} />
-                </div>
+                {/* Content */}
+                <div className={styles.grid}>
+                    {/* Slides */}
+                    <div>
+                        <Slides title={selectedYear} images={slidesImages} />
+                    </div>
 
+                    <div>
+                        <StatsSection rawData={rawData} />
+                    </div>
+                </div>
             </div>
         </main>
     )

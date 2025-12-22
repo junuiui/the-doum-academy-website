@@ -11,8 +11,8 @@ type Props = {
     images: string[]
 }
 
-const ROWS = 3
-const COLS = 4
+const ROWS = 5
+const COLS = 3
 const PER_PAGE = ROWS * COLS
 
 export default function Slides({ title, images }: Props) {

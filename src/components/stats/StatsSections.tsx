@@ -3,7 +3,6 @@ import SummaryCards from './SummaryCards'
 import styles from './StatsSection.module.css'
 
 import schoolColors from '../../data/schoolColor.json'
-import departmentColors from '../../data/majorColor.json'
 
 import {
     cleanData,

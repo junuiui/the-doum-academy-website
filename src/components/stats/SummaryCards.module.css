@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border-radius: 6px;
-    border: 1px solid hsl(0, 0%, 80%);
-    padding: 2%;
-    background-color: #fff;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .summary {
