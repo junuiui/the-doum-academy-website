@@ -1,7 +1,6 @@
 .pageContainer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
 }
 
 .header {
@@ -11,7 +10,7 @@
 }
 
 .headerContent {
-    max-width: 1400px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 3rem 1rem;
     text-align: center;
@@ -25,7 +24,7 @@
 .pageSubtitle {
     color: #6b7280;
     margin: 0;
-    max-width: 600px;
+    max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -36,196 +35,6 @@
     padding: 3rem 1rem;
 }
 
-.campusSection {
-    margin-bottom: 4rem;
-}
-
-.campusSection:last-of-type {
-    margin-bottom: 0;
-}
-
-.campusHeader {
-    background: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
-
-.campusHeaderContent {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.campusTitle {
-    color: #4f46e5;
-    margin: 0;
-}
-
-.campusLocation {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #6b7280;
-}
-
-.campusLocation span {
-    margin: 0;
-}
-
-.imageGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.imageCard {
-    background: white;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.imageCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
-}
-
-.imageWrapper {
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.imageCard:hover .image {
-    transform: scale(1.05);
-}
-
-.imageOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(79, 70, 229, 0.9);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    color: white;
-}
-
-.imageCard:hover .imageOverlay {
-    opacity: 1;
-}
-
-.imageOverlay p {
-    margin: 0;
-}
-
-.imageCaption {
-    padding: 1rem;
-    color: #374151;
-    text-align: center;
-}
-
-/* Lightbox Modal */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 2rem;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.lightboxContent {
-    position: relative;
-    max-width: 1200px;
-    width: 100%;
-    animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.9);
-    }
-
-    to {
-        transform: scale(1);
-    }
-}
-
-.closeButton {
-    position: absolute;
-    top: -3rem;
-    right: 0;
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.2s ease;
-    z-index: 10;
-}
-
-.closeButton:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.lightboxImage {
-    width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 1rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-.lightboxCaption {
-    background: white;
-    padding: 1.5rem;
-    text-align: center;
-    color: #374151;
-    border-radius: 0 0 1rem 1rem;
-    margin-top: -0.5rem;
-}
-
 @media (min-width: 640px) {
     .headerContent {
         padding: 4rem 1.5rem;
@@ -233,22 +42,6 @@
 
     .mainContent {
         padding: 4rem 1.5rem;
-    }
-
-    .campusHeaderContent {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
-
-@media (min-width: 768px) {
-    .imageGrid {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    }
-
-    .imageWrapper {
-        height: 300px;
     }
 }
 

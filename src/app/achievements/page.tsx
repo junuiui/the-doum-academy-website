@@ -75,8 +75,6 @@ const years: YearFilter[] = [
     ...Object.keys(images).map(Number).sort((a, b) => b - a),
 ]
 
-
-
 export default function AchievementPage() {
 
     const [selectedYear, setSelectedYear] = useState<YearFilter>(years[0])
