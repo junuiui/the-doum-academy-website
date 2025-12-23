@@ -1,15 +1,24 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { Popup } from '@/components/ui/Popup';
 import { Award, Users, GraduationCap, TrendingUp, X, ArrowRight, Star, Quote } from 'lucide-react';
 
-const DUMMY_POPUP = [
-    { id: 'id1', title: 'title 1', bodies: ['body 1', 'body 2', 'body 3'] },
-    { id: 'id2', title: 'title 2', bodies: ['body 1', 'body 2', 'body 3'] },
-    { id: 'id3', title: 'title 3', bodies: ['body 1', 'body 2', 'body 3'] },
-];
+const DUMMY_POPUP = {
+    'en': [
+        { id: 'id1', title: 'title 1', bodies: ['body 1', 'body 2', 'body 3'] },
+        { id: 'id2', title: 'title 2', bodies: ['body 1', 'body 2', 'body 3'] },
+        { id: 'id3', title: 'title 3', bodies: ['body 1', 'body 2', 'body 3'] },
+    ],
+    'ko': [
+        { id: 'id1k', title: '제목1', bodies: ['ㅂㄷ 1', 'ㅂㄷ 2', 'ㅂㄷ 3'] },
+        { id: 'id2k', title: '제목2', bodies: ['ㅂㄷ 1', 'ㅂㄷ 2', 'ㅂㄷ 3'] },
+        { id: 'id3k', title: '제목3', bodies: ['ㅂㄷ 1', 'ㅂㄷ 2', 'ㅂㄷ 3'] },
+    ]
+
+};
 
 // TODO: should I make the function for calculating all the acheivement stats?
 const DUMMY_ACHIEVEMENT = [
@@ -65,19 +74,24 @@ const DUMMY_TESTIMONIALS = [
 ];
 
 export default function Home() {
+
+    const pathname = usePathname()
+    const isKo = pathname.startsWith('/ko')
+    const lang = isKo ? 'ko' : 'en'
+
     const [popupStates, setPopupStates] = useState<
         Record<string, { closed: boolean; hideToday: boolean }>
     >({});
 
     useEffect(() => {
         const states: Record<string, { closed: boolean; hideToday: boolean }> = {};
-        DUMMY_POPUP.forEach(p => {
+        DUMMY_POPUP[lang].forEach(p => {
             const hideUntil = localStorage.getItem(`hidePopup_${p.id}`);
             const hideToday = hideUntil ? Date.now() < Number(hideUntil) : false;
             states[p.id] = { closed: false, hideToday };
         });
         setPopupStates(states);
-    }, []);
+    }, [lang]);
 
     const closePopup = (id: string) => {
         setPopupStates(prev => ({
@@ -97,7 +111,7 @@ export default function Home() {
         }));
     };
 
-    const visiblePopups = DUMMY_POPUP.filter(
+    const visiblePopups = DUMMY_POPUP[lang].filter(
         p => !popupStates[p.id]?.closed && !popupStates[p.id]?.hideToday
     );
 
