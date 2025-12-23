@@ -1,16 +1,22 @@
+'use client'
+
+import { usePathname } from "next/navigation";
+
 import styles from "./Service.module.css";
 import services from "@/data/services.json";
 
 export function Service() {
 
-    const lang = 'en';
+    const pathname = usePathname()
+    const isKo = pathname.startsWith('/ko')
+    const lang = isKo ? 'ko' : 'en'
 
     return (
         <div className={styles.container}>
             <section className={styles.serviceCard}>
                 <div className={styles.serviceHeader}>
                     <h2 className={styles.title}>
-                        Our Services
+                        {lang === 'ko' ? '서비스 소개' : 'Our Services'}
                     </h2>
                 </div>
 
