@@ -177,17 +177,15 @@ export default function GalleryPage() {
 
     return (
         <div className={styles.pageContainer}>
-            <div className={styles.mainContent}>
-                <Slide2
-                    data={galleryData.portmoody}
-                    onImageClick={(image) => handleImageClick('portmoody', image)}
-                />
+            <Slide2
+                data={galleryData.portmoody}
+                onImageClick={(image) => handleImageClick('portmoody', image)}
+            />
 
-                <Slide2
-                    data={galleryData.vancouver}
-                    onImageClick={(image) => handleImageClick('vancouver', image)}
-                />
-            </div>
+            <Slide2
+                data={galleryData.vancouver}
+                onImageClick={(image) => handleImageClick('vancouver', image)}
+            />
 
             {/* Lightbox Modal */}
             {lightboxOpen && (

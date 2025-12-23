@@ -1,7 +1,7 @@
 .campusSection {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 1rem 1rem;
+    padding: 1rem 0rem;
 }
 
 .campusSection:last-of-type {
