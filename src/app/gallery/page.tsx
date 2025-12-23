@@ -180,11 +180,15 @@ export default function GalleryPage() {
             <Slide2
                 data={galleryData.portmoody}
                 onImageClick={(image) => handleImageClick('portmoody', image)}
+                row={3}
+                col={4}
             />
 
             <Slide2
                 data={galleryData.vancouver}
                 onImageClick={(image) => handleImageClick('vancouver', image)}
+                row={3}
+                col={4}
             />
 
             {/* Lightbox Modal */}

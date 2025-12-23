@@ -5,11 +5,7 @@ import { Slide2 } from '@/components/features/Slide2';
 import { Lightbox } from '@/components/features/Lighbox';
 import styles from './page.module.css';
 
-interface GalleryImage {
-    url: string;
-    alt: string;
-    caption: string;
-}
+import { GalleryImageInterface } from '@/interface/GalleryImage.interface';
 
 const galleryData = {
     portmoody: {
@@ -151,7 +147,7 @@ export default function GalleryPage() {
     const [currentCampus, setCurrentCampus] = useState<'portmoody' | 'vancouver'>('portmoody');
     const [lightboxIndex, setLightboxIndex] = useState(0);
 
-    const handleImageClick = (campus: 'portmoody' | 'vancouver', image: GalleryImage) => {
+    const handleImageClick = (campus: 'portmoody' | 'vancouver', image: GalleryImageInterface) => {
         const campusImages = galleryData[campus].images;
         const imageIndex = campusImages.findIndex(
             (img) => img.url === image.url && img.caption === image.caption
@@ -180,11 +176,15 @@ export default function GalleryPage() {
             <Slide2
                 data={galleryData.portmoody}
                 onImageClick={(image) => handleImageClick('portmoody', image)}
+                row={3}
+                col={4}
             />
 
             <Slide2
                 data={galleryData.vancouver}
                 onImageClick={(image) => handleImageClick('vancouver', image)}
+                row={3}
+                col={4}
             />
 
             {/* Lightbox Modal */}

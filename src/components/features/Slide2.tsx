@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ImageFallBack } from '@/components/ui/ImageFallBack';
+import { ImageFallBack } from '../ui/ImageFallBack';
 import styles from './Slide2.module.css';
 
 interface GalleryImage {
@@ -18,11 +18,14 @@ interface GalleryData {
 interface Slide2Props {
     data: GalleryData;
     onImageClick?: (image: GalleryImage) => void;
-    itemsPerPage?: number;
+    row?: number;
+    col?: number;
 }
 
-export function Slide2({ data, onImageClick, itemsPerPage = 12 }: Slide2Props) {
+export function Slide2({ data, onImageClick, row = 3, col = 2 }: Slide2Props) {
     const [currentPage, setCurrentPage] = useState(1);
+
+    const itemsPerPage = row * col;
 
     const totalPages = Math.ceil(data.images.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -32,14 +35,14 @@ export function Slide2({ data, onImageClick, itemsPerPage = 12 }: Slide2Props) {
     const goToPage = (page: number) => {
         setCurrentPage(page);
         // Smooth scroll to top of the section
-        const element = document.getElementById(`campus-${data.name.replace(/\s+/g, '-').toLowerCase()}`);
+        const element = document.getElementById(`slide-${data.name.replace(/\s+/g, '-').toLowerCase()}`);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
 
     return (
-        <section className={styles.campusSection} id={`campus-${data.name.replace(/\s+/g, '-').toLowerCase()}`}>
+        <section className={styles.campusSection} id={`slide-${data.name.replace(/\s+/g, '-').toLowerCase()}`}>
             <div className={styles.slideCard}>
                 <div className={styles.campusHeader}>
                     <div className={styles.campusHeaderContent}>
@@ -54,7 +57,12 @@ export function Slide2({ data, onImageClick, itemsPerPage = 12 }: Slide2Props) {
                     </div>
                 </div>
 
-                <div className={styles.imageGrid}>
+                <div
+                    className={styles.imageGrid}
+                    style={{
+                        '--grid-cols': col,
+                    } as React.CSSProperties}
+                >
                     {currentImages.map((image, index) => (
                         <div
                             key={index}
