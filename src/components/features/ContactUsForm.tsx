@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import {
-    User, GraduationCap, School, Phone, MessageSquare, BookOpen, Send
+    User, GraduationCap, School, Phone, MessageSquare, BookOpen, Send, MapPin, SquarePen
 } from 'lucide-react';
 import { locationData } from './location';
 import styles from './ContactUsForm.module.css';
 import Toast from '@/components/ui/Toast';
+import { usePathname } from 'next/navigation';
 
 const inquiries = [
     'Online Courses',
@@ -79,6 +80,10 @@ export default function ContactUsForm() {
     const [toastMessage, setToastMessage] = useState('');
     const [submitting, setSubmitting] = useState(false);
 
+    const pathname = usePathname();
+    const isKo = pathname.startsWith('/ko');
+    const lang = isKo ? 'ko' : 'en';
+
     const [form, setForm] = useState<Form>(initialForm);
 
     const updateForm = <K extends keyof Form>(key: K, value: Form[K]) => {
@@ -94,7 +99,9 @@ export default function ContactUsForm() {
 
         setSubmitting(true);
 
-        setToastMessage('Your inquiry has been successfully submitted. We will contact you as soon as possible.');
+        setToastMessage(lang === 'ko'
+            ? "문의가 성공적으로 접수.."
+            : `Your inquiry has been successfully submitted. We will contact you as soon as possible.`);
         setToastVisible(true);
 
         setTimeout(() => {
@@ -110,9 +117,9 @@ export default function ContactUsForm() {
             {/* Form */}
             <section className={styles.formCard}>
                 <div className={styles.formHeader}>
-                    <h2 className={styles.formTitle}>Send us a message</h2>
+                    <h2 className={styles.formTitle}>{lang === 'ko' ? "문의하기" : "Send us a message"}</h2>
                     <p className={styles.formDescription}>
-                        Fill out the form below and we'll get back to you as soon as possible
+                        {lang === 'ko' ? "한글 description" : 'Fill out the form below and we will get back to you as soon as possible'}
                     </p>
                 </div>
 
@@ -125,14 +132,14 @@ export default function ContactUsForm() {
                     <div className={styles.formGroup}>
                         <label className={styles.label}>
                             <User size={18} className={styles.labelIcon} />
-                            Student Name *
+                            {lang === 'ko' ? "학생 이름 *" : "Student Name *"}
                         </label>
                         <input
                             className={styles.input}
                             required
                             value={form.studentName}
                             onChange={(e) => updateForm('studentName', e.target.value)}
-                            placeholder="Enter student's full name"
+                            placeholder={lang === 'ko' ? "학생 이름을 입력해주세요." : "Enter student's full name"}
                         />
                     </div>
 
@@ -142,7 +149,7 @@ export default function ContactUsForm() {
                         <div className={styles.formGroup}>
                             <label className={styles.label}>
                                 <GraduationCap size={18} className={styles.labelIcon} />
-                                Grade *
+                                {lang === 'ko' ? "학년 *" : "Grade *"}
                             </label>
                             <select
                                 className={styles.select}
@@ -150,7 +157,7 @@ export default function ContactUsForm() {
                                 value={form.grade}
                                 onChange={(e) => updateForm('grade', e.target.value as Grade)}
                             >
-                                <option value="">Select Grade</option>
+                                <option value="">{lang === 'ko' ? "학년을 선택해주세요." : "Select Grade"}</option>
                                 {grades.map(g => (
                                     <option key={g} value={g}>{g}</option>
                                 ))}
@@ -161,14 +168,14 @@ export default function ContactUsForm() {
                         <div className={styles.formGroup}>
                             <label className={styles.label}>
                                 <School size={18} className={styles.labelIcon} />
-                                School Name *
+                                {lang === 'ko' ? "학교" : "Enter school Name *"}
                             </label>
                             <input
                                 className={styles.input}
                                 required
                                 value={form.schoolName}
                                 onChange={(e) => updateForm('schoolName', e.target.value)}
-                                placeholder="Current school name"
+                                placeholder={lang === 'ko' ? "학교 이름을 입력해주세요." : "Enter current school name"}
                             />
                         </div>
                     </div>
@@ -179,13 +186,13 @@ export default function ContactUsForm() {
                         <div className={styles.formGroup}>
                             <label className={styles.label}>
                                 <Phone size={18} className={styles.labelIcon} />
-                                Phone Number {!form.kakao && '*'}
+                                {lang === 'ko' ? "전화번호" : "Phone Number"} {!form.kakao && '*'}
                             </label>
                             <input
                                 className={styles.input}
                                 value={form.phone}
                                 onChange={(e) => updateForm('phone', e.target.value)}
-                                placeholder="xxx xxx xxxx"
+                                placeholder={lang === 'ko' ? "전화번호를 입력해주세요." : "Enter phone number"}
                                 required={!form.kakao}
                             />
                         </div>
@@ -194,17 +201,17 @@ export default function ContactUsForm() {
                         <div className={styles.formGroup}>
                             <label className={styles.label}>
                                 <MessageSquare size={18} className={styles.labelIcon} />
-                                KakaoTalk ID {!form.phone && '*'}
+                                {lang === 'ko' ? "카카오톡 ID" : "KakaoTalk ID"} {!form.phone && '*'}
                             </label>
                             <input
                                 className={styles.input}
                                 value={form.kakao}
                                 onChange={(e) => updateForm('kakao', e.target.value)}
-                                placeholder="Enter your KakaoTalk ID"
+                                placeholder={lang === 'ko' ? "카카오톡 ID를 입력해주세요." : "Enter your KakaoTalk ID"}
                                 required={!form.phone}
                             />
                             <p className={styles.helperText}>
-                                Please provide either phone number or KakaoTalk ID
+                                {lang === 'ko' ? "전화번호나 카카오톡 ID 하나 이상을 입력주세요." : "Please provide either phone number or KakaoTalk ID"}
                             </p>
                         </div>
                     </div>
@@ -213,7 +220,7 @@ export default function ContactUsForm() {
                     <div className={styles.formGroup}>
                         <label className={styles.label}>
                             <BookOpen size={18} className={styles.labelIcon} />
-                            Inquiry Type *
+                            {lang === 'ko' ? "문의 유형" : "Inquiry Type *"}
                         </label>
                         <select
                             className={styles.select}
@@ -286,7 +293,10 @@ export default function ContactUsForm() {
 
                     {/* Location Selection */}
                     <div className={styles.formGroup}>
-                        <label className={styles.label}>Location *</label>
+                        <label className={styles.label}>
+                            <MapPin size={18} className={styles.labelIcon} />
+                            {lang === 'ko' ? "학원 위치" : "Location *"}
+                        </label>
                         <div className={styles.locationButtons}>
                             {Object.keys(locationData).map((key) => (
                                 <button
@@ -304,13 +314,18 @@ export default function ContactUsForm() {
 
                     {/* Message */}
                     <div className={styles.formGroup}>
-                        <label className={styles.label}>Message</label>
+                        <label className={styles.label}>
+                            <SquarePen size={18} className={styles.labelIcon} />
+                            {lang === 'ko' ? "문의 내용" : "Message"}
+                        </label>
                         <textarea
                             className={styles.textarea}
                             rows={5}
                             value={form.message}
                             onChange={(e) => updateForm('message', e.target.value)}
-                            placeholder="Please describe your situation, goals, and schedule."
+                            placeholder={lang === 'ko'
+                                ? "현재 상태가 어떠신지, 어떤 목표를 가지고 계신지, 그리고 시간은 언제쯤 괜찮으신지 설명 부탁드립니다."
+                                : "Please describe your situation, goals, and schedule."}
                         />
                     </div>
 
@@ -318,7 +333,7 @@ export default function ContactUsForm() {
                     <div className={styles.checkboxGroup}>
                         <label className={styles.checkboxLabel}>
                             <input type="checkbox" className={styles.checkbox} required />
-                            <span>I agree to the collection and use of personal information. *</span>
+                            <span>{lang === 'ko' ? "개인정보 수집 및 이용에 동의합니다. *" : "I agree to the collection and use of personal information. *"}</span>
                         </label>
                     </div>
 
