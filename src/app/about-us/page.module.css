@@ -1,7 +1,6 @@
 .container {
     min-height: 100vh;
     background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem 0rem;
     width: 100%;
