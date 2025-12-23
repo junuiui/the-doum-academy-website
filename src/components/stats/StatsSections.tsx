@@ -1,3 +1,7 @@
+'use client'
+
+import { usePathname } from 'next/navigation'
+
 import HorizontalBarChart from './HorizontalBarChart'
 import SummaryCards from './SummaryCards'
 import styles from './StatsSection.module.css'
@@ -19,6 +23,11 @@ type Props = {
 }
 
 export default function StatsSection({ rawData }: Props) {
+
+    const pathname = usePathname()
+    const isKo = pathname.startsWith('/ko')
+    const lang = isKo ? 'ko' : 'en'
+
     const data = cleanData(rawData)
 
     const schoolData = countBySchool(data)
@@ -39,20 +48,13 @@ export default function StatsSection({ rawData }: Props) {
             />
 
             <HorizontalBarChart
-                title="University Breakdown"
+                title={lang === 'ko' ? "대학별 진학 현황" : "University Breakdown"}
                 data={schoolData}
                 colors={schoolColors}
             />
 
-            {/* 
-            <HorizontalBarChart
-                title="Offers by Major Category"
-                data={majorData}
-                colors={departmentColors}
-            /> */}
-
             <ScholarshipList
-                title="Scholarship Amount by University"
+                title={lang === 'ko' ? '대학별 장학금 규모' : "Scholarship Amount by University"}
                 scholarships={scholarshipDataName}
                 
             />

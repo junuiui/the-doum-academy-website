@@ -15,21 +15,21 @@ type Props = {
     scholarships: ScholarshipItem[];
 }
 
-export default function ScholarshipList({ scholarships }: Props) {
+export default function ScholarshipList({ title, scholarships }: Props) {
     // console.log(scholarships)
 
     return (
         <div className={styles.container}>
 
             {/* Header */}
-            <h2>Scholarships</h2>
+            <h2>{title}</h2>
             
             {/* Scholarship cards */}
             <div className={styles.listContainer}>
                 {scholarships.map((scholarship, index) => (
                     <div key={index} className={styles.listItem}>
                         <div className={styles.info}>
-                            <p className={styles.name}>{scholarship.Name}</p>
+                            <p className={styles.name}>{scholarship.Name.split(' ')[0][0]}. {scholarship.Name.split(' ')[1]}</p>
                             <p className={styles.university}>{scholarship.School}</p>
                         </div>
                         <div className={styles.amount}>${scholarship.ScholarshipAmount}</div>
