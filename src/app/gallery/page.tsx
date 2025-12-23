@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Slide2 } from '@/components/features/Slide';
+import { Slide } from '@/components/features/Slide';
 import { Lightbox } from '@/components/features/Lighbox';
 import styles from './page.module.css';
 
@@ -177,14 +177,14 @@ export default function GalleryPage() {
 
     return (
         <div className={styles.pageContainer}>
-            <Slide2
+            <Slide
                 data={galleryData.portmoody}
                 onImageClick={(image) => handleImageClick('portmoody', image)}
                 row={3}
                 col={4}
             />
 
-            <Slide2
+            <Slide
                 data={galleryData.vancouver}
                 onImageClick={(image) => handleImageClick('vancouver', image)}
                 row={3}
