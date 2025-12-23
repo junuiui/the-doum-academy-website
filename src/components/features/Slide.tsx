@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { MapPin, Image as ImageIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageFallBack } from '../ui/ImageFallBack';
-import styles from './Slide2.module.css';
+import styles from './Slide.module.css';
 
 interface GalleryImage {
     url: string;
@@ -22,7 +22,7 @@ interface Slide2Props {
     col?: number;
 }
 
-export function Slide2({ data, onImageClick, row = 3, col = 2 }: Slide2Props) {
+export function Slide({ data, onImageClick, row = 3, col = 2 }: Slide2Props) {
     const [currentPage, setCurrentPage] = useState(1);
 
     const itemsPerPage = row * col;

@@ -5,17 +5,13 @@ import { useState } from 'react'
 import styles from './page.module.css'
 import rawData from '@/data/achievement.json'
 import StatsSection from '@/components/stats/StatsSections'
-import { Slide2 } from '../../components/features/Slide2';
+import { Slide } from '@/components/features/Slide'
 import { Lightbox } from '@/components/features/Lighbox'
 
 import { GalleryImageInterface } from '@/interface/GalleryImage.interface'
 
 const images: Record<number, GalleryImageInterface[]> = {
     2025: [
-        { url: '/achievements/example1.png', alt: 'Achievement 1', caption: 'Caption 1' },
-        { url: '/achievements/example2.png', alt: 'Achievement 2', caption: 'Caption 2' },
-        { url: '/achievements/example3.png', alt: 'Achievement 3', caption: 'Caption 3' },
-        { url: '/achievements/example4.png', alt: 'Achievement 4', caption: 'Caption 4' },
         { url: '/achievements/example5.png', alt: 'Achievement 5', caption: 'Caption 5' },
         { url: '/achievements/example6.png', alt: 'Achievement 6', caption: 'Caption 6' },
         { url: '/achievements/example1.png', alt: 'Achievement 1', caption: 'Caption 1' },
@@ -38,7 +34,6 @@ const images: Record<number, GalleryImageInterface[]> = {
         { url: '/achievements/example6.png', alt: 'Achievement 6', caption: 'Caption 6' },
     ],
     2024: [
-        { url: '/achievements/example1.png', alt: 'Achievement 1', caption: 'Caption 1' },
         { url: '/achievements/example2.png', alt: 'Achievement 2', caption: 'Caption 2' },
         { url: '/achievements/example3.png', alt: 'Achievement 3', caption: 'Caption 3' },
         { url: '/achievements/example4.png', alt: 'Achievement 4', caption: 'Caption 4' },
@@ -136,13 +131,14 @@ export default function AchievementPage() {
                 <div className={styles.grid}>
                     {/* Slides */}
                     <div>
-                        <Slide2
+                        <Slide
                             data={{
                                 name: selectedYear === 'ALL' ? 'All Achievements' : `${selectedYear} Achievements`,
                                 images: slidesImages,
                             }}
                             onImageClick={handleImageClick}
-                            itemsPerPage={9}
+                            row={4}
+                            col={4}
                         />
                     </div>
 

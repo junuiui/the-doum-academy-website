@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Slide2 } from '@/components/features/Slide2';
+import { Slide2 } from '@/components/features/Slide';
 import { Lightbox } from '@/components/features/Lighbox';
 import styles from './page.module.css';
 
