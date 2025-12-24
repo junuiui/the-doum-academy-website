@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { MapPin, Clock, Phone, Mail, Car, Train, Footprints, Navigation } from 'lucide-react';
 import MapComponent from '@/components/ui/Map';
 import styles from './location.module.css';
@@ -29,6 +30,11 @@ const hoursOfOperation = [
 ];
 
 export function Location() {
+
+    const pathname = usePathname()
+    const isKo = pathname.startsWith('/ko')
+    const lang = isKo ? 'ko' : 'en'
+
     const [branch, setBranch] = useState<'portmoody' | 'vancouver'>('portmoody');
     const currentLocation = locationData[branch];
 
@@ -84,7 +90,7 @@ export function Location() {
                                 <div className={styles.addressContent}>
                                     <p className={styles.addressText}>{currentLocation.address}</p>
                                     <p className={styles.directionsText}>
-                                        Click for directions <Navigation size={14} />
+                                        {isKo ? '길찾기' : 'Click for directions'}  <Navigation size={14} />
                                     </p>
                                 </div>
                             </button>
@@ -125,21 +131,21 @@ export function Location() {
                                         className={`${styles.directionButton} ${styles.drivingButton}`}
                                     >
                                         <Car size={24} />
-                                        <span>Driving</span>
+                                        <span>{isKo ? '운전' : 'Driving'}</span>
                                     </button>
                                     <button
                                         onClick={() => openDirections('transit')}
                                         className={`${styles.directionButton} ${styles.transitButton}`}
                                     >
                                         <Train size={24} />
-                                        <span>Transit</span>
+                                        <span>{isKo ? '대중교통' : 'Transit'}</span>
                                     </button>
                                     <button
                                         onClick={() => openDirections('walking')}
                                         className={`${styles.directionButton} ${styles.walkingButton}`}
                                     >
                                         <Footprints size={24} />
-                                        <span>Walking</span>
+                                        <span>{isKo ? '도보' : 'Walking'}</span>
                                     </button>
                                 </div>
                             </div>
@@ -151,7 +157,11 @@ export function Location() {
                         <div className={styles.card}>
                             <div className={styles.hoursHeader}>
                                 <Clock className={styles.clockIcon} size={28} />
-                                <h3 className={styles.hoursTitle}>Hours of Operation</h3>
+                                <h3 className={styles.hoursTitle}>
+                                    <span>
+                                        {isKo ? '운영 시간' : 'Hours of Operation'}
+                                    </span>
+                                </h3>
                             </div>
 
                             <div className={styles.hoursContent}>
