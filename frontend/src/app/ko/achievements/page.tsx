@@ -4,11 +4,11 @@ import { useState } from 'react'
 
 import styles from './page.module.css'
 import rawData from '@/data/achievement.json'
-import StatsSection from '@/components/stats/StatsSections'
-import { Slide } from '@/components/features/Slide'
-import { Lightbox } from '@/components/features/Lighbox'
+import StatsSection from '../../../components/stats/StatsSections'
+import { Slide } from '../../../components/features/Slide'
+import { Lightbox } from '../../../components/features/Lighbox'
 
-import { GalleryImageInterface } from '@/interface/GalleryImage.interface'
+import { GalleryImageInterface } from '../../../interface/GalleryImage.interface'
 
 const images: Record<number, GalleryImageInterface[]> = {
     2025: [
@@ -110,8 +110,8 @@ export default function AchievementPage() {
             <div className={styles.achievementCard}>
                 {/* Main Header */}
                 <div className={styles.mainHeader}>
-                    <h2>Student Achievements</h2>
-                    <p>Our Students' Success Stories</p>
+                    <h2> 학생들의 성과</h2>
+                    <p>우리 학생들의 노력으로 이루어진 성과를 소개합니다</p>
                 </div>
 
                 {/* Year Tabs */}
@@ -150,22 +150,17 @@ export default function AchievementPage() {
             </div>
 
             {/* Lightbox Modal */}
-            {lightboxOpen && (
-                <Lightbox
-                    images={slidesImages}
-                    currentIndex={lightboxIndex}
-                    onClose={() => setLightboxOpen(false)}
-                    onNext={handleNextImage}
-                    onPrevious={handlePreviousImage}
-                />
-            )}
-        </main>
+            {
+                lightboxOpen && (
+                    <Lightbox
+                        images={slidesImages}
+                        currentIndex={lightboxIndex}
+                        onClose={() => setLightboxOpen(false)}
+                        onNext={handleNextImage}
+                        onPrevious={handlePreviousImage}
+                    />
+                )
+            }
+        </main >
     )
 }
-
-
-/**
- * 
- * TODO:
- *  1. Add summary
- */

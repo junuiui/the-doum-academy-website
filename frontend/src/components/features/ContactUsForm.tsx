@@ -4,7 +4,7 @@ import {
 } from 'lucide-react';
 import { locationData } from './location';
 import styles from './ContactUsForm.module.css';
-import Toast from '@/components/ui/Toast';
+import Toast from '../ui/Toast';
 import { usePathname } from 'next/navigation';
 
 const inquiries = [

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { MapPin, Clock, Phone, Mail, Car, Train, Footprints, Navigation } from 'lucide-react';
-import MapComponent from '@/components/ui/Map';
+import MapComponent from '../ui/Map';
 import styles from './location.module.css';
 
 // TODO

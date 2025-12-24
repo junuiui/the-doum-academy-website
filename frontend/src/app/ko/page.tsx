@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
-import { Popup } from '@/components/ui/Popup';
+import { Popup } from '../../components/ui/Popup';
 import { Award, Users, GraduationCap, TrendingUp, X, ArrowRight, Star, Quote } from 'lucide-react';
 
 const DUMMY_POPUP = {

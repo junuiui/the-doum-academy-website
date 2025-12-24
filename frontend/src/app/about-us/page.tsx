@@ -1,8 +1,8 @@
 // import MapComponent from "@/components/Map";
 
 import styles from './page.module.css';
-import Teachers from "@/components/features/Teachers";
-import { Service } from '@/components/features/Service';
+import Teachers from "../../components/features/Teachers";
+import { Service } from '../../components/features/Service';
 
 // Data
 

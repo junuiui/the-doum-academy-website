@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ImageFallBack } from '@/components/ui/ImageFallBack';
+import { ImageFallBack } from '../ui/ImageFallBack';
 import styles from './Lightbox.module.css';
 
 interface LightboxProps {

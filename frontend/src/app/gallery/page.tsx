@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import { Slide } from '@/components/features/Slide';
-import { Lightbox } from '@/components/features/Lighbox';
+import { Slide } from '../../components/features/Slide';
+import { Lightbox } from '../../components/features/Lighbox';
 import styles from './page.module.css';
 
 interface GalleryImage {
