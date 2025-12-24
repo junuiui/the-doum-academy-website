@@ -232,7 +232,7 @@ export default function ContactUsForm() {
                                 updateForm('englishTest', '');
                             }}
                         >
-                            <option value="">Select Inquiry Type</option>
+                            <option value="">{lang === 'ko' ? "문의 유형을 선택해주세요." : "Select Inquiry Type"}</option>
                             {inquiries.map(opt => (
                                 <option key={opt} value={opt}>{opt}</option>
                             ))}
