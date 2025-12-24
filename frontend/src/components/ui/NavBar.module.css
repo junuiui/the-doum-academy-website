@@ -1,10 +1,10 @@
+/* 기존 데스크탑 nav */
 .navLinks {
     display: flex;
     gap: 40px;
     list-style: none;
     padding: 0;
     margin: 0;
-    left: 50%;
 }
 
 .navLinks a {
@@ -21,4 +21,37 @@
 .active {
     color: #000;
     border-bottom: 2px solid #000;
+}
+
+/* 모바일 */
+@media (max-width: 980px) {
+    .navLinks {
+        display: none;
+        flex-direction: row;
+        background: white;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        z-index: 100;
+        white-space: nowrap;
+    }
+
+    .navLinks.showMobile {
+        display: flex;
+    }
+
+    .hamburger {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2.5rem;
+    }
+
+    .mobileNav {
+        position: relative;
+    }
 }
