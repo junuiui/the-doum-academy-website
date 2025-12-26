@@ -7,8 +7,18 @@ export type RecordItem = {
     "Scholarship Amount": number
 }
 
-export function cleanData(data: RecordItem[]) {
-    return data.filter(d => d.Name && d.School)
+export function cleanData(data: RecordItem[], year: string) {
+    return data.filter(d => {
+        const basicValid = d.Name && d.School;
+
+        if (!basicValid) return false;
+
+        if (year === 'ALL') {
+            return true;
+        }
+
+        return d.Year.toString() === year; 
+    });
 }
 
 export function countBySchool(data: RecordItem[]) {
@@ -62,4 +72,33 @@ export function scholarshipByName(data: RecordItem[]) {
             ScholarshipName: d['Scholarship Name'],
             ScholarshipAmount: d['Scholarship Amount'],
         }))
+}
+
+/**
+ * 
+ * @param data 
+ * @param by 
+ * @param order 
+ */
+export function sortBy<T>(
+    data: T[],
+    by: keyof T,
+    order: 'asc' | 'desc' = 'asc'
+): T[] {
+    return [...data].sort((a, b) => {
+        const aVal = a[by];
+        const bVal = b[by];
+
+        if (aVal === bVal) return 0;
+
+        if (aVal == null) return 1;
+        if (bVal == null) return -1;
+
+        const result =
+            typeof aVal === 'number' && typeof bVal === 'number'
+                ? aVal - bVal
+                : String(aVal).localeCompare(String(bVal));
+
+        return order === 'asc' ? result : -result;
+    });
 }

@@ -144,7 +144,7 @@ export default function AchievementPage() {
 
                     {/* Stats Section */}
                     <div>
-                        <StatsSection rawData={rawData} />
+                        <StatsSection rawData={rawData} year={selectedYear.toString()} />
                     </div>
                 </div>
             </div>
