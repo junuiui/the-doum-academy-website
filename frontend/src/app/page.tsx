@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { Popup } from '../components/ui/Popup';
@@ -49,13 +49,13 @@ const DUMMY_ACHIEVEMENT = [
 ];
 
 // TODO: from google review? 
-const DUMMY_TESTIMONIALS = [
+const reviews = [
     {
         name: 'Jun Hong',
         grade: 'GRADE 12',
         university: 'SCHOOL',
         text: 'REIVEW 1',
-        rating: 5
+        rating: 4
     },
     {
         name: 'Koko Kang',
@@ -65,7 +65,49 @@ const DUMMY_TESTIMONIALS = [
         rating: 5
     },
     {
-        name: 'YaYa Chen',
+        name: 'YaYa Ch333en',
+        grade: 'Grade 10',
+        university: 'Future: Medicine',
+        text: 'REIVEW 1',
+        rating: 5
+    },
+    {
+        name: 'YaYa C312hen3',
+        grade: 'Grade 10',
+        university: 'Future: Medicine',
+        text: 'REIVEW 1',
+        rating: 5
+    },
+    {
+        name: 'YaYa Chen1323',
+        grade: 'Grade 10',
+        university: 'Future: Medicine',
+        text: 'REIVEW 1',
+        rating: 5
+    },
+    {
+        name: 'YaYa Chen33',
+        grade: 'Grade 10',
+        university: 'Future: Medicine',
+        text: 'REIVEW 1',
+        rating: 5
+    },
+    {
+        name: 'YaYa Chen333',
+        grade: 'Grade 10',
+        university: 'Future: Medicine',
+        text: 'REIVEW 1',
+        rating: 5
+    },
+    {
+        name: 'YaYa Che441n',
+        grade: 'Grade 10',
+        university: 'Future: Medicine',
+        text: 'REIVEW 1',
+        rating: 5
+    },
+    {
+        name: 'YaYa Ch123en',
         grade: 'Grade 10',
         university: 'Future: Medicine',
         text: 'REIVEW 1',
@@ -73,11 +115,26 @@ const DUMMY_TESTIMONIALS = [
     }
 ];
 
+
+
 export default function Home() {
 
     const pathname = usePathname()
     const isKo = pathname.startsWith('/ko')
     const lang = isKo ? 'ko' : 'en'
+    const sliderRef = useRef<HTMLDivElement>(null);
+
+    const nextSlide = () => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollBy({ left: sliderRef.current.clientWidth, behavior: 'smooth' });
+        }
+    };
+
+    const prevSlide = () => {
+        if (sliderRef.current) {
+            sliderRef.current.scrollBy({ left: -sliderRef.current.clientWidth, behavior: 'smooth' });
+        }
+    };
 
     const [popupStates, setPopupStates] = useState<
         Record<string, { closed: boolean; hideToday: boolean }>
@@ -130,6 +187,45 @@ export default function Home() {
             </div>
 
             {/* Home content */}
+            <div className={styles.home}>
+                Home Content 1
+                <div className={styles.banner}>
+                    <div className={styles.mainBanner}>
+                        Main Banner
+                    </div>
+                    <div className={styles.subBanner}>
+                        Sub Banner 1
+                    </div>
+                    <div className={styles.subBanner}>
+                        Sub Banner 2
+                    </div>
+                    <div className={styles.subBanner}>
+                        Sub Banner 3
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.testimonialWrapper}>
+                <button className={styles.prevBtn} onClick={prevSlide}>‹</button>
+
+                <div className={styles.testimonialSlider} ref={sliderRef}>
+                    {reviews.map((r, i) => (
+                        <div key={i} className={styles.testimonialCard}>
+                            <div className={styles.header}>
+                                <span className={styles.name}>{r.name}</span>
+                                <span className={styles.grade}>{r.grade}</span>
+                            </div>
+                            <div className={styles.university}>{r.university}</div>
+                            <div className={styles.text}>{r.text}</div>
+                            <div className={styles.rating}>
+                                {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <button className={styles.nextBtn} onClick={nextSlide}>›</button>
+            </div>
         </div>
     );
 }

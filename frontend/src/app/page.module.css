@@ -1,16 +1,97 @@
 /* src/app/page.module.css */
 .container {
-    padding-left: 2%;
-    padding-right: 2%;
-    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
+    margin: 0 auto;
+    padding: 2rem 0rem;
+    width: 100%;
 }
 
+/* popups */
 .popupContainer {
+    position: fixed;
+    padding: 0rem 2rem;
+
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
+
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.popupContainer>* {
+    pointer-events: auto;
 }
 
 .popup {
     margin-bottom: 1rem;
+}
+
+/* Home 1 */
+.banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    /* gap: 1.5rem; */
+    padding: 2rem;
+}
+
+.mainBanner {
+    grid-column: 1 / -1;
+    min-height: 320px;
+    background: #fff;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    border-width: 2px;
+    overflow: hidden;
+
+    box-shadow: none;
+}
+
+.subBanner {
+    min-height: 200px;
+    background: #f8fafc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    border-width: 2px;
+    overflow: hidden;
+    box-shadow: none;
+}
+
+/* review */
+.testimonialWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.testimonialSlider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
+}
+
+.testimonialCard {
+    min-width: calc(100% / 6);
+    margin-right: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.prevBtn,
+.nextBtn {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
 }
