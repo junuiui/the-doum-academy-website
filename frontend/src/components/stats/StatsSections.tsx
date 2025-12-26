@@ -25,7 +25,6 @@ type Props = {
 }
 
 export default function StatsSection({ rawData, year }: Props) {
-    console.log(year)
     const pathname = usePathname()
     const isKo = pathname.startsWith('/ko')
     const lang = isKo ? 'ko' : 'en'
@@ -39,7 +38,6 @@ export default function StatsSection({ rawData, year }: Props) {
 
     const totalScholarship = scholarshipData.reduce((a, b) => a + b.value, 0)
     const scholarshipCount = data.filter(d => d['Scholarship Amount'] > 0).length
-    console.log(scholarshipDataName)
 
     return (
         <section className={styles.container}>
