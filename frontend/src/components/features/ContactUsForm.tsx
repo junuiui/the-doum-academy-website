@@ -109,6 +109,16 @@ export default function ContactUsForm() {
             setSubmitting(false);
         }, 5000);
 
+        // @TODO: send to backend
+        console.log(form)
+
+        // switch to json format
+        const jsonForm = JSON.stringify(form);
+        console.log(form)
+
+        // send to backend
+
+
         setForm(initialForm);
     };
 
