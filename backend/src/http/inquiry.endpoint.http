@@ -1,0 +1,8 @@
+POST http://localhost:3000/inquiries
+Content-Type: application/json
+
+{
+  "name": "test_Name",
+  "email": "tst@test.com",
+  "message": "1 test"
+}

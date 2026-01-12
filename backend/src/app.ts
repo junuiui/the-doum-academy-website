@@ -9,7 +9,7 @@ export function createApp() {
     app.use(express.json())
 
     addRoutes(app);
-
+    
     app.use(errorHandler)
 
     return app;
