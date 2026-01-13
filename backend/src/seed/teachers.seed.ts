@@ -7,11 +7,11 @@ dotenv.config();
 
 async function seed() {
     try {
-        await mongoose.connect(process.env.MONGODB_URI!);
+        await mongoose.connect(process.env.DB_URL!);
 
         console.log('MongoDB connected');
 
-        await Teacher.deleteMany(); // 초기화
+        await Teacher.deleteMany(); // reset
         await Teacher.insertMany(teachers);
 
         console.log('Teachers seeded successfully');
