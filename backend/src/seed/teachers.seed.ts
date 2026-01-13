@@ -10,7 +10,7 @@ const seedTeachers = async () => {
         await mongoose.connect(process.env.DB_URL!);
         console.log('MongoDB connected');
 
-        // director / instructor 합치고 role 추가
+        // director / instructor combined and add role
         const directors = teachersData.director.map(d => ({
             ...d,
             role: 'director'
@@ -21,10 +21,10 @@ const seedTeachers = async () => {
             role: 'instructor'
         }));
 
-        // 모든 데이터를 하나의 배열로
+        // to one array
         const allTeachers = [...directors, ...instructors];
 
-        // insertMany로 넣기 전에 각 객체가 스키마 필드와 맞는지 확인
+        // double checking
         const sanitizedTeachers = allTeachers.map(t => ({
             id: t.id,
             role: t.role,
