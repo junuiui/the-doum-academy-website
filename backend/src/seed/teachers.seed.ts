@@ -7,7 +7,7 @@ dotenv.config();
 
 const seedTeachers = async () => {
     try {
-        await mongoose.connect(process.env.DB_URL!);
+        await mongoose.connect(process.env.DB_URL_SEED!);
         console.log('MongoDB connected');
 
         // director / instructor combined and add role
