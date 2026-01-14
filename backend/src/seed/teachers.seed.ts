@@ -7,7 +7,14 @@ dotenv.config();
 
 const seedTeachers = async () => {
     try {
-        await mongoose.connect(process.env.DB_URL_SEED!);
+
+        if (!process.env.DB_URL || !process.env.DB_NAME) {
+            throw new Error('DB_URL or DB_NAME is missing in .env');
+        }
+        
+        await mongoose.connect(process.env.DB_URL, {
+            dbName: process.env.DB_NAME,
+        });
         console.log('MongoDB connected');
 
         // director / instructor combined and add role
