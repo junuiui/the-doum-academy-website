@@ -1,0 +1,634 @@
+[
+    {
+        "Name": "Jiwoo Lee",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Studies in Commerce",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Gyulim Kim",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Mathematical and Physical Sciences",
+        "Scholarship Name": "International Merit Admission Award",
+        "Scholarship Amount": 50000
+    },
+    {
+        "Name": "Gyulim Kim",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "-",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Nayeon Kwak",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Health Sciences",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Dawon Lee",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Communication, Art and Technology (FCAT)",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Dawon Lee",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Applied Biology",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yejin Cho",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Business Administration",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yejin Cho",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Social Sciences",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yejin Cho",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Co-op Arts: Social Sciences & Humanities",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Lyra Harumi Visan",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Mathematical and Physical Sciences",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Software System",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Chemical and Physical Sciences",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Co-op Arts: Social Sciences & Humanities",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Social Sciences ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Arts",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "University of Waterloo",
+        "Major": "Honours Geography and Aviation, Regular",
+        "Scholarship Name": "Waterloo President's Scholarship",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "University of Waterloo",
+        "Major": "Honours Science and Aviation, Regular",
+        "Scholarship Name": "Waterloo President's Scholarship",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Seojin Yun",
+        "Year": 2025,
+        "School": "Western University",
+        "Major": "Commercial Aviation Management",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Sihyeon Woo",
+        "Year": 2025,
+        "School": "Emily Carr University",
+        "Major": "Fine Arts - Illustration",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Sihyeon Woo",
+        "Year": 2025,
+        "School": "OCAD University",
+        "Major": "Illustration",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Jung Won",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Commerce",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Jung Won",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Co-op Management (BBA)",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Juwon Kim",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Arts and Social Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Juwon Kim",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Co-op Arts: Social Sciences & Humanities",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Juwon Kim",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Social Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Juwon Kim",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Arts",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junmo Lee",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Foestry",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junmo Lee",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Computer Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junmo Lee",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Computing Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junhwan Kim",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Computer Science, Mathematics and Statistics",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junhwan Kim",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Co-op Physical and Environmental Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junhwan Kim",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Applied Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Junhwan Kim",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Applied Science, Engineering",
+        "Scholarship Name": "International Excellence Entrance Scholarship",
+        "Scholarship Amount": 10000
+    },
+    {
+        "Name": "Jihun Yeom",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Computing Science",
+        "Scholarship Name": "International Excellence Entrance Scholarship",
+        "Scholarship Amount": 10000
+    },
+    {
+        "Name": "Hyuntai Cho",
+        "Year": 2025,
+        "School": "Simon Fraser University",
+        "Major": "Computing Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyuntai Cho",
+        "Year": 2025,
+        "School": "University of Toronto",
+        "Major": "Co-op Computer Science ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyuntai Cho",
+        "Year": 2025,
+        "School": "University of British Columbia",
+        "Major": "Foestry",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyesung Kevin Kim",
+        "Year": 2025,
+        "School": "Embry-Riddle Aeronautical University",
+        "Major": "Aeronautical Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Tony Min",
+        "Year": 2024,
+        "School": "University of British Columbia",
+        "Major": "Food Nutrition and Health ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Tony Min",
+        "Year": 2024,
+        "School": "University of British Columbia",
+        "Major": "Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Tony Min",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Life Science ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Tony Min",
+        "Year": 2024,
+        "School": "McMaster University",
+        "Major": "Life Science ",
+        "Scholarship Name": "McMaster Award of Excellence",
+        "Scholarship Amount": 3000
+    },
+    {
+        "Name": "Sooyeon Kim",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Co-op Psychology & Health Studies",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Sooyeon Kim",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Communication, Culture, Information and Technology",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Sooyeon Kim",
+        "Year": 2024,
+        "School": "University of British Columbia",
+        "Major": "Arts",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yoonji Lee",
+        "Year": 2024,
+        "School": "Simon Fraser University",
+        "Major": "Fine Arts",
+        "Scholarship Name": "International Excellence Entrance Scholarship",
+        "Scholarship Amount": 10000
+    },
+    {
+        "Name": "Yoonji Lee",
+        "Year": 2024,
+        "School": "University of Victoria",
+        "Major": "Fine Arts",
+        "Scholarship Name": "International Entrance Scholarship",
+        "Scholarship Amount": 12000
+    },
+    {
+        "Name": "Jeongbin Choe",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Mathematical and Physical Sciences",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Jimin Phang",
+        "Year": 2024,
+        "School": "University of British Columbia",
+        "Major": "Foestry",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Jimin Phang",
+        "Year": 2024,
+        "School": "Simon Fraser University",
+        "Major": "Science",
+        "Scholarship Name": "International Excellence Entrance Scholarship",
+        "Scholarship Amount": 10000
+    },
+    {
+        "Name": "Andrew Sim",
+        "Year": 2024,
+        "School": "Simon Fraser University",
+        "Major": "Biomedical Physiology",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Andrew Sim",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Co-op Life Science (Health Science Stream)",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Andrew Sim",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Kinesiology",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Taeuk Kim",
+        "Year": 2024,
+        "School": "Simon Fraser University",
+        "Major": "General Studies",
+        "Scholarship Name": "International Excellence Entrance Scholarship",
+        "Scholarship Amount": 10000
+    },
+    {
+        "Name": "Taeuk Kim",
+        "Year": 2024,
+        "School": "University of Victoria",
+        "Major": "Education",
+        "Scholarship Name": "Entrance ",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Taeuk Kim",
+        "Year": 2024,
+        "School": "Queen's University",
+        "Major": "Science Honours",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Taeuk Kim",
+        "Year": 2024,
+        "School": "York University",
+        "Major": "Mathematics for Education",
+        "Scholarship Name": "Entrance Scholarship",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Michael Song",
+        "Year": 2024,
+        "School": "University of British Columbia",
+        "Major": "Nursing",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyunsoo Cho",
+        "Year": 2024,
+        "School": "University of Waterloo",
+        "Major": "Honours Mathematics/Financial Analysis and Risk Management, Co-op",
+        "Scholarship Name": "",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyunsoo Cho",
+        "Year": 2024,
+        "School": "University of Waterloo",
+        "Major": "Honours Mathematics, Co-op",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyunsoo Cho",
+        "Year": 2024,
+        "School": "Simon Fraser University",
+        "Major": "Computing Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Michaela Song",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Life Science ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Michaela Song",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Co-op Life Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Michaela Song",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Life Science ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyeuk Song",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Life Science ",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Hyeuk Song",
+        "Year": 2024,
+        "School": "University of Toronto",
+        "Major": "Chemical and Physical Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Thomas Lee",
+        "Year": 2023,
+        "School": "University of British Columbia",
+        "Major": "Food Nutrition and Health Program",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yewon Shin",
+        "Year": 2023,
+        "School": "Queen's University",
+        "Major": "Music",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yewon Shin",
+        "Year": 2023,
+        "School": "University of British Columbia",
+        "Major": "Arts",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Daehyeon Woo",
+        "Year": 2023,
+        "School": "University of British Columbia",
+        "Major": "Vantage One Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Daehyeon Woo",
+        "Year": 2023,
+        "School": "University of Victoria",
+        "Major": "-",
+        "Scholarship Name": "Entrance Scholarship",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Seongjun Kim",
+        "Year": 2023,
+        "School": "University of Toronto",
+        "Major": "Arts and Science",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Jeongbin Choe",
+        "Year": 2023,
+        "School": "University of Toronto",
+        "Major": "Social Sciences and Humanities",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Yegrina Lim",
+        "Year": 2023,
+        "School": "University of Victoria",
+        "Major": "-",
+        "Scholarship Name": "Entrance Scholarship",
+        "Scholarship Amount": 1500
+    },
+    {
+        "Name": "Minsuk Joo",
+        "Year": 2022,
+        "School": "University of Toronto",
+        "Major": "Mathematical and Physical Sciences",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    },
+    {
+        "Name": "Minsuk Joo",
+        "Year": 2022,
+        "School": "University of Waterloo",
+        "Major": "Mathematics, Honours",
+        "Scholarship Name": "President's Scholarship",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Minsuk Joo",
+        "Year": 2022,
+        "School": "University of Waterloo",
+        "Major": "Environment and Business, Honours, Co-op",
+        "Scholarship Name": "President's / Entrance Scholarship",
+        "Scholarship Amount": 3000
+    },
+    {
+        "Name": "Ju Hyung Lee",
+        "Year": 2022,
+        "School": "University of Waterloo",
+        "Major": "Science & Aviation, Honours, Regular",
+        "Scholarship Name": "President's Scholarship",
+        "Scholarship Amount": 2000
+    },
+    {
+        "Name": "Siyeon Han",
+        "Year": 2022,
+        "School": "Simon Fraser University",
+        "Major": "Arts and Social Sciences (FASS)",
+        "Scholarship Name": "-",
+        "Scholarship Amount": 0
+    }
+]
