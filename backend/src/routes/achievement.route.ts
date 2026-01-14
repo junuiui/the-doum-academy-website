@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { Achievement } from '../models/achievement.model';
 
-const achievementRoute = Router();
+const achievementRouter = Router();
 
-achievementRoute.get('/', async (req, res) => {
+achievementRouter.get('/', async (req, res) => {
     try {
         const {
             year,
@@ -34,4 +34,4 @@ achievementRoute.get('/', async (req, res) => {
     }
 });
 
-export default achievementRoute;
+export default achievementRouter;

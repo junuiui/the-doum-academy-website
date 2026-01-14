@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import { Service } from '../models/service.model';
 
-const serviceRoute = Router();
+const serviceRouter = Router();
 
 /**
  * GET /services
  * ?lang=en | ko
  */
-serviceRoute.get('/', async (req, res) => {
+serviceRouter.get('/', async (req, res) => {
     const { lang } = req.query;
 
     const services = await Service.find().sort({ id: 1 });
@@ -23,3 +23,5 @@ serviceRoute.get('/', async (req, res) => {
 
     res.json(services);
 });
+
+export default serviceRouter;

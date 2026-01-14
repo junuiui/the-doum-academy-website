@@ -1,0 +1,2 @@
+GET http://localhost:3000/services
+GET http://localhost:3000/services?lang=en
