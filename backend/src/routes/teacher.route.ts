@@ -8,21 +8,21 @@ const teacherRouter = Router();
  * ?lang=en | ko
  */
 teacherRouter.get('/', async (req, res) => {
-    const teachers = await Teacher.find().sort({ id: 1 });
+  const teachers = await Teacher.find().sort({ id: 1 });
 
-    // Language option
-    // const { lang } = req.query;
+  // Language option
+  // const { lang } = req.query;
 
-    // if (lang === 'en' || lang === 'ko') {
-    //     const localized = teachers.map(s => ({
-    //         id: s.id,
-    //         title: s.title[lang],
-    //         body: s.body.map(b => b[lang]),
-    //     }));
-    //     return res.json(localized);
-    // }
+  // if (lang === 'en' || lang === 'ko') {
+  //     const localized = teachers.map(s => ({
+  //         id: s.id,
+  //         title: s.title[lang],
+  //         body: s.body.map(b => b[lang]),
+  //     }));
+  //     return res.json(localized);
+  // }
 
-    res.json(teachers);
+  res.json(teachers);
 });
 
 export default teacherRouter;
