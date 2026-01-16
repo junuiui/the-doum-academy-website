@@ -96,6 +96,7 @@ export default function ContactUsForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (submitting) return;
+    console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
 
     try {
       setSubmitting(true);
@@ -146,7 +147,7 @@ export default function ContactUsForm() {
         </div>
 
         <form
-          key={Date.now()}
+          // key={Date.now()}
           className={styles.form}
           onSubmit={handleSubmit}>
 

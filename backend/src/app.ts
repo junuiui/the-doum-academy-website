@@ -5,20 +5,24 @@ import { errorHandler } from './middlewares/error.middleware'
 import { addRoutes } from './config/routes.config'
 
 export function createApp() {
-    const app: express.Express = express()
+  const app: express.Express = express()
 
-    // Parse incoming JSON request bodies
-    app.use(express.json())
+  // Parse incoming JSON request bodies
+  app.use(express.json())
 
-    app.use(cors({
-        origin: 'http://localhost:5173',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        credentials: true // 쿠키/세션 전송 필요 시
-    }))
+  app.use(cors({
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:3001'
 
-    addRoutes(app);
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // 쿠키/세션 전송 필요 시
+  }))
 
-    app.use(errorHandler)
+  addRoutes(app);
 
-    return app;
+  app.use(errorHandler)
+
+  return app;
 }
