@@ -31,7 +31,7 @@ type Instructor = {
   core: LangText
   profileImage: string | null
   bio?: LangText
-  certificate?: LangText
+  certificate?: LangArray
   achievements?: LangText
   subject?: LangArray
   experience?: LangArray
@@ -59,7 +59,8 @@ export default function TeachersPage() {
     director: [],
     instructors: []
   })
-  const [isLoading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false);
 
   const pathname = usePathname()
   const isKo = pathname.startsWith('/ko')
@@ -69,11 +70,16 @@ export default function TeachersPage() {
     async function fetchTeachers() {
       try {
         setLoading(true)
+        setError(false);
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/teachers`)
-        const json = await res.json()
+
+        if (!res.ok) {
+          throw new Error('Server error');
+        }
+        const data = await res.json()
 
         // sanitize data: optional fields & arrays
-        const directors: Director[] = json
+        const directors: Director[] = data
           .filter((t: any) => t.role === 'director')
           .map((t: any) => ({
             id: t.id,
@@ -89,7 +95,7 @@ export default function TeachersPage() {
             core: t.core || { en: '', ko: '' },
           }))
 
-        const instructors: Instructor[] = json
+        const instructors: Instructor[] = data
           .filter((t: any) => t.role === 'instructor')
           .map((t: any) => ({
             id: t.id,
@@ -107,7 +113,9 @@ export default function TeachersPage() {
 
         setData({ director: directors, instructors: instructors })
       } catch (err) {
-        console.error('Failed to fetch teachers', err)
+        console.error('Failed to fetch teachers', err);
+        setError(true);
+        setData({ director: [], instructors: [] });
       } finally {
         setLoading(false)
       }
@@ -116,7 +124,14 @@ export default function TeachersPage() {
     fetchTeachers()
   }, [])
 
-  if (isLoading) return <div>Loading...</div>
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>Failed to load teachers.</div>
+  }
+
   if (!data) return <div>No teachers found</div>
 
   return (
