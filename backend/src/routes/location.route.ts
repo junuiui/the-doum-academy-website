@@ -11,3 +11,5 @@ locationRouter.get('/', async (req, res) => {
     res.status(500).json({ message: 'Failed to fetch locations' })
   }
 })
+
+export default locationRouter;
