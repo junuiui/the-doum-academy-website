@@ -10,18 +10,6 @@ const teacherRouter = Router();
 teacherRouter.get('/', async (req, res) => {
   const teachers = await Teacher.find().sort({ id: 1 });
 
-  // Language option
-  // const { lang } = req.query;
-
-  // if (lang === 'en' || lang === 'ko') {
-  //     const localized = teachers.map(s => ({
-  //         id: s.id,
-  //         title: s.title[lang],
-  //         body: s.body.map(b => b[lang]),
-  //     }));
-  //     return res.json(localized);
-  // }
-
   res.json(teachers);
 });
 
