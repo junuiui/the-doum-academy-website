@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   User, GraduationCap, School, Phone, MessageSquare, BookOpen, Send, MapPin, SquarePen
 } from 'lucide-react';
-import { locationData } from './location';
 import styles from './ContactUsForm.module.css';
 import Toast from '../ui/Toast';
 import { usePathname } from 'next/navigation';
@@ -55,7 +54,7 @@ type Form = {
   englishTest: EnglishTest | '';
   apCourse: string;
   otherCourse: string;
-  location: keyof typeof locationData | '';
+  location: string| '';
   message: string;
 };
 
@@ -70,12 +69,22 @@ const initialForm: Form = {
   englishTest: '',
   apCourse: '',
   otherCourse: '',
-  location: 'portmoody',
+  location: '',
   message: '',
 };
 
-export default function ContactUsForm() {
+type LocationType = {
+  _id: string;
+  location: string;
+  address: string;
+  phone: string;
+  email: string;
+  mapEmbedLink: string;
+  directionsBase: string;
+};
 
+export default function ContactUsForm() {
+  const [locations, setLocations] = useState<LocationType[]>([]);
   const [toastVisible, setToastVisible] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -83,6 +92,18 @@ export default function ContactUsForm() {
   const pathname = usePathname();
   const isKo = pathname.startsWith('/ko');
   const lang = isKo ? 'ko' : 'en';
+
+  useEffect(() => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/locations`)
+      .then(res => res.json())
+      .then(data => {
+        setLocations(data);
+        if (data.length > 0) {
+          setForm(prev => ({ ...prev, location: data[0]._id }));
+        }
+      })
+      .catch(err => console.error(err));
+  }, []);
 
   const [form, setForm] = useState<Form>(initialForm);
 
@@ -314,22 +335,18 @@ export default function ContactUsForm() {
             </div>
           )}
 
-          {/* Location Selection */}
+          {/* Location Buttons */}
           <div className={styles.formGroup}>
-            <label className={styles.label}>
-              <MapPin size={18} className={styles.labelIcon} />
-              {lang === 'ko' ? "학원 위치" : "Location *"}
-            </label>
+            <label><MapPin size={18} /> {lang === 'ko' ? '학원 위치' : 'Location *'}</label>
             <div className={styles.locationButtons}>
-              {Object.keys(locationData).map((key) => (
+              {locations.map(loc => (
                 <button
-                  key={key}
+                  key={loc._id}
                   type="button"
-                  className={`${styles.locationButton} ${form.location === key ? styles.locationButtonActive : ''
-                    }`}
-                  onClick={() => updateForm('location', key as keyof typeof locationData)}
+                  className={`${styles.locationButton} ${form.location === loc._id ? styles.locationButtonActive : ''}`}
+                  onClick={() => updateForm('location', loc._id)}
                 >
-                  {locationData[key as keyof typeof locationData].name}
+                  {loc.location}
                 </button>
               ))}
             </div>
