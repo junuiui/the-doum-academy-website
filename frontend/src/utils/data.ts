@@ -3,8 +3,8 @@ export type RecordItem = {
     "Year": number
     "School": string
     "Major": string
-    "Scholarship Name": string
-    "Scholarship Amount": number
+    "ScholarshipName": string
+    "ScholarshipAmount": number
 }
 
 export function cleanData(data: RecordItem[], year: string) {
@@ -56,7 +56,7 @@ export function scholarshipBySchool(data: RecordItem[]) {
     const map: Record<string, number> = {}
 
     data.forEach(d => {
-        map[d.School] = (map[d.School] || 0) + d['Scholarship Amount']
+        map[d.School] = (map[d.School] || 0) + d['ScholarshipAmount']
     })
 
     return Object.entries(map).map(([label, value]) => ({ label, value }))
@@ -64,13 +64,13 @@ export function scholarshipBySchool(data: RecordItem[]) {
 
 export function scholarshipByName(data: RecordItem[]) {
     return data
-        .filter(d => d['Scholarship Amount'] > 0)
+        .filter(d => d['ScholarshipAmount'] > 0)
         .map(d => ({
             Name: d.Name,
             Year: d.Year,
             School: d.School,
-            ScholarshipName: d['Scholarship Name'],
-            ScholarshipAmount: d['Scholarship Amount'],
+            ScholarshipName: d['ScholarshipName'],
+            ScholarshipAmount: d['ScholarshipAmount'],
         }))
 }
 
