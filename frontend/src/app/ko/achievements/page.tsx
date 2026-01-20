@@ -64,6 +64,8 @@ export default function AchievementPage() {
         )
     }
 
+    console.log(rawData);
+
     return (
         <main className={styles.pageContainer}>
             <div className={styles.achievementCard}>
