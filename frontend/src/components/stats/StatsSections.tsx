@@ -9,55 +9,57 @@ import styles from './StatsSection.module.css'
 import schoolColors from '../../data/schoolColor.json'
 
 import {
-    cleanData,
-    countBySchool,
-    countByMajorCategory,
-    scholarshipBySchool,
-    scholarshipByName,
-    RecordItem,
-    sortBy
+  cleanData,
+  countBySchool,
+  countByMajorCategory,
+  scholarshipBySchool,
+  scholarshipByName,
+  RecordItem,
+  sortBy
 } from '../../utils/data'
 import ScholarshipList from './ScholarshipList'
 
 type Props = {
-    rawData: RecordItem[]
-    year: string
+  rawData: RecordItem[]
+  year: string
 }
 
 export default function StatsSection({ rawData, year }: Props) {
-    const pathname = usePathname()
-    const isKo = pathname.startsWith('/ko')
-    const lang = isKo ? 'ko' : 'en'
+  const pathname = usePathname()
+  const isKo = pathname.startsWith('/ko')
+  const lang = isKo ? 'ko' : 'en'
 
-    const data = cleanData(rawData, year)
+  const data = cleanData(rawData, year)
 
-    const schoolData = countBySchool(data)
-    const schoolDataAsc = sortBy(schoolData, 'value', 'desc')
-    const scholarshipData = scholarshipBySchool(data)
-    const scholarshipDataName = scholarshipByName(data);
+  const schoolData = countBySchool(data)
+  const schoolDataAsc = sortBy(schoolData, 'value', 'desc')
 
-    const totalScholarship = scholarshipData.reduce((a, b) => a + b.value, 0)
-    const scholarshipCount = data.filter(d => d['Scholarship Amount'] > 0).length
+  const scholarshipData = scholarshipBySchool(data)
+  const scholarshipDataName = scholarshipByName(data);
 
-    return (
-        <section className={styles.container}>
-            <SummaryCards
-                totalOffers={data.length}
-                scholarshipCount={scholarshipCount}
-                totalScholarship={totalScholarship}
-            />
+  const totalScholarship = scholarshipData.reduce((a, b) => a + b.value, 0)
+  console.log(scholarshipData)
+  const scholarshipCount = data.filter(d => d['Scholarship Amount'] > 0).length
 
-            <HorizontalBarChart
-                title={lang === 'ko' ? "대학별 진학 현황" : "University Breakdown"}
-                data={schoolDataAsc}
-                colors={schoolColors}
-            />
+  return (
+    <section className={styles.container}>
+      <SummaryCards
+        totalOffers={data.length}
+        scholarshipCount={scholarshipCount}
+        totalScholarship={totalScholarship}
+      />
 
-            <ScholarshipList
-                title={lang === 'ko' ? '대학별 장학금 규모' : "Scholarship Amount by University"}
-                scholarships={scholarshipDataName}
+      <HorizontalBarChart
+        title={lang === 'ko' ? "대학별 진학 현황" : "University Breakdown"}
+        data={schoolDataAsc}
+        colors={schoolColors}
+      />
 
-            />
-        </section>
-    )
+      <ScholarshipList
+        title={lang === 'ko' ? '대학별 장학금 규모' : "Scholarship Amount by University"}
+        scholarships={scholarshipDataName}
+
+      />
+    </section>
+  )
 }
