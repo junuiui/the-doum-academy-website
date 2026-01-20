@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import teachersData from './teachers.json';
-import { Teacher } from '../models/teachers.model';
+import { Teacher } from '../models/teacher.model';
 
 dotenv.config();
 

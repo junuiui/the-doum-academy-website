@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { InquiryModel } from "../models/inquiry.model";
+import { Inquiry } from "../models/inquiry.model";
 
 // POST /inquiries
 export const createInquiry = async (
@@ -8,7 +8,7 @@ export const createInquiry = async (
     next: NextFunction
 ) => {
     try {
-        const inquiry = await InquiryModel.create(req.body);
+        const inquiry = await Inquiry.create(req.body);
 
         res.status(201).json({
             success: true,
