@@ -9,6 +9,8 @@ import { Lightbox } from '../../../components/features/Lighbox'
 
 import { GalleryImageInterface } from '../../../interface/GalleryImage.interface'
 
+
+// @todo need to fetch the images
 const images: Record<number, GalleryImageInterface[]> = {
   2025: [
   ],
@@ -91,7 +93,9 @@ export default function AchievementPage() {
     )
   }
 
-  console.log("Page: ", rawData);
+  if (loading) {
+    return <div className={styles.pageContainer}>Loading...</div>
+  }
 
   return (
     <main className={styles.pageContainer}>
