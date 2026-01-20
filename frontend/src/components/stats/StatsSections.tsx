@@ -38,8 +38,7 @@ export default function StatsSection({ rawData, year }: Props) {
   const scholarshipDataName = scholarshipByName(data);
 
   const totalScholarship = scholarshipData.reduce((a, b) => a + b.value, 0)
-  console.log(scholarshipData)
-  const scholarshipCount = data.filter(d => d['Scholarship Amount'] > 0).length
+  const scholarshipCount = data.filter(d => d['ScholarshipAmount'] > 0).length
 
   return (
     <section className={styles.container}>

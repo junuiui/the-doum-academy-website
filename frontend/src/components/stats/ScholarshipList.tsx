@@ -16,8 +16,6 @@ type Props = {
 }
 
 export default function ScholarshipList({ title, scholarships }: Props) {
-    // console.log(scholarships)
-
     return (
         <div className={styles.container}>
 
