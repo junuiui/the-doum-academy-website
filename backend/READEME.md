@@ -8,4 +8,4 @@
 `npm i -D @types/node @types/express`
 `npm i dotenv`
 `npm i mongodb mongoose`
-
+`npm install nodemailer`
