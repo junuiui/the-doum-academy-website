@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { Popup } from '../components/ui/Popup';
 import { Award, Users, GraduationCap, TrendingUp, X, ArrowRight, Star, Quote } from 'lucide-react';
+import DomeGallery from '../components/features/DomeGallery';
 
 const DUMMY_POPUP = {
     'en': [
@@ -115,8 +116,6 @@ const reviews = [
     }
 ];
 
-
-
 export default function Home() {
 
     const pathname = usePathname()
@@ -188,7 +187,7 @@ export default function Home() {
 
             {/* Home content */}
             <div className={styles.home}>
-                Home Content 1
+                <DomeGallery />
                 <div className={styles.banner}>
                     <div className={styles.mainBanner}>
                         Main Banner
