@@ -11,7 +11,7 @@
    - `/inquiries` GET 데이터 렌더링
 5. ~~(Optional) 사용자 알림~~
    - 제출 성공/실패 시 Toast 메시지 표시
-6. Gallary, Achievement
+6. Gallary, Achievement pictures  
 
 ## Back
 1. ~~Front 연결~~
