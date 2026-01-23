@@ -4,21 +4,29 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
 import { Popup } from '../../components/ui/Popup';
-import { Award, Users, GraduationCap, TrendingUp, X, ArrowRight, Star, Quote } from 'lucide-react';
 import DomeGallery from '../../components/features/DomeGallery';
 
 const DUMMY_POPUP = {
   'en': [
-    { id: 'id1', title: 'title 1', bodies: ['body 1', 'body 2', 'body 3'] },
+    {
+      id: 'id1', title: 'From Dev', bodies: ["demo purposes only",
+        "Still under development",
+        "This site is deployed just to show the current progress",
+        "Not 100% finished yet. Thanks for your understanding!",
+        "For more inquiry, please contact jhong980821@outlook.com"]
+    },
     { id: 'id2', title: 'title 2', bodies: ['body 1', 'body 2', 'body 3'] },
     { id: 'id3', title: 'title 3', bodies: ['body 1', 'body 2', 'body 3'] },
   ],
   'ko': [
-    { id: 'id1k', title: '제목1', bodies: ['내용 1', '내용 2', '내용 3'] },
+    {
+      id: 'id1k', title: 'Dev로 부터', bodies: ["아직 개발 중이에요",
+        "현재 상태를 보여주기 위해 임시로 배포된 사이트입니다.",
+        "완성 전이라 일부 기능이 부족할 수 있어요!"]
+    },
     { id: 'id2k', title: '제목2', bodies: ['내용 1', '내용 2', '내용 3'] },
     { id: 'id3k', title: '제목3', bodies: ['내용 1', '내용 2', '내용 3'] },
   ]
-
 };
 
 // TODO: from google review? 
@@ -89,14 +97,6 @@ const reviews = [
 ];
 
 export default function Home() {
-  useEffect(() => {
-    alert(
-      "아직 개발 중이에요\n\n" +
-      "현재 상태를 보여주기 위해 임시로 배포된 사이트입니다.\n" +
-      "완성 전이라 일부 기능이 부족할 수 있어요!"
-    );
-  }, []);
-
 
   const pathname = usePathname()
   const isKo = pathname.startsWith('/ko')
