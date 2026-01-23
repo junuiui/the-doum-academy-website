@@ -11,7 +11,7 @@
     // For nodejs:
     // "lib": ["esnext"],
     "types": [
-      "node"
+      "node" 
     ],
     "typeRoots": ["./node_modules/@types"],
     // and npm install -D @types/node

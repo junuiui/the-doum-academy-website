@@ -3,7 +3,7 @@ import { Achievement } from '../models/achievement.model'
 
 const achievementRouter = Router()
 
-achievementRouter.get('/', async (re: Request, res: Response) => {
+achievementRouter.get('/', async (req: Request, res: Response) => {
   try {
     const {
       year,
