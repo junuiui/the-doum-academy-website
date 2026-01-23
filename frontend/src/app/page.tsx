@@ -21,34 +21,6 @@ const DUMMY_POPUP = {
 
 };
 
-// TODO: should I make the function for calculating all the acheivement stats?
-const DUMMY_ACHIEVEMENT = [
-    {
-        icon: Users,
-        number: '500+',
-        label: 'Students Enrolled',
-        subtitle: 'in 3 years'
-    },
-    {
-        icon: GraduationCap,
-        number: '450+',
-        label: 'University Acceptances',
-        subtitle: 'Top tier schools'
-    },
-    {
-        icon: Award,
-        number: '95%',
-        label: 'Success Rate',
-        subtitle: 'Target achievement'
-    },
-    {
-        icon: TrendingUp,
-        number: '15%',
-        label: 'Average Grade Improvement',
-        subtitle: 'Within 6 months'
-    }
-];
-
 // TODO: from google review? 
 const reviews = [
     {
