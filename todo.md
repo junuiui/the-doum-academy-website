@@ -31,3 +31,4 @@
 <!-- general -->
 ## General
 1. Reload --> Reload components?
+2. Talk to client
