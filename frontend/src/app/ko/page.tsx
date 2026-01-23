@@ -89,12 +89,14 @@ const reviews = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    alert(
+      "아직 개발 중이에요\n\n" +
+      "현재 상태를 보여주기 위해 임시로 배포된 사이트입니다.\n" +
+      "완성 전이라 일부 기능이 부족할 수 있어요!"
+    );
+  }, []);
 
-  alert(
-    "아직 개발 중이에요\n\n" +
-    "현재 상태를 보여주기 위해 임시로 배포된 사이트입니다.\n" +
-    "완성 전이라 일부 기능이 부족할 수 있어요!"
-  );
 
   const pathname = usePathname()
   const isKo = pathname.startsWith('/ko')

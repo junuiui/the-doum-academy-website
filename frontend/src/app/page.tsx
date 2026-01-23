@@ -90,13 +90,16 @@ const reviews = [
 
 export default function Home() {
 
-  alert(
-    "demo purposes only\n" +
-    "Still under development\n\n" +
-    "This site is deployed just to show the current progress.\n" +
-    "Not 100% finished yet. Thanks for your understanding!" +
-    "For more inquiry, please contact jhong980821@outlook.com"
-  );
+  useEffect(() => {
+    alert(
+      "demo purposes only\n" +
+      "Still under development\n\n" +
+      "This site is deployed just to show the current progress.\n" +
+      "Not 100% finished yet. Thanks for your understanding!" +
+      "For more inquiry, please contact jhong980821@outlook.com"
+    );
+  }, [])
+
 
   const pathname = usePathname()
   const isKo = pathname.startsWith('/ko')
