@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import styles from './page.module.css';
-import { Popup } from '../components/ui/Popup';
+import { Popup } from '../../components/ui/Popup';
 import { Award, Users, GraduationCap, TrendingUp, X, ArrowRight, Star, Quote } from 'lucide-react';
-import DomeGallery from '../components/features/DomeGallery';
+import DomeGallery from '../../components/features/DomeGallery';
 
 const DUMMY_POPUP = {
   'en': [
