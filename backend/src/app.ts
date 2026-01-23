@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 
 import { errorHandler } from './middlewares/error.middleware'
@@ -15,6 +15,7 @@ export function createApp() {
       'http://localhost:5173',
       'http://localhost:3001',
       'http://localhost:3000',
+      'https://the-doum-academy-website.vercel.app',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // 쿠키/세션 전송 필요 시
@@ -23,6 +24,10 @@ export function createApp() {
   addRoutes(app);
 
   app.use(errorHandler)
+
+  app.get('/', (req: Request, res: Response) => {
+    res.send('The Doum Academy API Server is Running!');
+  });
 
   return app;
 }
