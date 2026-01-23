@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { NextFunction, Request, Response, Router } from 'express';
 import { Inquiry } from '../models/inquiry.model';
 import { createInquiry } from '../controllers/inquiry.controllers';
 
@@ -20,7 +20,7 @@ inquiryRouter.post('/', createInquiry);
 /**
  * GET /inquiries
  */
-inquiryRouter.get('/', async (req, res, next) => {
+inquiryRouter.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const inquiries = await Inquiry.find().sort({ createdAt: -1 });
     res.json(inquiries);

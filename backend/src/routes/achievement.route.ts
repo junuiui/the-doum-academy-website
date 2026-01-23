@@ -1,9 +1,9 @@
-import { Router } from 'express'
+import { Request, Response, Router } from 'express'
 import { Achievement } from '../models/achievement.model'
 
 const achievementRouter = Router()
 
-achievementRouter.get('/', async (req, res) => {
+achievementRouter.get('/', async (re: Request, res: Response) => {
   try {
     const {
       year,
