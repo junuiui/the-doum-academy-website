@@ -1,49 +1,74 @@
-# The Doum Academy Website
+# The Doum Academy
 
-Welcome to The Doum Academy Website project. This repository contains the source code for both the frontend and backend of the application.
+**Official Website Repository**  
+*Located in Port Moody, British Columbia*
 
-## Project Structure
+---
 
-This project is organized as a monorepo-style structure:
+## Overview
 
-- **`frontend/`**: The client-side application built with Next.js 16 and React 19.
-- **`backend/`**: The server-side API application built with Node.js, Express, and TypeScript.
+Welcome to the official source code repository for **The Doum Academy** website. This platform serves as the digital front door for our academy, providing information on our services, achievements, and facilitating communication with students and parents in the Port Moody community.
 
-## Quick Start
+The application is architected as a modern full-stack solution, ensuring performance, scalability, and a seamless user experience.
 
-You can run the frontend and backend independently.
+## Technical Architecture
+
+This project adopts a monorepo structure to maintain separation of concerns while keeping the codebase unified.
+
+### Frontend
+The client-side application is built to be responsive and performant.
+- **Framework**: Next.js 16 (App Router)
+- **Library**: React 19
+- **Styling**: Vanilla CSS, CSS Modules
+- **Language**: TypeScript
+
+### Backend
+The server-side application handles data persistence and business logic.
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB (Mongoose ORM)
+- **Language**: TypeScript
+
+## Getting Started
 
 ### Prerequisites
+Ensure the following are installed on your system:
+- Node.js (v18+ LTS)
+- npm (Node Package Manager)
 
-- Node.js (v18 or higher recommended)
-- npm
+### Installation & Execution
 
-### Running the Frontend
+The frontend and backend services operate independently. You may run them concurrently for full local development.
 
+#### Frontend Application
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
+*Access via: [http://localhost:3000](http://localhost:3000)*
 
-The frontend will start on [http://localhost:3000](http://localhost:3000).
-
-### Running the Backend
-
+#### Backend Service
 ```bash
 cd backend
 npm install
 npm run dev
 ```
-
-The backend will start on the configured port (default is often 4000 or 5000, check `.env`).
+*Port configuration is handled via environment variables (default: 4000/5000).*
 
 ## Deployment
 
-- **Frontend**: Recommended deployment on [Vercel](https://vercel.com).
-- **Backend**: Can be deployed on any Node.js hosting service (e.g., AWS, Heroku, Railway).
+- **Frontend**: Optimized for deployment on scalable platforms such as Vercel.
+- **Backend**: Compatible with standard Node.js hosting environments (AWS, Azure, Railway, etc.).
 
-## Current Status
+## Project Status
 
-- **Frontend**: Services page, Inquiry form, and basic routing are implemented.
-- **Backend**: Basic API setup, MongoDB connection, and Inquiry submission endpoints are ready.
+**Current Phase**: Active Development
+
+- **Services & Inquiry**: Fully implemented user interfaces for service listings and contact forms.
+- **API Integration**: Backend endpoints established for inquiry processing and data management.
+- **Next Steps**: Development of administrative dashboards, gallery features, and Google Reviews integration.
+
+---
+
+*© The Doum Academy. All Rights Reserved.*
