@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 import styles from './page.module.css'
 import StatsSection from '../../components/stats/StatsSections'
 import { Slide } from '../../components/features/Slide'
-import { Lightbox } from '../../components/features/Lighbox'
+import { Lightbox } from '../../components/features/Lightbox'
 
 import { GalleryImageInterface } from '../../interface/GalleryImage.interface'
 

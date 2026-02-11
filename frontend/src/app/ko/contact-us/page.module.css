@@ -1,20 +1,22 @@
 .pageContainer {
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-    /* max-width: 1280px; */
-    margin: 0 auto;
-    padding: 2rem 0rem;
-    width: 100%;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
 }
 
 .columnGrid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
-@media (min-width: 1024px) {
-    .columnGrid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 2rem 1.5rem;
+  }
+
+  .columnGrid {
+    gap: 2rem;
+  }
 }

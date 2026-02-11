@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './HomeContent.module.css';
 import { Popup } from '../ui/Popup';
 import DomeGallery from '../features/DomeGallery';
-import { DUMMY_POPUP, reviews } from '../../data/homeData';
+import { DUMMY_POPUP, reviews, heroContent, featureBanners } from '../../data/homeData';
 
 interface HomeContentProps {
   lang: 'en' | 'ko';
@@ -12,16 +12,18 @@ interface HomeContentProps {
 
 export default function HomeContent({ lang }: HomeContentProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
+  const hero = heroContent[lang];
+  const features = featureBanners[lang];
 
   const nextSlide = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: sliderRef.current.clientWidth, behavior: 'smooth' });
+      sliderRef.current.scrollBy({ left: 400, behavior: 'smooth' });
     }
   };
 
   const prevSlide = () => {
     if (sliderRef.current) {
-      sliderRef.current.scrollBy({ left: -sliderRef.current.clientWidth, behavior: 'smooth' });
+      sliderRef.current.scrollBy({ left: -400, behavior: 'smooth' });
     }
   };
 
@@ -75,46 +77,59 @@ export default function HomeContent({ lang }: HomeContentProps) {
         ))}
       </div>
 
-      {/* Home content */}
-      <div className={styles.home}>
+      {/* Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroContent}>
+          <h1 className={styles.heroTitle}>{hero.title}</h1>
+          <p className={styles.heroSubtitle}>{hero.subtitle}</p>
+          <button className={styles.ctaButton}>{hero.cta}</button>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className={styles.featuresGrid}>
+        {features.map((f, i) => (
+          <div key={i} className={styles.featureCard}>
+            <h3 className={styles.featureTitle}>{f.title}</h3>
+            <p className={styles.featureDesc}>{f.description}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Gallery Section */}
+      <div className={styles.galleryWrapper}>
         <DomeGallery />
-        <div className={styles.banner}>
-          <div className={styles.mainBanner}>
-            Main Banner
-          </div>
-          <div className={styles.subBanner}>
-            Sub Banner 1
-          </div>
-          <div className={styles.subBanner}>
-            Sub Banner 2
-          </div>
-          <div className={styles.subBanner}>
-            Sub Banner 3
-          </div>
-        </div>
       </div>
 
-      <div className={styles.testimonialWrapper}>
-        <button className={styles.prevBtn} onClick={prevSlide}>‹</button>
-
-        <div className={styles.testimonialSlider} ref={sliderRef}>
-          {reviews.map((r, i) => (
-            <div key={i} className={styles.testimonialCard}>
-              <div className={styles.header}>
-                <span className={styles.name}>{r.name}</span>
-                <span className={styles.grade}>{r.grade}</span>
-              </div>
-              <div className={styles.university}>{r.university}</div>
-              <div className={styles.text}>{r.text}</div>
-              <div className={styles.rating}>
-                {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
-              </div>
-            </div>
-          ))}
+      {/* Testimonials Section */}
+      <section className={styles.testimonialSection}>
+        <div className={styles.sectionHeader}>
+          <h2 className={styles.sectionTitle}>
+            {lang === 'en' ? 'Success Stories' : '성공 스토리'}
+          </h2>
         </div>
 
-        <button className={styles.nextBtn} onClick={nextSlide}>›</button>
-      </div>
+        <div className={styles.testimonialWrapper}>
+          <button className={`${styles.navBtn} ${styles.prevBtn}`} onClick={prevSlide}>‹</button>
+
+          <div className={styles.testimonialSlider} ref={sliderRef}>
+            {reviews.map((r, i) => (
+              <div key={i} className={styles.testimonialCard}>
+                <div className={styles.rating}>
+                  {'★'.repeat(r.rating)}{'☆'.repeat(5 - r.rating)}
+                </div>
+                <p className={styles.text}>"{r.text}"</p>
+                <div className={styles.userInfo}>
+                  <span className={styles.name}>{r.name}</span>
+                  <span className={styles.univ}>{r.university} • {r.grade}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button className={`${styles.navBtn} ${styles.nextBtn}`} onClick={nextSlide}>›</button>
+        </div>
+      </section>
     </div>
   );
 }
