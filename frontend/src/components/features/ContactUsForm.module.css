@@ -175,7 +175,7 @@
   gap: 1rem;
   box-shadow: 0 10px 20px rgba(0, 51, 102, 0.15);
   transition: all 0.3s ease;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .submitButton:hover {

@@ -54,7 +54,7 @@ type Form = {
   englishTest: EnglishTest | '';
   apCourse: string;
   otherCourse: string;
-  location: string| '';
+  location: string | '';
   message: string;
 };
 
@@ -383,7 +383,7 @@ export default function ContactUsForm() {
             disabled={submitting}
           >
             <Send size={20} />
-            <span>Submit Inquiry</span>
+            <span>{lang === 'ko' ? "문의하기" : "Submit Inquiry"}</span>
           </button>
         </form>
       </section>
