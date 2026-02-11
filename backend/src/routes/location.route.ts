@@ -1,15 +1,8 @@
-import { Router, Request, Response } from "express";
-import { Location } from "../models/location.model";
+import { Router } from "express";
+import { getAllLocations } from "../controllers/location.controllers";
 
 const locationRouter = Router();
 
-locationRouter.get('/', async (req: Request, res: Response) => {
-  try {
-    const locations = await Location.find().sort({ location: 1 })
-    res.json(locations)
-  } catch (e) {
-    res.status(500).json({ message: 'Failed to fetch locations' })
-  }
-})
+locationRouter.get('/', getAllLocations)
 
 export default locationRouter;
