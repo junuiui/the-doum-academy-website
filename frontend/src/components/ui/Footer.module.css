@@ -1,6 +1,7 @@
 /* src/components/ui/Footer.module.css */
 
 .footer {
+  margin-top: 4rem;
   padding: 3rem 2rem;
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
