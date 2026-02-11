@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 import styles from './HomeContent.module.css';
 import { Popup } from '../ui/Popup';
 import { DUMMY_POPUP, reviews, heroContent, featureBanners } from '../../data/homeData';
@@ -13,6 +14,7 @@ export default function HomeContent({ lang }: HomeContentProps) {
   const sliderRef = useRef<HTMLDivElement>(null);
   const hero = heroContent[lang];
   const features = featureBanners[lang];
+  const contactPath = lang === 'ko' ? '/ko/contact-us' : '/contact-us';
 
   const nextSlide = () => {
     if (sliderRef.current) {
@@ -81,7 +83,9 @@ export default function HomeContent({ lang }: HomeContentProps) {
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>{hero.title}</h1>
           <p className={styles.heroSubtitle}>{hero.subtitle}</p>
-          <button className={styles.ctaButton}>{hero.cta}</button>
+          <Link href={contactPath}>
+            <button className={styles.ctaButton}>{hero.cta}</button>
+          </Link>
         </div>
       </section>
 
