@@ -7,6 +7,7 @@ import { User, Mail, Lock, Briefcase, IdCard } from 'lucide-react';
 import styles from '../admin.module.css';
 
 export default function AdminRegisterPage() {
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     role: 'Instructor',
@@ -23,8 +24,38 @@ export default function AdminRegisterPage() {
       return;
     }
     console.log('Registration attempt:', formData);
+    setSubmitted(true);
     // Future backend integration
   };
+
+  if (submitted) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.authCard}>
+          <div className={styles.header}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ backgroundColor: 'rgba(212, 175, 55, 0.1)', padding: '1.5rem', borderRadius: '50%' }}>
+                <IdCard size={48} color="var(--secondary-gold)" />
+              </div>
+            </div>
+            <h1 className={styles.title}>Registration Received</h1>
+            <p className={styles.subtitle}>Your account is currently pending approval.</p>
+          </div>
+
+          <div style={{ textAlign: 'center', marginBottom: '2rem', lineHeight: '1.6', color: 'var(--text-dark)' }}>
+            <p>Thank you for registering. Your account must be reviewed and approved by <strong>Devin</strong> or <strong>Kate</strong> before you can access the admin dashboard.</p>
+            <p style={{ marginTop: '1rem', fontStyle: 'italic', fontSize: '0.9rem' }}>You will receive an email once your account has been activated.</p>
+          </div>
+
+          <div className={styles.footerLinks}>
+            <Link href="/admin/login" className={styles.link}>
+              Return to Login
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.container}>

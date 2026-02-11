@@ -3,10 +3,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Lock, User } from 'lucide-react';
 import styles from '../admin.module.css';
 
 export default function AdminLoginPage() {
+  const router = useRouter();
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState({
     loginId: '',
     password: ''
@@ -14,8 +18,18 @@ export default function AdminLoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Login attempt:', formData);
-    // Future backend integration
+    setError('');
+    setIsPending(false);
+
+    // For demonstration/testing logic:
+    if (formData.loginId === 'test') {
+      setIsPending(true);
+    } else if (formData.loginId === 'admin' && formData.password === 'password') {
+      // Mock success and redirect
+      router.push('/admin/dashboard');
+    } else {
+      setError('Invalid ID or password. Please try again.');
+    }
   };
 
   return (
@@ -25,6 +39,38 @@ export default function AdminLoginPage() {
           <h1 className={styles.title}>Admin Login</h1>
           <p className={styles.subtitle}>Welcome back, please login to your account</p>
         </div>
+
+        {isPending && (
+          <div style={{
+            backgroundColor: 'rgba(212, 175, 55, 0.1)',
+            border: '1px solid var(--secondary-gold)',
+            padding: '1rem',
+            borderRadius: '12px',
+            marginBottom: '1.5rem',
+            color: 'var(--text-dark)',
+            fontSize: '0.9rem',
+            textAlign: 'center'
+          }}>
+            <strong>Account Pending Approval</strong>
+            <p style={{ marginTop: '0.5rem' }}>Your account has not been activated yet. Please wait for Devin or Kate to approve your registration.</p>
+          </div>
+        )}
+
+        {error && (
+          <div style={{
+            backgroundColor: 'rgba(239, 68, 68, 0.05)',
+            border: '1px solid #ef4444',
+            padding: '1rem',
+            borderRadius: '12px',
+            marginBottom: '1.5rem',
+            color: '#ef4444',
+            fontSize: '0.9rem',
+            textAlign: 'center'
+          }}>
+            <strong>Login Failed</strong>
+            <p style={{ marginTop: '0.25rem' }}>{error}</p>
+          </div>
+        )}
 
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
