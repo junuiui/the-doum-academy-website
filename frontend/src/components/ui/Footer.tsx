@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.businessInfo}>
           <p><strong>The Doum Academy</strong></p>
           <p>Address: 3003 St Johns St, Port Moody, BC V3H 0L4 | Tel: 604-000-0000</p>
-          <p>Registration No: 000-00-00000 | Principal: Devin Shin</p>
+          <p>Registration No: 000-00-00000 | Principal: Devin Kim</p>
         </div>
         <div className={styles.copyright}>
           © 2025 The Doum Academy. All rights reserved.
