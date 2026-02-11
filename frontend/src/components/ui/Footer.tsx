@@ -1,5 +1,7 @@
+/* src/components/ui/Footer.tsx */
 "use client";
 
+import Link from 'next/link';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -12,7 +14,8 @@ export default function Footer() {
           <p>Registration No: 000-00-00000 | Directors: Devin Kim, Kate Buiatti</p>
         </div>
         <div className={styles.copyright}>
-          © 2025 The Doum Academy. All rights reserved.
+          <p>© 2025 The Doum Academy. All rights reserved.</p>
+          <Link href="/admin/login" className={styles.adminLink}>Admin</Link>
         </div>
       </footer>
     </div>
