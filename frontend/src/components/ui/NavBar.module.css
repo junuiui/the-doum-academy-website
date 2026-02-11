@@ -1,57 +1,106 @@
-/* 기존 데스크탑 nav */
 .navLinks {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li {
+  position: relative;
 }
 
 .navLinks a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding-bottom: 4px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  display: block;
 }
 
 .navLinks a:hover {
-    color: #000;
+  color: var(--primary-blue);
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--secondary-gold);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navLinks a:hover::after,
+.active::after {
+  width: 100% !important;
 }
 
 .active {
-    color: #000;
-    border-bottom: 2px solid #000;
+  color: var(--primary-blue) !important;
 }
 
 /* 모바일 */
 @media (max-width: 980px) {
-    .navLinks {
-        display: none;
-        flex-direction: row;
-        background: white;
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px 50px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 6px;
-        z-index: 100;
-        white-space: nowrap;
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    padding: 6rem 2rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+    z-index: 999;
+    gap: 2rem;
+    animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100%);
     }
 
-    .navLinks.showMobile {
-        display: flex;
+    to {
+      transform: translateX(0);
     }
+  }
 
-    .hamburger {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 2.5rem;
-    }
+  .navLinks.showMobile {
+    display: flex;
+  }
 
-    .mobileNav {
-        position: relative;
-    }
+  .hamburger {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .hamburger:hover {
+    transform: scale(1.05);
+    background: #004488;
+  }
+
+  .mobileNav {
+    position: relative;
+  }
 }
