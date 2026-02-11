@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './HomeContent.module.css';
 import { Popup } from '../ui/Popup';
-import DomeGallery from '../features/DomeGallery';
 import { DUMMY_POPUP, reviews, heroContent, featureBanners } from '../../data/homeData';
 
 interface HomeContentProps {
@@ -96,10 +95,6 @@ export default function HomeContent({ lang }: HomeContentProps) {
         ))}
       </section>
 
-      {/* Gallery Section */}
-      <div className={styles.galleryWrapper}>
-        <DomeGallery />
-      </div>
 
       {/* Testimonials Section */}
       <section className={styles.testimonialSection}>
