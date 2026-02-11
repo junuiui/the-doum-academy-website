@@ -1,5 +1,4 @@
 # The Doum Academy
-
 **Official Website Repository**  
 *Located in Port Moody, British Columbia*
 
@@ -7,67 +6,37 @@
 
 ## Overview
 
-Welcome to the official source code repository for **The Doum Academy** website. This platform serves as the digital front door for our academy, providing information on our services, achievements, and facilitating communication with students and parents in the Port Moody community.
-
-The application is architected as a modern full-stack solution, ensuring performance, scalability, and a seamless user experience.
+Welcome to the official source code repository for **The Doum Academy** website. This platform serves as the digital front door for our academy, featuring a premium **"Royal Blue & Gold"** aesthetic with advanced glassmorphism. It provides a fully localized experience in both English and Korean.
 
 ## Technical Architecture
 
-This project adopts a monorepo structure to maintain separation of concerns while keeping the codebase unified.
+This project adopts a monorepo structure with a modern full-stack implementation.
 
 ### Frontend
-The client-side application is built to be responsive and performant.
-- **Framework**: Next.js 16 (App Router)
+- **Framework**: Next.js 15+ (App Router)
 - **Library**: React 19
-- **Styling**: Vanilla CSS, CSS Modules
+- **Design Core**: Premium Glassmorphism, CSS Modules, HSL Color System
+- **Animation**: `@react-spring/web`, `Framer Motion`
 - **Language**: TypeScript
 
 ### Backend
-The server-side application handles data persistence and business logic.
-- **Runtime**: Node.js
-- **Framework**: Express.js
+- **Framework**: Express.js (TypeScript)
 - **Database**: MongoDB (Mongoose ORM)
-- **Language**: TypeScript
+- **Controllers**: Refactored business logic for scalability
 
-## Getting Started
-
-### Prerequisites
-Ensure the following are installed on your system:
-- Node.js (v18+ LTS)
-- npm (Node Package Manager)
-
-### Installation & Execution
-
-The frontend and backend services operate independently. You may run them concurrently for full local development.
-
-#### Frontend Application
-```bash
-cd frontend
-npm install
-npm run dev
-```
-*Access via: [http://localhost:3000](http://localhost:3000)*
-
-#### Backend Service
-```bash
-cd backend
-npm install
-npm run dev
-```
-*Port configuration is handled via environment variables (default: 4000/5000).*
-
-## Deployment
-
-- **Frontend**: Optimized for deployment on scalable platforms such as Vercel.
-- **Backend**: Compatible with standard Node.js hosting environments (AWS, Azure, Railway, etc.).
+### Localization
+- **Multi-Language**: Fully synchronized EN/KO architectures.
+- **Paths**: Root path for English, `/ko` segment for Korean.
 
 ## Project Status
 
-**Current Phase**: Active Development
+**Current Phase**: Phase 1 Redesign Complete
 
-- **Services & Inquiry**: Fully implemented user interfaces for service listings and contact forms.
-- **API Integration**: Backend endpoints established for inquiry processing and data management.
-- **Next Steps**: Development of administrative dashboards, gallery features, and Google Reviews integration.
+- [x] **Global Premium Styling**: Integrated Royal Blue & Gold theme across all pages.
+- [x] **Full Localization**: Synchronized EN and KO page architectures and components.
+- [x] **Responsive Mastery**: Fluid 4->3->2->1 column grid system for galleries and content cards.
+- [x] **Interactive Navigation**: Glassmorphic header with animated gold underlines and sliding language toggle.
+- [x] **Backend Refactoring**: Stabilized controllers and optimized route handling.
 
 ---
 
