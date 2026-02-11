@@ -11,12 +11,7 @@ export function createApp() {
   app.use(express.json())
 
   app.use(cors({
-    origin: [
-      'http://localhost:5173',
-      'http://localhost:3001',
-      'http://localhost:3000',
-      'https://the-doum-academy-website.vercel.app',
-    ],
+    origin: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // 쿠키/세션 전송 필요 시
   }))

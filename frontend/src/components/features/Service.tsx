@@ -84,19 +84,20 @@ export function Service() {
           </p>
         )}
 
-        {!loading && !error && services.map((service) => (
-          <div key={service.id} className={styles.card}>
-            <h4 className={styles.cardTitle}>
-              {service.title[lang]}
-            </h4>
-
-            <ul className={styles.bodyList}>
-              {service.body.map((item, i) => (
-                <li key={i}>{item[lang]}</li>
-              ))}
-            </ul>
+        {!loading && !error && (
+          <div className={styles.grid}>
+            {services.map((service) => (
+              <div key={service.id} className={styles.card}>
+                <h4 className={styles.cardTitle}>{service.title[lang]}</h4>
+                <ul className={styles.bodyList}>
+                  {service.body.map((item, i) => (
+                    <li key={i}>{item[lang]}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </section>
     </div>
   );

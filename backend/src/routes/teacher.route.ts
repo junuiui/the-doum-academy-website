@@ -1,5 +1,5 @@
-import { Request, Response, Router } from 'express';
-import { Teacher } from '../models/teacher.model';
+import { Router } from 'express';
+import { getAllTeachers } from '../controllers/teacher.controllers';
 
 const teacherRouter = Router();
 
@@ -7,10 +7,6 @@ const teacherRouter = Router();
  * GET /teachers
  * ?lang=en | ko
  */
-teacherRouter.get('/', async (req: Request, res: Response) => {
-  const teachers = await Teacher.find().sort({ id: 1 });
-
-  res.json(teachers);
-});
+teacherRouter.get('/', getAllTeachers);
 
 export default teacherRouter;
