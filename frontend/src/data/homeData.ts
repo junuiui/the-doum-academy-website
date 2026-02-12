@@ -144,17 +144,88 @@ export const featureBanners = {
 };
 
 export const universityLogos = [
-  { name: "University of Toronto", logo: "https://logo.clearbit.com/utoronto.ca" },
-  { name: "UBC", logo: "https://logo.clearbit.com/ubc.ca" },
-  { name: "Waterloo", logo: "https://logo.clearbit.com/uwaterloo.ca" },
-  { name: "McGill", logo: "https://logo.clearbit.com/mcgill.ca" },
-  { name: "SFU", logo: "https://logo.clearbit.com/sfu.ca" },
-  { name: "McMaster", logo: "https://logo.clearbit.com/mcmaster.ca" },
-  { name: "Western", logo: "https://logo.clearbit.com/uwo.ca" },
-  { name: "Queens", logo: "https://logo.clearbit.com/queensu.ca" },
-  { name: "Alberta", logo: "https://logo.clearbit.com/ualberta.ca" },
-  { name: "Calgary", logo: "https://logo.clearbit.com/ucalgary.ca" },
-  { name: "York", logo: "https://logo.clearbit.com/yorku.ca" },
-  { name: "Ottawa", logo: "https://logo.clearbit.com/uottawa.ca" },
-  { name: "Victoria", logo: "https://logo.clearbit.com/uvic.ca" },
+  {
+    "name": "University of Toronto",
+    "abbreviation": "UofT",
+    "url": "https://www.utoronto.ca/",
+    "domain": "utoronto.ca",
+    "logo": "https://img.logo.dev/utoronto.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "The University of British Columbia",
+    "abbreviation": "UBC",
+    "url": "https://www.ubc.ca/",
+    "domain": "ubc.ca",
+    "logo": "https://img.logo.dev/ubc.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "Simon Fraser University",
+    "abbreviation": "SFU",
+    "url": "https://www.sfu.ca/",
+    "domain": "sfu.ca",
+    "logo": "https://img.logo.dev/sfu.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "University of Waterloo",
+    "abbreviation": "Waterloo",
+    "url": "https://uwaterloo.ca/",
+    "domain": "uwaterloo.ca",
+    "logo": "https://img.logo.dev/uwaterloo.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "University of Victoria",
+    "abbreviation": "UVic",
+    "url": "https://www.uvic.ca/",
+    "domain": "uvic.ca",
+    "logo": "https://img.logo.dev/uvic.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "Queen's University",
+    "abbreviation": "Queen's",
+    "url": "https://www.queensu.ca/",
+    "domain": "queensu.ca",
+    "logo": "https://img.logo.dev/queensu.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "Embry-Riddle Aeronautical University",
+    "abbreviation": "ERAU",
+    "url": "https://erau.edu/",
+    "domain": "erau.edu",
+    "logo": "https://img.logo.dev/erau.edu?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "Emily Carr University of Art + Design",
+    "abbreviation": "Emily Carr",
+    "url": "https://www.ecuad.ca/",
+    "domain": "ecuad.ca",
+    "logo": "https://img.logo.dev/ecuad.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "Western University",
+    "abbreviation": "Western",
+    "url": "https://www.uwo.ca/",
+    "domain": "uwo.ca",
+    "logo": "https://img.logo.dev/uwo.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "OCAD University",
+    "abbreviation": "OCAD",
+    "url": "https://www.ocadu.ca/",
+    "domain": "ocadu.ca",
+    "logo": "https://img.logo.dev/ocadu.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "York University",
+    "abbreviation": "YorkU",
+    "url": "https://www.yorku.ca/",
+    "domain": "yorku.ca",
+    "logo": "https://img.logo.dev/yorku.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  },
+  {
+    "name": "McMaster University",
+    "abbreviation": "McMaster",
+    "url": "https://www.mcmaster.ca/",
+    "domain": "mcmaster.ca",
+    "logo": "https://img.logo.dev/mcmaster.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
+  }
 ];
