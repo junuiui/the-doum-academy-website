@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import styles from './HomeContent.module.css';
 import { Popup } from '../ui/Popup';
+import UniversitySlider from './UniversitySlider';
 import { DUMMY_POPUP, reviews, heroContent, featureBanners } from '../../data/homeData';
 
 interface HomeContentProps {
@@ -88,6 +89,9 @@ export default function HomeContent({ lang }: HomeContentProps) {
           </Link>
         </div>
       </section>
+
+      {/* University Logo Slider */}
+      <UniversitySlider lang={lang} />
 
       {/* Features Grid */}
       <section className={styles.featuresGrid}>

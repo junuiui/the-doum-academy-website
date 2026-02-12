@@ -175,15 +175,23 @@ export function Location() {
           {/* Row 2 Col 2 - Quick Info Card */}
           <div className={styles.info}>
             <div className={styles.infoCard}>
-              <h3 className={styles.infoTitle}>Info title </h3>
+              <h3 className={styles.infoTitle}>
+                {isKo ? '전문 입시 가이드' : 'Expert Admissions Guidance'}
+              </h3>
               <p className={styles.infoDescription}>
-                information body
+                {isKo
+                  ? '데이터 기반의 전략과 개인별 맞춤형 로드맵으로 복잡한 대학 입시 과정을 완벽하게 가이드해 드립니다.'
+                  : 'Navigate the complex landscape of university admissions with our data-driven strategies and personalized roadmaps.'}
               </p>
               <div className={styles.infoBadge}>
                 <p>
-                  <strong>Additional Info title</strong>
+                  <strong>{isKo ? '무료 레벨 테스트 & 상담' : 'Free Assessment'}</strong>
                 </p>
-                <p>Additional info body </p>
+                <p>
+                  {isKo
+                    ? '지금 바로 무료 학업 진단과 전문가 상담을 예약하세요.'
+                    : 'Book a complimentary consultation and academic assessment today.'}
+                </p>
               </div>
             </div>
           </div>

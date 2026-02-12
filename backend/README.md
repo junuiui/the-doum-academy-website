@@ -1,6 +1,6 @@
 # Backend - The Doum Academy
 
-This is the backend service for The Doum Academy Website, providing API endpoints for the frontend application.
+This is the backend service for The Doum Academy Website, providing stabilized API endpoints and refactored business logic.
 
 ## Tech Stack
 
@@ -8,65 +8,30 @@ This is the backend service for The Doum Academy Website, providing API endpoint
 - **Framework**: Express.js
 - **Language**: TypeScript
 - **Database**: MongoDB (with Mongoose)
-- **Email**: Nodemailer
+- **Controller Pattern**: Clean separation of routes and business logic.
 
-## Installation
+## Architecture & Refactoring
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Configure Environment Variables:
-   Create a `.env` file in the `backend` directory with the following variables:
-   ```env
-   PORT=4000
-   MONGO_URI=your_mongodb_connection_string
-   EMAIL_USER=your_email@example.com
-   EMAIL_PASS=your_email_password
-   ```
-
-## Running the Server
-
-### Development Mode
-
-Runs the server with `nodemon` for auto-reloading:
-
-```bash
-npm run dev
-```
-
-### Production Build
-
-Build and start the server:
-
-```bash
-npm run build
-npm start
-```
+Recent updates focused on moving business logic from route definitions into dedicated controller files. This ensures:
+- **Scalability**: Easier to add new features or endpoints.
+- **Testability**: Logic is isolated from HTTP handling.
+- **Maintainability**: Clearer structure for managing complex operations like Inquiry processing.
 
 ## API Endpoints
 
 ### Inquiries
+- **POST /inquiries**: Creates a new inquiry. (Validated and stored in MongoDB).
+- **GET /inquiries**: Retrieves a list of all inquiries (Admin usage).
 
-- **POST /inquiries**
-  - Creates a new inquiry.
-  - Body: `{ name, email, message }`
-  
-- **GET /inquiries**
-  - Retrieves a list of all inquiries (Admin usage).
+### Achievements, Services & Locations
+- **GET /achievements**: Fetch localized student success records.
+- **GET /services**: Fetch academy program details.
+- **GET /locations**: Fetch campus information.
 
-## Status & Todo
-
-- [x] Basic Express setup with CORS
+## Status
+- [x] Express & TypeScript setup with CORS
 - [x] Database connection (MongoDB)
+- [x] Refactored to Controller architecture
 - [x] Inquiry API (Create & List)
-- [ ] Request Validation (Input sanitization)
-- [ ] Centralized Error Handling
-- [ ] Google Review API Integration
-- [ ] Integration with main Academy Server
+- [x] Localized Data Endpoints
+- [x] Security: Input sanitization and error handling

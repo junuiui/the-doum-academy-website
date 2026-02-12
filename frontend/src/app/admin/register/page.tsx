@@ -1,0 +1,173 @@
+/* src/app/admin/register/page.tsx */
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { User, Mail, Lock, Briefcase, IdCard } from 'lucide-react';
+import styles from '../admin.module.css';
+
+export default function AdminRegisterPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    role: 'Instructor',
+    email: '',
+    loginId: '',
+    password: '',
+    agreed: false
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.agreed) {
+      alert('Please agree to the collection and use of personal information.');
+      return;
+    }
+    console.log('Registration attempt:', formData);
+    setSubmitted(true);
+    // Future backend integration
+  };
+
+  if (submitted) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.authCard}>
+          <div className={styles.header}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+              <div style={{ backgroundColor: 'rgba(212, 175, 55, 0.1)', padding: '1.5rem', borderRadius: '50%' }}>
+                <IdCard size={48} color="var(--secondary-gold)" />
+              </div>
+            </div>
+            <h1 className={styles.title}>Registration Received</h1>
+            <p className={styles.subtitle}>Your account is currently pending approval.</p>
+          </div>
+
+          <div style={{ textAlign: 'center', marginBottom: '2rem', lineHeight: '1.6', color: 'var(--text-dark)' }}>
+            <p>Thank you for registering. Your account must be reviewed and approved by <strong>Devin</strong> or <strong>Kate</strong> before you can access the admin dashboard.</p>
+            <p style={{ marginTop: '1rem', fontStyle: 'italic', fontSize: '0.9rem' }}>You will receive an email once your account has been activated.</p>
+          </div>
+
+          <div className={styles.footerLinks}>
+            <Link href="/admin/login" className={styles.link}>
+              Return to Login
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className={styles.container}>
+      <div className={styles.authCard}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Create Account</h1>
+          <p className={styles.subtitle}>Join the academy admin team</p>
+        </div>
+
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              <User size={16} />
+              Full Name
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="e.g. Devin Shin"
+              required
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              <Briefcase size={16} />
+              Role
+            </label>
+            <select
+              className={styles.select}
+              value={formData.role}
+              onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+            >
+              <option value="Director">Director</option>
+              <option value="Instructor">Instructor</option>
+            </select>
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              <Mail size={16} />
+              Email Address
+            </label>
+            <input
+              type="email"
+              className={styles.input}
+              placeholder="admin@doumacademy.com"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              <IdCard size={16} />
+              Admin ID
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder="Choose a unique ID"
+              required
+              value={formData.loginId}
+              onChange={(e) => setFormData({ ...formData, loginId: e.target.value })}
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              <Lock size={16} />
+              Password
+            </label>
+            <input
+              type="password"
+              className={styles.input}
+              placeholder="Minimum 8 characters"
+              required
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+            />
+          </div>
+
+          <div className={styles.checkboxGroup}>
+            <label className={styles.checkboxLabel}>
+              <input
+                type="checkbox"
+                className={styles.checkbox}
+                required
+                checked={formData.agreed}
+                onChange={(e) => setFormData({ ...formData, agreed: e.target.checked })}
+              />
+              <span>I agree to the collection and use of personal information for administrative purposes.</span>
+            </label>
+          </div>
+
+          <button type="submit" className={styles.submitButton}>
+            Create Account
+          </button>
+        </form>
+
+        <div className={styles.footerLinks}>
+          <p>
+            Already have an account?{' '}
+            <Link href="/admin/login" className={styles.link}>
+              Login here
+            </Link>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

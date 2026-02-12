@@ -1,62 +1,45 @@
 # Frontend - The Doum Academy
 
-This is the client-side application for The Doum Academy Website, built with Next.js and React.
+This is the client-side application for The Doum Academy Website, featuring a premium "Royal Blue & Gold" design system.
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 (App Router)
+- **Framework**: Next.js 15+ (App Router)
 - **UI Library**: React 19
-- **Language**: TypeScript
-- **Styling**: Vanilla CSS, CSS Modules
-- **State/Animations**:
-  - `@react-spring/web`
-  - `@use-gesture/react`
+- **Design System**: Vanilla CSS with CSS Modules & HSL Variables
+- **Animations**:
+  - `@react-spring/web` (Gallery components)
+  - `Framer Motion` (Advanced UI transitions)
 - **Icons**: `lucide-react`, `react-icons`
 
-## Installation
+## Core Premium Features
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+- **Glassmorphic Navigation**: A sticky header with backdrop-blur and animated gold underlines.
+- **Dynamic Language Toggle**: A pill-styled switch for 1-click transition between EN and KR.
+- **Professional Popups**: Royal Blue & Gold announcement popups with stacking logic and persistence.
+- **Fluid Layouts**: Grids that adapt seamlessly through 4, 3, 2, and 1 column layouts across viewports.
+- **Service/Faculty Profiles**: High-fidelity cards for programs and teacher introductions.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## Implementation Details
 
-## Running the Application
+### Multi-Language Synchronization
+The frontend maintains parallel directory structures for `/` (English) and `/ko` (Korean). Shared components in `src/components/features` are designed to be locale-agnostic or localized via props.
 
-### Development Server
+### Layout & Spacing
+A global grid system is established in `globals.css` using radial patterns and CSS variables for consistent padding and gap management.
 
-Start the interactive development server:
+## Installation & Running
 
 ```bash
+cd frontend
+npm install
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to view the application.
-
-### Production Build
-
-Create an optimized production build:
-
-```bash
-npm run build
-npm start
-```
-
-## Features & Pages
-
-- **Services Page**: Lists details about academy services.
-- **Inquiry Form**: Allows users to send messages (Validated and sent to backend).
-- **Toast Notifications**: Feedback for user actions.
-
-## Status & Todo
-
-- [x] Services Page UI & Integration
-- [x] Inquiry Form UI
-- [x] Inquiry Submission Logic
-- [x] Toast Notifications
-- [ ] Admin Inquiry List Table
-- [ ] Gallery & Achievement Section
+## Status
+- [x] Global Premium Theme (Royal Blue & Gold)
+- [x] Multi-Language (EN/KO) Synchronization
+- [x] Responsive 4-3-2-1 Column Grid
+- [x] Glassmorphic Header & Navbar
+- [x] Professional Announcement Popups
+- [x] Contact Form & Location Services

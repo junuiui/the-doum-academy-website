@@ -189,19 +189,17 @@
   border-radius: 24px;
   box-shadow: var(--shadow-premium);
   transition: transform 0.3s ease, border-color 0.3s ease;
-  padding: 1.5rem;
+  overflow: hidden;
   display: flex;
-  gap: 1.5rem;
-  align-items: center;
+  flex-direction: column;
 }
 
 .instructorImageContainer {
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 300px;
   flex-shrink: 0;
-  border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--secondary-gold);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .instructorImage {
@@ -212,6 +210,7 @@
 
 .instructorContent {
   flex: 1;
+  padding: 1.5rem;
 }
 
 .instructorName {

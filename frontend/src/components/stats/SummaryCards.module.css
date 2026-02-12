@@ -4,7 +4,7 @@
     gap: 12px;
     margin: 0 auto;
     padding: 1rem 1rem;
-    background: white;
+    background: var(--glass-bg);
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
@@ -16,7 +16,7 @@
 }
 
 .card {
-    background: #f6f6f6;
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 14px;
     padding: 20px;
     min-width: 100px;
@@ -28,7 +28,7 @@
 
 .cardTitle {
     font-size: 13px;
-    color: #666;
+    color: var(--text-light);
 }
 
 .cardValue {
@@ -36,4 +36,3 @@
     font-weight: 600;
     margin-top: 6px;
 }
-

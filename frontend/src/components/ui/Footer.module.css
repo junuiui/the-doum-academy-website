@@ -1,24 +1,49 @@
-/* src/components/Footer.module.css */
+/* src/components/ui/Footer.module.css */
+
 .footer {
-    font-size: x-small;
-    text-align: center;
-    padding: 16px;
-    background: linear-gradient(to bottom right, #f8fafc, #f1f5f9);
-    border: 2px solid #e0e0e0;
-    color: #666;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--glass-border);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
 }
 
-.icon {
-    font-size: 26px;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+.businessInfo {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
 }
 
-.icon:hover {
-    transform: scale(1.1);
-    opacity: 0.8;
+.businessInfo p {
+  margin: 0.25rem 0;
+}
+
+.businessInfo strong {
+  color: var(--primary-blue);
+  font-size: 1rem;
+}
+
+.copyright {
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.adminLink {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  transition: all 0.3s ease;
+}
+
+.adminLink:hover {
+  opacity: 1;
+  color: var(--secondary-gold);
 }

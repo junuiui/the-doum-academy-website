@@ -1,0 +1,86 @@
+.sliderContainer {
+  width: 100%;
+  padding: 4rem 0;
+  background: var(--bg-slate);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-align: center;
+}
+
+.sliderViewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.sliderTrack {
+  display: flex;
+  width: max-content;
+  gap: 6rem;
+  align-items: center;
+  will-change: transform;
+}
+
+.logoItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  /* Increased height to accommodate text */
+  width: 120px;
+}
+
+.logoLink {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.1);
+}
+
+.logoImage {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  background-color: white;
+  /* Ensure white background for logos that might need it */
+  padding: 5px;
+  /* Add padding to prevent logos from touching the edges */
+  border-radius: 8px;
+  /* Slight rounding for a cleaner look */
+}
+
+.logoItem:hover .logoImage {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.abbreviation {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.logoLink:hover .abbreviation {
+  color: var(--text-dark);
+  opacity: 1;
+}

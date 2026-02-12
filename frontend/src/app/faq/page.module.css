@@ -1,0 +1,55 @@
+/* src/app/faq/page.module.css */
+
+.pageContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  background: linear-gradient(to right, var(--primary-blue), var(--primary-blue-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--secondary-gold);
+  border-radius: 2px;
+}
+
+.subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 4rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+}

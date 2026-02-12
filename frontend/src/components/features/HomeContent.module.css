@@ -1,17 +1,17 @@
 /* src/components/features/HomeContent.module.css */
 
 :root {
-  --primary-blue: #003366;
-  --secondary-gold: #D4AF37;
-  --text-dark: #1e293b;
-  --text-light: #64748b;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
+  --primary-blue: #d62d64;
+  --secondary-gold: #b8b8b8;
+  --text-dark: #ffffff;
+  --text-light: #b8b8b8;
+  --glass-bg: rgba(34, 35, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 .container {
   min-height: 100vh;
-  background: #f8fafc;
+  background: var(--bg-slate);
   background-image: radial-gradient(var(--glass-border) 1px, transparent 1px);
   background-size: 40px 40px;
   margin: 0 auto;
@@ -23,7 +23,7 @@
 .heroSection {
   padding: 8rem 2rem;
   text-align: center;
-  background: linear-gradient(rgba(0, 51, 102, 0.05), rgba(0, 51, 102, 0.02));
+  background: linear-gradient(rgba(214, 45, 100, 0.05), rgba(214, 45, 100, 0.02));
   position: relative;
   overflow: hidden;
 }
@@ -38,8 +38,9 @@
 .heroTitle {
   font-size: 4rem;
   font-weight: 800;
+  font-weight: 800;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, var(--primary-blue), #0055aa);
+  background: linear-gradient(to right, var(--primary-blue), #ff7aa2);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -117,15 +118,18 @@
 .popupContainer {
   position: fixed;
   top: 6rem;
-  right: 2rem;
+  left: 2rem;
+  right: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.5rem;
   z-index: 1000;
   pointer-events: none;
-  max-height: calc(100vh - 8rem);
-  overflow-y: auto;
+  max-width: calc(100vw - 4rem);
+  overflow-x: auto;
   scrollbar-width: none;
+  padding-bottom: 1rem;
+  /* For scrollbar space if needed, though hidden */
 }
 
 .popupContainer>* {
@@ -135,7 +139,7 @@
 /* Testimonials */
 .testimonialSection {
   padding: 6rem 2rem;
-  background: white;
+  background: var(--bg-slate);
 }
 
 .sectionHeader {
@@ -186,16 +190,16 @@
 
 .testimonialCard {
   min-width: 380px;
-  background: #f8fafc;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--glass-bg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 24px;
   padding: 2.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .testimonialCard:hover {
-  background: #fff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  background: rgba(40, 41, 45, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
 }
 
