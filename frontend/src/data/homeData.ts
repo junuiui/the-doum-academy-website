@@ -144,5 +144,17 @@ export const featureBanners = {
 };
 
 export const universityLogos = [
-  "UBC", "University of Toronto", "Waterloo", "McGill", "SFU", "McMaster", "Western", "Queens", "Alberta", "Calgary"
+  { name: "University of Toronto", logo: "https://logo.clearbit.com/utoronto.ca" },
+  { name: "UBC", logo: "https://logo.clearbit.com/ubc.ca" },
+  { name: "Waterloo", logo: "https://logo.clearbit.com/uwaterloo.ca" },
+  { name: "McGill", logo: "https://logo.clearbit.com/mcgill.ca" },
+  { name: "SFU", logo: "https://logo.clearbit.com/sfu.ca" },
+  { name: "McMaster", logo: "https://logo.clearbit.com/mcmaster.ca" },
+  { name: "Western", logo: "https://logo.clearbit.com/uwo.ca" },
+  { name: "Queens", logo: "https://logo.clearbit.com/queensu.ca" },
+  { name: "Alberta", logo: "https://logo.clearbit.com/ualberta.ca" },
+  { name: "Calgary", logo: "https://logo.clearbit.com/ucalgary.ca" },
+  { name: "York", logo: "https://logo.clearbit.com/yorku.ca" },
+  { name: "Ottawa", logo: "https://logo.clearbit.com/uottawa.ca" },
+  { name: "Victoria", logo: "https://logo.clearbit.com/uvic.ca" },
 ];
