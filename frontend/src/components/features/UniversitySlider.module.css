@@ -88,8 +88,9 @@
   }
 
   100% {
-    transform: translateX(-25%);
-    /* Move by 1/4th (one full set) of the total width */
+    transform: translateX(-50%);
+    /* 로고 배열을 2번만 복제했으므로, 전체 폭의 절반(= 한 세트)만큼 왼쪽으로 이동시켜
+       첫 번째 세트 끝과 두 번째 세트 시작이 자연스럽게 이어지도록 합니다. */
   }
 }
 

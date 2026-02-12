@@ -10,9 +10,9 @@ interface UniversitySliderProps {
 export default function UniversitySlider({ lang }: UniversitySliderProps) {
   const title = lang === 'en' ? 'Our students are accepted to:' : '합격 대학 리스트:';
 
-  // Duplicate key logos enough times to ensure smooth infinite scroll
-  // The animation duration and keyframes will need to match the total width
-  const logos = [...universityLogos, ...universityLogos, ...universityLogos, ...universityLogos];
+  // 로고 배열을 2번만 복제하고, CSS 애니메이션으로 전체 폭의 50%(-50%)를 이동시키는 패턴으로
+  // 첫 번째 세트 → 두 번째 세트 → 다시 첫 번째 세트가 자연스럽게 이어지도록 구성합니다.
+  const logos = [...universityLogos, ...universityLogos];
 
   return (
     <div className={styles.sliderContainer}>

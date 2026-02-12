@@ -208,13 +208,6 @@ export const universityLogos = [
     "logo": "https://img.logo.dev/uwo.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
   },
   {
-    "name": "OCAD University",
-    "abbreviation": "OCAD",
-    "url": "https://www.ocadu.ca/",
-    "domain": "ocadu.ca",
-    "logo": "https://img.logo.dev/ocadu.ca?token=pk_DHNhtaczTrKyGGbVa7T8uQ&size=80&retina=true&format=png"
-  },
-  {
     "name": "York University",
     "abbreviation": "YorkU",
     "url": "https://www.yorku.ca/",
