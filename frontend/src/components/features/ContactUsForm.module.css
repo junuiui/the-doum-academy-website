@@ -84,11 +84,11 @@
 .select,
 .textarea {
   padding: 1rem 1.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--glass-border);
   border-radius: 12px;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: white;
+  background: var(--glass-bg);
   color: var(--text-dark);
 }
 
@@ -97,7 +97,7 @@
 .textarea:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.05);
+  box-shadow: 0 0 0 4px rgba(214, 45, 100, 0.1);
 }
 
 .textarea {
@@ -122,7 +122,7 @@
   padding: 0.75rem 1.5rem;
   border: 1px solid var(--glass-border);
   border-radius: 50px;
-  background: white;
+  background: var(--glass-bg);
   color: var(--text-dark);
   font-size: 0.95rem;
   font-weight: 500;
@@ -132,7 +132,7 @@
 
 .locationButton:hover {
   border-color: var(--primary-blue);
-  background: rgba(0, 51, 102, 0.02);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .locationButtonActive {

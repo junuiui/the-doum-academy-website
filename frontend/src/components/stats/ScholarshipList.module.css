@@ -1,5 +1,5 @@
 .container {
-    background-color: #fff;
+    background-color: var(--glass-bg);
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     padding: 1rem;
@@ -19,8 +19,8 @@
     align-items: flex-start;
     padding: 0.75rem;
     border-radius: 0.75rem;
-    border: 1px solid #bbf7d0;
-    background: linear-gradient(to right, #ecfdf5, #d1fae5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     transition: box-shadow 0.3s ease;
 }
 
@@ -35,29 +35,29 @@
 .name {
     margin: 0;
     font-weight: 500;
-    color: #111827;
+    color: var(--text-dark);
 }
 
 .university {
     margin: 0;
     font-size: 0.875rem;
-    color: #4b5563;
+    color: var(--text-light);
 }
 
 .amount {
     margin-left: 0.5rem;
-    color: #047857;
-    /* dark green */
+    color: #4ade80;
+    /* light green for dark mode */
     font-weight: 500;
 }
 
 .empty {
     text-align: center;
     padding: 2rem 0;
-    color: #9ca3af;
+    color: var(--text-light);
 }
 
 .emptyIcon {
     margin-bottom: 0.5rem;
-    color: #9ca3af;
+    color: var(--text-light);
 }

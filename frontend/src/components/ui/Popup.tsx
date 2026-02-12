@@ -36,7 +36,7 @@ export function Popup({
           {bodies && bodies.map((body, idx) => (
             <li key={idx} className={styles.item}>
               <Info size={14} className={styles.itemIcon} />
-              <span>{body}</span>
+              <span dangerouslySetInnerHTML={{ __html: body }} />
             </li>
           ))}
         </ul>

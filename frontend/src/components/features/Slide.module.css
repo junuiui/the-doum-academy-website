@@ -126,7 +126,7 @@
   color: var(--text-dark);
   font-weight: 500;
   text-align: center;
-  background: white;
+  background: var(--glass-bg);
 }
 
 /* Pagination */
@@ -146,10 +146,10 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem 1.5rem;
-  background: white;
+  background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   border-radius: 50px;
-  color: var(--primary-blue);
+  color: var(--text-dark);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;

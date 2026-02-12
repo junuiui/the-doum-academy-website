@@ -3,17 +3,17 @@
   width: 350px;
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0, 51, 102, 0.15);
   overflow: hidden;
   animation: slideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes slideIn {
   from {
-    transform: translateX(50px);
+    transform: translateX(-50px);
     opacity: 0;
   }
 
@@ -96,10 +96,11 @@
 }
 
 .footer {
-  padding: 0.75rem 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   text-align: right;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 1rem;
 }
 
 .hideTodayBtn {

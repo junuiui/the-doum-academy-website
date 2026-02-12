@@ -35,7 +35,7 @@
 }
 
 .question:hover {
-  background: rgba(0, 51, 102, 0.02);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .questionText {
@@ -57,7 +57,7 @@
   max-height: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
-  background: white;
+  background: transparent;
 }
 
 .faqItemActive .answer {

@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 16px;
     padding: 1rem;
-    background: white;
+    background: var(--glass-bg);
     border-radius: 1rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
@@ -27,13 +27,13 @@
 
 .value {
     font-size: 13px;
-    color: #444;
+    color: var(--text-light);
 }
 
 .barBg {
     width: 100%;
     height: 18px;
-    background: #e5e5e5;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 999px;
     overflow: hidden;
 }

@@ -1,15 +1,21 @@
 /* src/app/globals.css */
 
 :root {
-  --primary-blue: #003366;
-  --primary-blue-light: #0055aa;
-  --secondary-gold: #D4AF37;
-  --text-dark: #1e293b;
-  --text-light: #64748b;
-  --bg-slate: #f8fafc;
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.3);
-  --shadow-premium: 0 10px 30px -5px rgba(0, 51, 102, 0.08);
+  --primary-blue: #d62d64;
+  /* Point colour */
+  --primary-blue-light: #e04e7d;
+  /* Lighter point colour */
+  --secondary-gold: #b8b8b8;
+  /* Sub colour */
+  --text-dark: #ffffff;
+  /* Text */
+  --text-light: #b8b8b8;
+  /* Sub colour */
+  --bg-slate: #222327;
+  /* Background colour */
+  --glass-bg: rgba(34, 35, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
 }
 
 html,
