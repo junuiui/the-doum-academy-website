@@ -2,7 +2,6 @@
   width: 100%;
   padding: 4rem 0;
   background: var(--bg-slate);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,12 +15,17 @@
   text-align: center;
 }
 
+.sliderViewport {
+  width: 100%;
+  overflow: hidden;
+}
+
 .sliderTrack {
   display: flex;
   width: max-content;
-  animation: scroll 60s linear infinite;
   gap: 6rem;
   align-items: center;
+  will-change: transform;
 }
 
 .logoItem {
@@ -79,22 +83,4 @@
 .logoLink:hover .abbreviation {
   color: var(--text-dark);
   opacity: 1;
-}
-
-/* Adjust scroll animation for smoother infinite loop */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-    /* 로고 배열을 2번만 복제했으므로, 전체 폭의 절반(= 한 세트)만큼 왼쪽으로 이동시켜
-       첫 번째 세트 끝과 두 번째 세트 시작이 자연스럽게 이어지도록 합니다. */
-  }
-}
-
-/* Pause animation on hover */
-.sliderTrack:hover {
-  animation-play-state: paused;
 }
