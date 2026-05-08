@@ -20,7 +20,7 @@ const ErrorPage = () => {
                 </p>
 
                 <div className={styles.divider} />
-
+                {/* 
                 <div className={styles.contactBox}>
                     <p className={styles.contactTitle}>For Inquiries</p>
                     <ul className={styles.contactList}>
@@ -31,7 +31,9 @@ const ErrorPage = () => {
                             <span>Phone:</span> +1 (604) 123-4567
                         </li>
                     </ul>
-                </div>
+                </div> */}
+
+
             </div>
         </div>
     );
