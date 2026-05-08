@@ -23,15 +23,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+    const isUnderConstruction = true; // Set to true to hide Header/Footer
+
     return (
         <html lang="en" className={noto.className}>
             <body className='layout-body'>
-                <Header />
+                {!isUnderConstruction && <Header />}
                 {/* <Navbar /> */}
-                <main className='layout-main'>
+                <main className='layout-main' style={isUnderConstruction ? { minHeight: '100vh', display: 'flex', flexDirection: 'column' } : {}}>
                     {children}
                 </main>
-                <Footer />
+                {!isUnderConstruction && <Footer />}
             </body>
         </html>
     );
