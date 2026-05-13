@@ -287,3 +287,5 @@ override.tf.json
 *.zip
 
 note.txt
+
+*/scripts/data/*.json
