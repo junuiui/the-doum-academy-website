@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, Loader2 } from 'lucide-react'; // 로딩 아이콘 추가
 import styles from './FAQ.module.css';
 
@@ -31,7 +31,8 @@ export default function FAQ({ isKo }: FAQProps) {
                 const langParam = isKo ? 'ko' : 'en';
 
                 // 백엔드 주소 환경변수(NEXT_PUBLIC_API_URL) 세팅이 안 되어있다면 'http://localhost:8000' 직접 입력 가능
-                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL
+                console.log(apiUrl)
                 const response = await fetch(`${apiUrl}/faqs/?lang=${langParam}`, {
                     method: 'GET',
                     headers: {
