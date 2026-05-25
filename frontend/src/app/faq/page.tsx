@@ -3,7 +3,7 @@ import FAQ from '../../components/features/FAQ';
 import styles from './page.module.css';
 
 export const metadata = {
-  title: 'FAQ - The Doum Academy',
+  title: 'The Doum Academy - FAQ',
   description: 'Frequently Asked Questions about The Doum Academy services, schedules, and assessments.',
 };
 
