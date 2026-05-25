@@ -6,7 +6,7 @@ from typing import List
 from app.core.config import settings
 from app.core.database import init_db
 
-from app.routers import auth, locations, services, inquiries, teachers, achievements
+from app.routers import auth, locations, services, inquiries, teachers, achievements, faqs
 
 
 @asynccontextmanager
@@ -43,15 +43,9 @@ app.include_router(services.router)
 app.include_router(inquiries.router)
 app.include_router(teachers.router)
 app.include_router(achievements.router)
+app.include_router(faqs.router)
 
-# app/main.py 맨 밑에 잠시 추가
-from app.core.security import get_password_hash
 
-@app.get("/gen-hash", tags=["DevTools"])
-def generate_new_hash():
-    # 'doum1234'의 순수 bcrypt 해시 값을 생성합니다.
-    new_hash = get_password_hash("doum1234")
-    print("\n" + "="*50)
-    print(f"YOUR NEW HASH VALUE:\n{new_hash}")
-    print("="*50 + "\n")
-    return {"hash": new_hash}
+@app.get('/')
+def greeting():
+    return {"Hello": "The Doum Academy API"}
