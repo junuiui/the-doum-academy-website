@@ -1,97 +1,114 @@
-/* src/components/features/FAQ.tsx */
 'use client';
 
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronDown, Loader2 } from 'lucide-react'; // 로딩 아이콘 추가
 import styles from './FAQ.module.css';
 
 interface FAQItem {
-  question: string;
-  answer: string;
+    id: number;
+    question: string;
+    answer: string;
 }
 
 interface FAQProps {
-  isKo: boolean;
+    isKo: boolean;
 }
 
-const FAQ_DATA = {
-  en: [
-    {
-      question: "What are the hours of operation?",
-      answer: "We are open Monday to Friday, from 4:00 PM to 10:00 PM. We are closed on weekends and public holidays."
-    },
-    {
-      question: "Do you offer free level tests?",
-      answer: "Yes, we provide a complimentary academic assessment and consultation for all new students to determine the best roadmap for success."
-    },
-    {
-      question: "Are live online classes available?",
-      answer: "Absolutely. We offer live sessions via Zoom/Google Meet for students who prefer or require remote learning."
-    },
-    {
-      question: "Is parking available at the academy?",
-      answer: "Yes, free parking is available for parents and students in the academy building."
-    },
-    {
-      question: "How do I book an appointment?",
-      answer: "You can book an appointment through our 'Contact Us' page or by calling our office directly during business hours."
-    }
-  ],
-  ko: [
-    {
-      question: "운영 시간은 어떻게 되나요?",
-      answer: "월요일부터 금요일, 오후 4시부터 10시까지 운영합니다. 주말과 공휴일은 휴무입니다."
-    },
-    {
-      question: "무료 레벨 테스트가 가능한가요?",
-      answer: "네, 모든 신규 학생들에게 무료 학업 진단과 전문가 상담을 제공하여 최적의 로드맵을 설계해 드립니다."
-    },
-    {
-      question: "온라인 수업도 진행하시나요?",
-      answer: "네, 대면 수업이 어려운 학생들을 위해 Zoom 또는 Google Meet을 통한 실시간 온라인 수업을 제공합니다."
-    },
-    {
-      question: "주차가 가능한가요?",
-      answer: "네, 학원 건물 내에 학부모님과 학생들을 위한 무료 주차 공간이 마련되어 있습니다."
-    },
-    {
-      question: "상담 예약은 어떻게 하나요?",
-      answer: "'문의하기' 페이지의 폼을 작성하시거나, 운영 시간 내에 학원으로 전화 주시면 예약을 도와드립니다."
-    }
-  ]
-};
-
 export default function FAQ({ isKo }: FAQProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [faqs, setFaqs] = useState<FAQItem[]>([]);
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
-  const toggleItem = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+    // 💡 백엔드 API로부터 FAQ 데이터를 가저오는 비동기 이펙트
+    useEffect(() => {
+        const fetchFAQs = async () => {
+            try {
+                setIsLoading(true);
+                setError(null);
 
-  const data = isKo ? FAQ_DATA.ko : FAQ_DATA.en;
+                // 현재 언어 상태에 맞춰 Query Parameter 전송 (ko 또는 en)
+                const langParam = isKo ? 'ko' : 'en';
 
-  return (
-    <div className={styles.faqContainer}>
-      {data.map((item, index) => (
-        <div
-          key={index}
-          className={`${styles.faqItem} ${activeIndex === index ? styles.faqItemActive : ''}`}
-        >
-          <button
-            className={styles.question}
-            onClick={() => toggleItem(index)}
-            aria-expanded={activeIndex === index}
-          >
-            <span className={styles.questionText}>{item.question}</span>
-            <ChevronDown className={styles.icon} size={20} />
-          </button>
-          <div className={styles.answer}>
-            <div className={styles.answerText}>
-              {item.answer}
+                // 백엔드 주소 환경변수(NEXT_PUBLIC_API_URL) 세팅이 안 되어있다면 'http://localhost:8000' 직접 입력 가능
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+                const response = await fetch(`${apiUrl}/faqs/?lang=${langParam}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch FAQ data from server');
+                }
+
+                const data: FAQItem[] = await response.json();
+                setFaqs(data);
+            } catch (err: any) {
+                console.error('FAQ fetching error:', err);
+                setError(err.message || 'Something went wrong');
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchFAQs();
+    }, [isKo]); // 언어 탭이 바뀔 때마다 백엔드에 쿼리를 새로 날려 데이터를 갱신함
+
+    const toggleItem = (index: number) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+    // ⏳ 1. 로딩 상태 렌더링 (디자인 무너짐 방지)
+    if (isLoading) {
+        return (
+            <div className={styles.faqContainer} style={{ display: 'flex', justifyContent: 'center', padding: '2rem 0' }}>
+                <Loader2 className="animate-spin" size={32} style={{ color: '#cbd5e1' }} />
             </div>
-          </div>
+        );
+    }
+
+    // ⚠️ 2. 백엔드가 꺼져있거나 네트워크 에러가 났을 때 예외 처리
+    if (error) {
+        return (
+            <div className={styles.faqContainer} style={{ textAlign: 'center', color: '#ef4444', padding: '1rem' }}>
+                {isKo ? '자주 묻는 질문을 불러오는 중 오류가 발생했습니다.' : 'Error loading FAQs. Please try again later.'}
+            </div>
+        );
+    }
+
+    // 📭 3. 등록된 FAQ가 하나도 없을 때
+    if (faqs.length === 0) {
+        return (
+            <div className={styles.faqContainer} style={{ textAlign: 'center', color: '#64748b', padding: '1rem' }}>
+                {isKo ? '등록된 자주 묻는 질문이 없습니다.' : 'No FAQs available.'}
+            </div>
+        );
+    }
+
+    return (
+        <div className={styles.faqContainer}>
+            {faqs.map((item, index) => (
+                <div
+                    key={item.id} // 💡 하드코딩 배열 인덱스 대신 DB의 고유 PK인 item.id를 Key로 매핑하여 렌더링 성능 최적화
+                    className={`${styles.faqItem} ${activeIndex === index ? styles.faqItemActive : ''}`}
+                >
+                    <button
+                        className={styles.question}
+                        onClick={() => toggleItem(index)}
+                        aria-expanded={activeIndex === index}
+                    >
+                        <span className={styles.questionText}>{item.question}</span>
+                        <ChevronDown className={styles.icon} size={20} />
+                    </button>
+                    <div className={styles.answer}>
+                        <div className={styles.answerText}>
+                            {item.answer}
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
-      ))}
-    </div>
-  );
+    );
 }
