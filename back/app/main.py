@@ -14,6 +14,7 @@ from app.routers import (
     achievements,
     faqs,
     reviews,
+    extra_data,
 )
 
 
@@ -67,7 +68,7 @@ app.include_router(teachers.router)
 app.include_router(achievements.router)
 app.include_router(faqs.router)
 app.include_router(reviews.router)
-
+app.include_router(extra_data.router)
 
 @app.get("/")
 def greeting():
