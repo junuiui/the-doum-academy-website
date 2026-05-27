@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlmodel import Session, select
 
 from app.core.database import get_session
-from app.models.reviews import Review, get_pacific_time  # 파일명에 맞게 임포트 경로 확인
+from app.models.reviews import Review  # 파일명에 맞게 임포트 경로 확인
 from app.routers.auth import get_current_admin
 
 router = APIRouter(prefix="/reviews", tags=["Reviews"])
