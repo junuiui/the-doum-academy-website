@@ -52,10 +52,10 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,  # 허용할 도메인 리스트
-    allow_credentials=True,  # 쿠키 및 인증 헤더(Authorization) 포함 허용 여부 (JWT 필수)
-    allow_methods=["*"],  # GET, POST, PUT, DELETE 등 모든 HTTP 메서드 허용
-    allow_headers=["*"],  # 모든 HTTP 헤더 허용
+    allow_origins=origins,  # Allowed Domain List
+    allow_credentials=True, # 쿠키 및 인증 헤더(Authorization) 포함 허용 여부 (JWT 필수)
+    allow_methods=["*"],    # GET, POST, PUT, DELETE 등 모든 HTTP 메서드 허용
+    allow_headers=["*"],    # 모든 HTTP 헤더 허용
 )
 
 
