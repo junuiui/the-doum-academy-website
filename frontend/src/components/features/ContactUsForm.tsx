@@ -74,13 +74,13 @@ const initialForm: Form = {
 };
 
 type LocationType = {
-    _id: string;
-    location: string;
-    address: string;
-    phone: string;
-    email: string;
-    mapEmbedLink: string;
-    directionsBase: string;
+    id: string
+    location_name: string
+    // address: string
+    // phone: string
+    // email: string
+    // map_embed_link: string
+    // directions_base: string
 };
 
 export default function ContactUsForm() {
@@ -99,7 +99,7 @@ export default function ContactUsForm() {
             .then(data => {
                 setLocations(data);
                 if (data.length > 0) {
-                    setForm(prev => ({ ...prev, location: data[0]._id }));
+                    setForm(prev => ({ ...prev, location: data[0].id }));
                 }
             })
             .catch(err => console.error(err));
@@ -341,12 +341,12 @@ export default function ContactUsForm() {
                         <div className={styles.locationButtons}>
                             {locations.map(loc => (
                                 <button
-                                    key={loc._id}
+                                    key={loc.id}
                                     type="button"
-                                    className={`${styles.locationButton} ${form.location === loc._id ? styles.locationButtonActive : ''}`}
-                                    onClick={() => updateForm('location', loc._id)}
+                                    className={`${styles.locationButton} ${form.location === loc.id ? styles.locationButtonActive : ''}`}
+                                    onClick={() => updateForm('location', loc.id)}
                                 >
-                                    {loc.location}
+                                    {loc.location_name}
                                 </button>
                             ))}
                         </div>

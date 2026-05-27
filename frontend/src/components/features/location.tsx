@@ -147,7 +147,7 @@ export function Location() {
                         </div>
                     </div>
 
-                    {/*  Row 2 Col 2 -  Hours of Operation */}
+                    {/*  Row 2 Col 1,2 -  Hours of Operation */}
                     <div className={styles.hours}>
                         <div className={styles.card}>
                             <div className={styles.hoursHeader}>
@@ -171,8 +171,9 @@ export function Location() {
                             </div>
                         </div>
                     </div>
-
-                    {/* Row 2 Col 2 - Quick Info Card */}
+                    
+                    {/* Not using */}
+                    {/* Row 2 Col 2 - Quick Info Card
                     <div className={styles.info}>
                         <div className={styles.infoCard}>
                             <h3 className={styles.infoTitle}>
@@ -194,7 +195,7 @@ export function Location() {
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </div>
