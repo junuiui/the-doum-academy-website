@@ -111,7 +111,7 @@ def delete_faq_soft(
             status_code=status.HTTP_404_NOT_FOUND, detail="Requested FAQ not found"
         )
 
-    # 💡 상태값만 꺼버리고 수정 시각 갱신
+    # 상태값만 꺼버리고 수정 시각 갱신
     db_faq.is_active = False
     db_faq.updated_at = get_pacific_time()
 
@@ -119,6 +119,7 @@ def delete_faq_soft(
     db.commit()
 
     return {"detail": f"FAQ ID {faq_id} has been successfully deactivated."}
+
 
 # -----------------------------------------------------------------------------
 # Delete (hard)
@@ -131,7 +132,7 @@ def delete_faq_hard(
 ):
     """
     어드민 대시보드용 API (Hard Delete): FAQ 데이터를 DB에서 영구히 삭제합니다.
-    ⚠️ 실행 시 복구가 불가능하므로 신중하게 호출해야 합니다.
+    실행 시 복구가 불가능하므로 신중하게 호출해야 합니다.
     """
     db_faq = db.get(Faq, faq_id)
     if not db_faq:
@@ -139,7 +140,7 @@ def delete_faq_hard(
             status_code=status.HTTP_404_NOT_FOUND, detail="Requested FAQ not found"
         )
 
-    # 💥 DB 로우 자체를 날려버림
+    # DB row complete delete
     db.delete(db_faq)
     db.commit()
 

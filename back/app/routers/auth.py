@@ -20,14 +20,14 @@ ADMIN_HASHED_PASSWORD = settings.TEMP_ADMIN_PW
 def login(form_data: OAuth2PasswordRequestForm = Depends()):
     """Admin Login / JWT Token"""
     from app.core.security import verify_password
-    
-    print("\n" + "="*50)
+
+    print("\n" + "=" * 50)
     print(f"[DEBUG] 사용자가 입력한 ID: '{form_data.username}'")
     print(f"[DEBUG] 사용자가 입력한 PW: '{form_data.password}'")
     print(f"[DEBUG] .env에서 로드된 ID: '{ADMIN_USERNAME}'")
     print(f"[DEBUG] .env에서 로드된 PW: '{ADMIN_HASHED_PASSWORD}'")
-    print("="*50 + "\n")
-    
+    print("=" * 50 + "\n")
+
     if form_data.username != ADMIN_USERNAME or not verify_password(
         form_data.password, ADMIN_HASHED_PASSWORD
     ):
@@ -41,7 +41,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends()):
     return {"access_token": access_token, "token_type": "bearer"}
 
 
-# 🔒 다른 라우터들이 '보안 장벽'으로 사용할 함수
+# 다른 라우터들이 '보안 장벽'으로 사용할 함수
 def get_current_admin(token: str = Depends(oauth2_scheme)):
     """토큰을 유효성을 검증하여 현재 로그인한 관리자를 반환"""
     credentials_exception = HTTPException(
