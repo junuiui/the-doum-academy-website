@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import List, Optional
 from zoneinfo import ZoneInfo
 from sqlmodel import Field, SQLModel
-from sqlalchemy import Column, ARRAY, String 
+from sqlalchemy import Column, ARRAY, String
 
 PACIFIC_TZ = ZoneInfo("America/Vancouver")
 
@@ -24,7 +24,7 @@ class ExtraData(SQLModel, table=True):
     title_ko: Optional[str] = Field(default=None, description="Korean Title")
     title_en: Optional[str] = Field(default=None, description="English Title")
 
-    # 다중 문자열(List) 저장을 위한 PostgreSQL ARRAY 데이터 타입 매핑
+    # for multiple strings <= mapping => PostgreSQL ARRAY data type
     subtitle_ko: Optional[List[str]] = Field(
         default=None,
         sa_column=Column(ARRAY(String), nullable=True),
@@ -36,7 +36,7 @@ class ExtraData(SQLModel, table=True):
         description="English Subtitle List",
     )
 
-    # 메타데이터 타임스탬프
+    # metadata timestamp
     created_at: datetime = Field(
         default_factory=get_pacific_time, description="Row creation time"
     )

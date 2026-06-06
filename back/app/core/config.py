@@ -8,9 +8,9 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
-    
+
     TEMP_ADMIN_USERNAME: str
-    TEMP_ADMIN_PW: str 
+    TEMP_ADMIN_PW: str
 
     # Let Pydantic read .env
     model_config = SettingsConfigDict(env_file=".env")
