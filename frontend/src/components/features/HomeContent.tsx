@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Loader2 } from 'lucide-react';
 import styles from './HomeContent.module.css';
 import { Popup } from '../ui/Popup';
-import UniversitySlider from './UniversitySlider';
 
 interface ExtraDataItem {
     id: number;
