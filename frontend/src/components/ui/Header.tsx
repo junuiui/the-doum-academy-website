@@ -3,20 +3,22 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
 import logoImage from '../../../public/color_doum_horizontal.png';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Navbar from './NavBar';
 
 export default function Header() {
     const pathname = usePathname();
     const router = useRouter();
+    const searchParams = useSearchParams();
 
     const isKo = pathname.startsWith("/ko");
+    const qs = searchParams.toString() ? '?' + searchParams.toString() : '';
 
     const toggleLang = (lang: 'ko' | 'en') => {
         if (lang === 'ko') {
-            if (!isKo) router.push('/ko' + pathname); // EN -> KO
+            if (!isKo) router.push('/ko' + pathname + qs);
         } else {
-            if (isKo) router.push(pathname.replace(/^\/ko/, '') || '/'); // KO -> EN
+            if (isKo) router.push((pathname.replace(/^\/ko/, '') || '/') + qs);
         }
     };
 

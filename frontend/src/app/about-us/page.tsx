@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { MapPin } from 'lucide-react';
 import teachersData from '../../data/teachers.json';
 import aboutData from '../../data/about.json';
 import servicesData from '../../data/services.json';
@@ -13,19 +14,22 @@ const TABS: { id: Tab; en: string; ko: string }[] = [
     { id: 'services',    en: 'Services',    ko: '수업 안내' },
     { id: 'history',     en: 'History',     ko: '연혁' },
     { id: 'instructors', en: 'Instructors', ko: '강사진' },
-    { id: 'classroom',   en: 'Classroom',   ko: '교실' },
+    { id: 'classroom',   en: 'Gallery',     ko: '학습 공간' },
 ];
 
 export default function AboutUsPage() {
-    const [tab, setTab] = useState<Tab>('services');
-    const [slide, setSlide] = useState(0);
+    const pathname = usePathname();
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
-    const isKo = typeof window !== 'undefined' && window.location.pathname.startsWith('/ko');
-    const lang: 'en' | 'ko' = isKo ? 'ko' : 'en';
+    const lang: 'en' | 'ko' = pathname.startsWith('/ko') ? 'ko' : 'en';
 
-    const images = aboutData.classroomImages;
-    const prevSlide = () => setSlide(i => (i === 0 ? images.length - 1 : i - 1));
-    const nextSlide = () => setSlide(i => (i === images.length - 1 ? 0 : i + 1));
+    const initialTab = (searchParams.get('tab') as Tab | null) ?? 'services';
+    const [tab, setTab] = useState<Tab>(initialTab);
+    const handleTabChange = (newTab: Tab) => {
+        setTab(newTab);
+        router.replace(`${pathname}?tab=${newTab}`, { scroll: false });
+    };
 
     return (
         <main className={styles.page}>
@@ -35,28 +39,13 @@ export default function AboutUsPage() {
                 <div className={styles.heroContent}>
                     <p className={styles.heroEyebrow}>{lang === 'ko' ? '도움 아카데미' : 'The Doum Academy'}</p>
                     {tab === 'instructors' ? (
-                        <>
-                            <h1 className={styles.heroTitle}>{teachersData['main-title'][lang]}</h1>
-                            <p className={styles.heroDesc}>{teachersData['main-body'][lang]}</p>
-                        </>
+                        <h1 className={styles.heroTitle}>{teachersData['main-title'][lang]}</h1>
                     ) : tab === 'history' ? (
-                        <>
-                            <h1 className={styles.heroTitle}>{lang === 'ko' ? '학원 연혁' : 'History'}</h1>
-                            <p className={styles.heroDesc}>
-                                {lang === 'ko'
-                                    ? '도움 아카데미의 성장 여정을 소개합니다.'
-                                    : 'The journey of The Doum Academy from its founding to today.'}
-                            </p>
-                        </>
+                        <h1 className={styles.heroTitle}>{lang === 'ko' ? '학원 연혁' : 'History'}</h1>
+                    ) : tab === 'classroom' ? (
+                        <h1 className={styles.heroTitle}>{lang === 'ko' ? '학습공간' : 'Gallery'}</h1>
                     ) : (
-                        <>
-                            <h1 className={styles.heroTitle}>{lang === 'ko' ? '학원 소개' : 'About Us'}</h1>
-                            <p className={styles.heroDesc}>
-                                {lang === 'ko'
-                                    ? '도움 아카데미는 캐나다 BC주에 위치한 한국식 입시 전문 학원입니다.'
-                                    : 'A Korean-style university prep academy based in BC, Canada — Port Moody & Vancouver.'}
-                            </p>
-                        </>
+                        <h1 className={styles.heroTitle}>{lang === 'ko' ? '수업 안내' : 'Our Services'}</h1>
                     )}
                 </div>
             </section>
@@ -67,7 +56,7 @@ export default function AboutUsPage() {
                     <button
                         key={t.id}
                         className={`${styles.tabBtn} ${tab === t.id ? styles.tabBtnActive : ''}`}
-                        onClick={() => setTab(t.id)}
+                        onClick={() => handleTabChange(t.id)}
                     >
                         {lang === 'ko' ? t.ko : t.en}
                     </button>
@@ -80,10 +69,6 @@ export default function AboutUsPage() {
                 {/* Services */}
                 {tab === 'services' && (
                     <section>
-                        <div className={styles.sectionHeader}>
-                            <p className={styles.eyebrow}>{lang === 'ko' ? '수업 프로그램' : 'OUR PROGRAMS'}</p>
-                            <h2 className={styles.sectionTitle}>{lang === 'ko' ? '수업 안내' : 'Our Services'}</h2>
-                        </div>
                         <div className={styles.servicesGrid}>
                             {servicesData.map(svc => (
                                 <div key={svc.id} className={styles.serviceCard}>
@@ -102,6 +87,11 @@ export default function AboutUsPage() {
                 {/* History */}
                 {tab === 'history' && (
                     <section>
+                        <p className={styles.historyFootnote}>
+                            {lang === 'ko'
+                                ? '도움 아카데미의 성장 여정을 소개합니다.'
+                                : 'The journey of The Doum Academy from its founding to today.'}
+                        </p>
                         <div className={styles.timeline}>
                             {aboutData.history.map((item, i) => (
                                 <div
@@ -122,10 +112,17 @@ export default function AboutUsPage() {
                 {/* Instructors */}
                 {tab === 'instructors' && (
                     <section>
+                        {/* Intro body */}
+                        <div className={styles.instructorsBody}>
+                            {teachersData['main-body'][lang].split('. ').map((line, i, arr) => (
+                                <p key={i}>{line}{i < arr.length - 1 ? '.' : ''}</p>
+                            ))}
+                        </div>
+
                         {/* Directors */}
-                        <div className={styles.sectionHeader}>
+                        <div className={styles.sectionHeader} style={{ marginTop: '3rem' }}>
                             <p className={styles.eyebrow}>{lang === 'ko' ? '원장 소개' : 'DIRECTORS'}</p>
-                            <h2 className={styles.sectionTitle}>{lang === 'ko' ? '원장님들' : 'Our Directors'}</h2>
+                            <h2 className={styles.sectionTitle}>{lang === 'ko' ? '원장진' : 'Our Directors'}</h2>
                         </div>
                         <div className={styles.directorGrid}>
                             {teachersData.director.map(d => (
@@ -156,39 +153,28 @@ export default function AboutUsPage() {
                     </section>
                 )}
 
-                {/* Classroom */}
+                {/* Classroom / Gallery */}
                 {tab === 'classroom' && (
                     <section>
-                        <div className={styles.sectionHeader}>
-                            <p className={styles.eyebrow}>{lang === 'ko' ? '학습 공간' : 'OUR SPACE'}</p>
-                            <h2 className={styles.sectionTitle}>{lang === 'ko' ? '교실 소개' : 'Our Classrooms'}</h2>
-                        </div>
-                        <div className={styles.slideshow}>
-                            <button className={styles.slideBtn} onClick={prevSlide} aria-label="Previous">
-                                <ChevronLeft size={24} />
-                            </button>
-                            <div className={styles.slideImageWrap}>
-                                <img
-                                    src={images[slide].url}
-                                    alt={images[slide].caption}
-                                    className={styles.slideImage}
-                                />
-                                <p className={styles.slideCaption}>{images[slide].caption}</p>
+                        {aboutData.campuses.map((campus, ci) => (
+                            <div key={ci} className={styles.campusSection}>
+                                <div className={styles.campusHeader}>
+                                    <h2 className={styles.campusName}>{campus[lang].name}</h2>
+                                    <p className={styles.campusAddress}>
+                                        <MapPin size={15} />
+                                        {campus[lang].address}
+                                    </p>
+                                </div>
+                                <div className={styles.photoGrid}>
+                                    {campus.images.map((img, ii) => (
+                                        <div key={ii} className={styles.photoCard}>
+                                            <img src={img.url} alt={img.caption} className={styles.photoImg} />
+                                            <p className={styles.photoCaption}>{img.caption}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <button className={styles.slideBtn} onClick={nextSlide} aria-label="Next">
-                                <ChevronRight size={24} />
-                            </button>
-                        </div>
-                        <div className={styles.slideDots}>
-                            {images.map((_, i) => (
-                                <button
-                                    key={i}
-                                    className={`${styles.slideDot} ${i === slide ? styles.slideDotActive : ''}`}
-                                    onClick={() => setSlide(i)}
-                                    aria-label={`Go to slide ${i + 1}`}
-                                />
-                            ))}
-                        </div>
+                        ))}
                     </section>
                 )}
 

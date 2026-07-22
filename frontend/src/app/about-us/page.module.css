@@ -2,23 +2,24 @@
 
 .page {
     background: var(--bg-page);
-    min-height: 100vh;
 }
 
 /* Hero */
 .hero {
     width: 100%;
-    height: 360px;
+    height: 220px;
     background: #e0e0e0;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .heroContent {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 2rem 3rem;
+    padding: 3.5rem 2rem 2rem;
+    text-align: center;
 }
 
 .heroEyebrow {
@@ -34,15 +35,15 @@
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--text-dark);
-    margin: 0 0 0.75rem 0;
+    margin: 0;
     line-height: 1.1;
 }
 
 .heroDesc {
     font-size: 1rem;
     color: var(--text-light);
-    margin: 0;
-    max-width: 480px;
+    margin: 0.75rem auto 0;
+    max-width: 560px;
     line-height: 1.6;
 }
 
@@ -237,6 +238,13 @@
     padding-right: 2.5rem;
 }
 
+.historyFootnote {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0 0 2.5rem 0;
+}
+
 /* Instructors */
 .instructorsIntro {
     text-align: center;
@@ -245,10 +253,15 @@
 }
 
 .instructorsBody {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.instructorsBody p {
     font-size: 0.95rem;
     color: var(--text-light);
     line-height: 1.8;
-    margin: 1rem 0 0 0;
+    margin: 0;
 }
 
 .directorGrid {
@@ -309,81 +322,65 @@
     gap: 0.4rem;
 }
 
-/* Classroom Slideshow */
-.slideshow {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+/* Campus Gallery */
+.campusSection {
+    margin-bottom: 4rem;
 }
 
-.slideBtn {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid var(--card-border);
-    background: var(--card-bg);
+.campusSection:last-child {
+    margin-bottom: 0;
+}
+
+.campusHeader {
+    margin-bottom: 1.5rem;
+}
+
+.campusName {
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--text-dark);
+    margin: 0 0 0.5rem 0;
+}
+
+.campusAddress {
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: var(--shadow-card);
-    transition: background 0.2s ease, transform 0.15s ease;
+    gap: 0.4rem;
+    font-size: 1rem;
+    color: var(--text-light);
+    margin: 0;
 }
 
-.slideBtn:hover {
-    background: #f0f0f0;
-    transform: scale(1.08);
+.photoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
-.slideImageWrap {
-    flex: 1;
-    border-radius: 12px;
+.photoCard {
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
+    box-shadow: var(--shadow-card);
 }
 
-.slideImage {
+.photoImg {
     width: 100%;
-    height: 480px;
+    height: 220px;
     object-fit: cover;
     display: block;
 }
 
-.slideCaption {
+.photoCaption {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: linear-gradient(transparent, rgba(0,0,0,0.55));
     color: white;
-    font-size: 0.9rem;
-    padding: 2rem 1.5rem 1rem;
+    font-size: 0.82rem;
+    padding: 1.5rem 0.9rem 0.6rem;
     margin: 0;
-}
-
-.slideDots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 1.25rem;
-}
-
-.slideDot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: none;
-    background: var(--card-border);
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.slideDotActive {
-    background: var(--primary-teal);
-    transform: scale(1.3);
 }
 
 /* Responsive */
@@ -400,6 +397,7 @@
     .directorGrid { grid-template-columns: 1fr; }
     .instructorGrid { grid-template-columns: repeat(2, 1fr); }
 
-    .slideImage { height: 260px; }
+    .photoGrid { grid-template-columns: 1fr; }
+    .photoImg { height: 200px; }
     .tabBtn { padding: 0.75rem 1rem; font-size: 0.9rem; }
 }
