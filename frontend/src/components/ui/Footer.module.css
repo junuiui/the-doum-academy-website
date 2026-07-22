@@ -3,10 +3,8 @@
 .footer {
   margin-top: 4rem;
   padding: 3rem 2rem;
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid var(--glass-border);
+  background: var(--card-bg);
+  border-top: 1px solid var(--card-border);
   text-align: center;
   color: var(--text-light);
   font-size: 0.9rem;
@@ -22,7 +20,7 @@
 }
 
 .businessInfo strong {
-  color: var(--primary-blue);
+  color: var(--text-dark);
   font-size: 1rem;
 }
 
@@ -45,5 +43,5 @@
 
 .adminLink:hover {
   opacity: 1;
-  color: var(--secondary-gold);
+  color: var(--secondary-salmon);
 }

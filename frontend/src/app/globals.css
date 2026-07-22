@@ -1,21 +1,18 @@
 /* src/app/globals.css */
 
 :root {
-  --primary-blue: #d62d64;
-  /* Point colour */
-  --primary-blue-light: #e04e7d;
-  /* Lighter point colour */
-  --secondary-gold: #b8b8b8;
-  /* Sub colour */
-  --text-dark: #ffffff;
-  /* Text */
-  --text-light: #b8b8b8;
-  /* Sub colour */
-  --bg-slate: #222327;
-  /* Background colour */
-  --glass-bg: rgba(34, 35, 39, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  --primary-teal: #1EAAAA;
+  --primary-teal-light: #3BBFBF;
+
+  --secondary-salmon: #E66464;
+
+  --text-dark: #3C3C3C;
+  --text-light: #555555;
+
+  --bg-page: #FFFFFF;
+  --card-bg: #FFFFFF;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 html,
@@ -23,9 +20,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background: var(--bg-slate);
-  background-image: radial-gradient(var(--glass-border) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background: var(--bg-page);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--text-dark);
 }
@@ -40,37 +35,30 @@ body {
   flex: 1;
 }
 
-/*  */
-
-/* Premium Utility Classes */
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  box-shadow: var(--shadow-premium);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+/* Utility Classes */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.glass-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 51, 102, 0.1);
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.premium-title {
-  background: linear-gradient(to right, var(--primary-blue), var(--primary-blue-light));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.accent-title {
+  color: var(--primary-teal);
   font-weight: 800;
 }
 
-.gold-underline {
+.section-underline {
   position: relative;
 }
 
-.gold-underline::after {
+.section-underline::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -78,6 +66,6 @@ body {
   transform: translateX(-50%);
   width: 60px;
   height: 4px;
-  background: var(--secondary-gold);
+  background: var(--secondary-salmon);
   border-radius: 2px;
 }

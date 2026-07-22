@@ -21,7 +21,7 @@
 }
 
 .navLinks a:hover {
-  color: var(--primary-blue);
+  color: var(--text-dark);
 }
 
 .navLinks a::after {
@@ -31,7 +31,7 @@
   left: 0;
   width: 0;
   height: 3px;
-  background: var(--secondary-gold);
+  background: var(--secondary-salmon);
   transition: width 0.3s ease;
   border-radius: 2px;
 }
@@ -42,24 +42,22 @@
 }
 
 .active {
-  color: var(--primary-blue) !important;
+  color: var(--text-dark) !important;
 }
 
-/* 모바일 */
+/* Mobile */
 @media (max-width: 980px) {
   .navLinks {
     display: none;
     flex-direction: column;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: var(--bg-page);
     position: fixed;
     top: 0;
     right: 0;
     width: 300px;
     height: 100vh;
     padding: 6rem 2rem;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.08);
     z-index: 999;
     gap: 2rem;
     animation: slideInRight 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -80,7 +78,7 @@
   }
 
   .hamburger {
-    background: var(--primary-blue);
+    background: var(--primary-teal);
     color: white;
     border: none;
     cursor: pointer;
@@ -97,7 +95,7 @@
 
   .hamburger:hover {
     transform: scale(1.05);
-    background: #004488;
+    background: var(--primary-teal-light);
   }
 
   .mobileNav {

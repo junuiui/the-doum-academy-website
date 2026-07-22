@@ -1,0 +1,44 @@
+{
+    "stats": [
+        { "value": "000+", "en": "Students Admitted",   "ko": "합격생 수" },
+        { "value": "00%+", "en": "Top University Rate",  "ko": "명문대 합격률" },
+        { "value": "0+",   "en": "Years of Experience", "ko": "입시 컨설팅 경력" },
+        { "value": "00+",  "en": "Programs Available",  "ko": "다양한 프로그램" }
+    ],
+    "quickLinks": [
+        {
+            "icon": "BookOpen",
+            "href": "/about-us",
+            "en": { "title": "About Us",     "desc": "Learn about our academy and teaching philosophy." },
+            "ko": { "title": "학원소개",     "desc": "도움 아카데미의 교육 철학을 소개합니다." }
+        },
+        {
+            "icon": "GraduationCap",
+            "href": "/contact-us",
+            "en": { "title": "Our Services", "desc": "Personalized programs tailored to your goals." },
+            "ko": { "title": "수업 안내",   "desc": "목표에 맞는 맞춤형 수업을 안내합니다." }
+        },
+        {
+            "icon": "Award",
+            "href": "/achievements",
+            "en": { "title": "Achievements", "desc": "See the results our students have achieved." },
+            "ko": { "title": "합격 성과",   "desc": "학생들의 우수한 합격 성과를 확인하세요." }
+        },
+        {
+            "icon": "Phone",
+            "href": "/contact-us",
+            "en": { "title": "Contact Us",   "desc": "Get in touch to book a consultation." },
+            "ko": { "title": "문의하기",     "desc": "상담 예약 및 문의를 남겨주세요." }
+        }
+    ],
+    "notices": [
+        {
+            "en": { "title": "Notice", "body": "Description", "date": "2025-01-01" },
+            "ko": { "title": "공지",   "body": "설명",        "date": "2025-01-01" }
+        },
+        {
+            "en": { "title": "Notice", "body": "Description", "date": "2025-01-01" },
+            "ko": { "title": "공지",   "body": "설명",        "date": "2025-01-01" }
+        }
+    ]
+}

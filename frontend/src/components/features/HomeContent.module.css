@@ -1,117 +1,9 @@
 /* src/components/features/HomeContent.module.css */
 
-:root {
-  --primary-blue: #d62d64;
-  --secondary-gold: #b8b8b8;
-  --text-dark: #ffffff;
-  --text-light: #b8b8b8;
-  --glass-bg: rgba(34, 35, 39, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.1);
-}
-
 .container {
-  min-height: 100vh;
-  background: var(--bg-slate);
-  background-image: radial-gradient(var(--glass-border) 1px, transparent 1px);
-  background-size: 40px 40px;
-  margin: 0 auto;
+  background: var(--bg-page);
   width: 100%;
   color: var(--text-dark);
-}
-
-/* Hero Section */
-.heroSection {
-  padding: 8rem 2rem;
-  text-align: center;
-  background: linear-gradient(rgba(214, 45, 100, 0.05), rgba(214, 45, 100, 0.02));
-  position: relative;
-  overflow: hidden;
-}
-
-.heroContent {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-.heroTitle {
-  font-size: 4rem;
-  font-weight: 800;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(to right, var(--primary-blue), #ff7aa2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.02em;
-}
-
-.heroSubtitle {
-  font-size: 1.25rem;
-  color: var(--text-light);
-  margin-bottom: 2.5rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-.ctaButton {
-  background: var(--primary-blue);
-  color: white;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 10px 20px rgba(0, 51, 102, 0.15);
-}
-
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0, 51, 102, 0.25);
-  background: #004488;
-}
-
-/* Feature Grid */
-.featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.featureCard {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border);
-  padding: 2.5rem;
-  border-radius: 24px;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-}
-
-.featureCard:hover {
-  transform: translateY(-10px);
-  border-color: rgba(0, 51, 102, 0.1);
-}
-
-.featureTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--primary-blue);
-}
-
-.featureDesc {
-  color: var(--text-light);
-  line-height: 1.6;
 }
 
 /* Popups */
@@ -119,7 +11,6 @@
   position: fixed;
   top: 6rem;
   left: 2rem;
-  right: auto;
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
@@ -128,18 +19,65 @@
   max-width: calc(100vw - 4rem);
   overflow-x: auto;
   scrollbar-width: none;
-  padding-bottom: 1rem;
-  /* For scrollbar space if needed, though hidden */
 }
 
-.popupContainer>* {
+.popupContainer > * {
   pointer-events: auto;
 }
 
-/* Testimonials */
-.testimonialSection {
-  padding: 6rem 2rem;
-  background: var(--bg-slate);
+/* Hero Banner */
+.heroBanner {
+  width: 100%;
+  height: 480px;
+  background: #e0e0e0;
+}
+
+/* Stats Bar */
+.statsSection {
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--card-border);
+  padding: 2.5rem 2rem;
+}
+
+.statsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  border-right: 1px solid var(--card-border);
+}
+
+.statItem:last-child {
+  border-right: none;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-teal);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Quick Links */
+.quickSection {
+  background: #f9f9f9;
+  padding: 4rem 2rem;
 }
 
 .sectionHeader {
@@ -147,139 +85,224 @@
   margin-bottom: 3rem;
 }
 
+.sectionEyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--secondary-salmon);
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: 1.9rem;
   font-weight: 800;
-  color: var(--primary-blue);
-  position: relative;
-  display: inline-block;
-}
-
-.sectionTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: var(--secondary-gold);
-  border-radius: 2px;
-}
-
-.testimonialWrapper {
-  max-width: 1400px;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.testimonialSlider {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  gap: 1.5rem;
-  padding: 2rem 1rem;
-  scrollbar-width: none;
-}
-
-.testimonialSlider::-webkit-scrollbar {
-  display: none;
-}
-
-.testimonialCard {
-  min-width: 380px;
-  background: var(--glass-bg);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 24px;
-  padding: 2.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.testimonialCard:hover {
-  background: rgba(40, 41, 45, 0.9);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
-}
-
-.rating {
-  color: var(--secondary-gold);
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-style: italic;
   color: var(--text-dark);
+  margin: 0;
 }
 
-.userInfo {
+.quickGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.quickCard {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.name {
-  font-weight: 700;
-  color: var(--primary-blue);
+.quickCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.univ {
-  font-size: 0.875rem;
-  color: var(--text-light);
-}
-
-.navBtn {
-  background: white;
-  color: var(--primary-blue);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 56px;
-  height: 56px;
+.quickIconWrap {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  cursor: pointer;
+  border: 1.5px solid var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
-  z-index: 10;
+  margin-bottom: 1.25rem;
+  color: var(--text-dark);
 }
 
-.navBtn:hover {
-  background: var(--primary-blue);
+.quickTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem 0;
+}
+
+.quickDesc {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.quickLearnMore {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--secondary-salmon);
+}
+
+/* Notice + Contact */
+.infoSection {
+  padding: 4rem 2rem;
+  background: var(--bg-page);
+}
+
+.infoInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.noticeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.noticeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.noticeTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.noticePlus {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.noticeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.noticeCard {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--card-bg);
+}
+
+.noticeCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.noticeCardBody {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.noticeDate {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+/* Contact Box */
+.contactBox {
+  background: #3d5a5a;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
   color: white;
-  transform: scale(1.1);
+  min-height: 200px;
 }
 
-.prevBtn {
-  position: absolute;
-  left: -28px;
+.contactBoxLabel {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
-.nextBtn {
-  position: absolute;
-  right: -28px;
+.contactBoxPhone {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0.25rem 0 0.5rem;
+  color: white;
+}
+
+.contactBoxDetail {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.contactBoxBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.contactBoxBtn:hover {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.75rem;
+  .heroBanner {
+    height: 260px;
   }
 
-  .heroSection {
-    padding: 6rem 1.5rem;
-  }
-
-  .testimonialCard {
-    min-width: 300px;
-  }
-
-  .navBtn {
-    display: none;
+  .quickGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

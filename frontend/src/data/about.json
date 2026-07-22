@@ -1,0 +1,46 @@
+{
+    "values": [
+        {
+            "icon": "Shield",
+            "en": { "title": "Integrity",       "desc": "We hold ourselves to the highest standards of honesty and transparency in everything we do." },
+            "ko": { "title": "진실성",           "desc": "저희는 모든 일에 있어 최고 수준의 정직함과 투명성을 유지합니다." }
+        },
+        {
+            "icon": "Star",
+            "en": { "title": "Personalization", "desc": "Every student is unique. We tailor our approach to fit each individual's goals and learning style." },
+            "ko": { "title": "맞춤형 교육",     "desc": "모든 학생은 특별합니다. 각 학생의 목표와 학습 방식에 맞게 접근 방식을 조정합니다." }
+        },
+        {
+            "icon": "Users",
+            "en": { "title": "Excellence",      "desc": "We push students to reach beyond their limits and achieve results they never thought possible." },
+            "ko": { "title": "탁월함",           "desc": "학생들이 자신의 한계를 넘어 생각지도 못했던 결과를 이루도록 이끕니다." }
+        }
+    ],
+
+    "history": [
+        {
+            "year": "2025",
+            "en": "Opened second campus in Vancouver.",
+            "ko": "밴쿠버 제2 캠퍼스 개설"
+        },
+        {
+            "year": "20XX",
+            "en": "Expanded programs to include AP, IB, and university-level courses.",
+            "ko": "AP, IB 및 대학 수준 과정으로 프로그램 확대"
+        },
+        {
+            "year": "20XX",
+            "en": "Founded The Doum Academy in Port Moody, BC.",
+            "ko": "BC주 포트무디에 도움 아카데미 설립"
+        }
+    ],
+    
+    "classroomImages": [
+        { "url": "https://images.unsplash.com/photo-1764720572930-eb63afd14b06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjbGFzc3Jvb20lMjBzdHVkZW50c3xlbnwxfHx8fDE3NjYxMDIzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080", "caption": "State-of-the-art classrooms" },
+        { "url": "https://images.unsplash.com/photo-1753546466496-d2d8a819f61a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkeSUyMHJvb20lMjBhY2FkZW15fGVufDF8fHx8MTc2NjE4NTI4NHww&ixlib=rb-4.1.0&q=80&w=1080", "caption": "Quiet study areas" },
+        { "url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGxlYXJuaW5nfGVufDF8fHx8MTc2NjE1ODk1OXww&ixlib=rb-4.1.0&q=80&w=1080", "caption": "Interactive learning sessions" },
+        { "url": "https://images.unsplash.com/photo-1611074182055-4ac85bad8bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGFzc3Jvb20lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjYxNjEwMzV8MA&ixlib=rb-4.1.0&q=80&w=1080", "caption": "Bright and spacious learning environment" },
+        { "url": "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBsaWJyYXJ5fGVufDF8fHx8MTc2NjE0Mjc0Nnww&ixlib=rb-4.1.0&q=80&w=1080", "caption": "Resource library" },
+        { "url": "https://images.unsplash.com/photo-1580894732930-0babd100d356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWFjaGVyJTIwc3R1ZGVudHxlbnwxfHx8fDE3NjYxODUyODV8MA&ixlib=rb-4.1.0&q=80&w=1080", "caption": "One-on-one tutoring" }
+    ]
+}
