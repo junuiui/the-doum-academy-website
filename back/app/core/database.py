@@ -22,6 +22,15 @@ def init_db():
     - If the tables do not exist in PostgreSQL, it executes 'CREATE TABLE' statements.
     - Typically called once during the application startup (lifespan).
     """
+    from app.models.inquiries import Inquiry, InquiryOption
+    from app.models.locations import Location
+    from app.models.services import Service
+    from app.models.teachers import Teacher
+    from app.models.achievements import Achievement
+    from app.models.faqs import Faq
+    from app.models.reviews import Review
+    from app.models.extra_data import ExtraData
+    
     SQLModel.metadata.create_all(engine)
 
 
