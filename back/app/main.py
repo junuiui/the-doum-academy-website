@@ -1,5 +1,7 @@
+import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
@@ -15,6 +17,7 @@ from app.routers import (
     faqs,
     reviews,
     extra_data,
+    media,
 )
 
 
@@ -54,11 +57,20 @@ origins = [
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,  # Allowed Domain List
-    allow_credentials=True, # 쿠키 및 인증 헤더(Authorization) 포함 허용 여부 (JWT 필수)
-    allow_methods=["*"],    # GET, POST, PUT, DELETE 등 모든 HTTP 메서드 허용
-    allow_headers=["*"],    # 모든 HTTP 헤더 허용
+    allow_credentials=True,  # 쿠키 및 인증 헤더(Authorization) 포함 허용 여부 (JWT 필수)
+    allow_methods=["*"],  # GET, POST, PUT, DELETE 등 모든 HTTP 메서드 허용
+    allow_headers=["*"],  # 모든 HTTP 헤더 허용
 )
 
+# # NAS SSD 내 실제 파일 저장 절대 경로
+# # 예: Synology NAS의 경우 "/volume1/web/uploads" 또는 Docker volume 경로
+# NAS_MEDIA_DIR = os.getenv("NAS_MEDIA_DIR", "/Users/junuiui/nas_data/uploads")
+
+# # 폴더가 없을 경우 자동 생성
+# os.makedirs(NAS_MEDIA_DIR, exist_ok=True)
+
+# # /static/images 요청이 오면 NAS_MEDIA_DIR 폴더 안의 실제 파일을 서빙
+# app.mount("/static/images", StaticFiles(directory=NAS_MEDIA_DIR), name="static_images")
 
 app.include_router(auth.router)
 app.include_router(locations.router)
@@ -69,6 +81,8 @@ app.include_router(achievements.router)
 app.include_router(faqs.router)
 app.include_router(reviews.router)
 app.include_router(extra_data.router)
+app.include_router(media.router)
+
 
 @app.get("/")
 def greeting():
