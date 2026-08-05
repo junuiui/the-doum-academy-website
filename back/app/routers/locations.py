@@ -3,7 +3,7 @@ from sqlmodel import Session, select
 from typing import List
 
 from app.core.database import get_session
-from app.models.locations import Location
+from app.models.locations import Location, LocationCreate, LocationUpdate
 from app.routers.auth import get_current_admin
 
 router = APIRouter(prefix="/locations", tags=["Locations"])
@@ -22,17 +22,19 @@ def read_locations(session: Session = Depends(get_session)):
 # -----------------------------------------------------------------------------
 @router.post("", response_model=Location, status_code=status.HTTP_201_CREATED)
 def create_location(
-    location_data: Location,
+    location_data: LocationCreate,  # Location -> LocationCreate 변경
     session: Session = Depends(get_session),
     current_admin: str = Depends(get_current_admin),
 ):
     """
     새로운 학원 지점 정보를 데이터베이스에 등록합니다.
     """
-    session.add(location_data)
+    # LocationCreate DTO를 DB 테이블 인스턴스로 변환
+    db_location = Location.model_validate(location_data)
+    session.add(db_location)
     session.commit()
-    session.refresh(location_data)
-    return location_data
+    session.refresh(db_location)
+    return db_location
 
 
 # -----------------------------------------------------------------------------
@@ -41,21 +43,21 @@ def create_location(
 @router.put("/{location_id}", response_model=Location)
 def update_location(
     location_id: int,
-    updated_data: Location,
+    updated_data: LocationUpdate,  # Location -> LocationUpdate 변경
     session: Session = Depends(get_session),
     current_admin: str = Depends(get_current_admin),
 ):
     """
-    지정된 ID의 지점 정보를 찾아 데이터를 덮어씁니다.
+    지정된 ID의 지점 정보를 찾아 데이터를 수정합니다.
     """
     db_location = session.get(Location, location_id)
     if not db_location:
         raise HTTPException(status_code=404, detail="Location not found")
 
+    # 보내지 않은 (None/Unset) 필드는 제외하고 전달받은 값만 업데이트
     data = updated_data.model_dump(exclude_unset=True)
     for key, value in data.items():
-        if key != "id":
-            setattr(db_location, key, value)
+        setattr(db_location, key, value)
 
     session.add(db_location)
     session.commit()
